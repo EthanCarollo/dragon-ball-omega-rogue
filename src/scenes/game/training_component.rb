@@ -5,24 +5,37 @@ class TrainingComponent
     @window = window
     @player = player
     @button_factory = ButtonFactory.new(@window)
+    @text_factory = TextWithBackgroundFactory.new(@window)
     @trainings = player.trainings
     @buttons = []
 
     button_width = 250
-    button_height = 50
+    button_height = 65
     button_spacing = 10
     start_x = 50
     start_y = 50
 
+    @training_points = player.training_points  # Get the player's training points
+
+    # Create the text displaying the number of training points
+    @training_points_text = @text_factory.create_default_text_with_background(
+      x: start_x,
+      y: 50,  # Position above the buttons
+      width: button_width,
+      height: 40,
+      text: "Training Points: #{@training_points}",
+      font: Gosu::Font.new(20)
+    )
 
     @trainings.each_with_index do |training, index|
       button_y = start_y + index * (button_height + button_spacing)
-      button = @button_factory.create_default_button(
+      button = @button_factory.create_training_button(
         x: start_x,
-        y: button_y,
+        y: button_y + 50,
         width: button_width,
         height: button_height,
-        text: training.name
+        training_name: training.name,
+        training_cost: training.cost  # Assuming Training class has a cost attribute
       ) { activate_training(training) }
       @buttons << button
     end
@@ -41,6 +54,7 @@ class TrainingComponent
   end
 
   def draw
+    @training_points_text.draw
     @buttons.each(&:draw)
   end
 

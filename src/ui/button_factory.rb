@@ -24,5 +24,25 @@ class ButtonFactory
       &callback
     )
   end
+
+  def create_training_button(x:, y:, width:, height:, training_name:, training_cost:, &callback)
+    background_color = Gosu::Color::WHITE
+    hover_color = Gosu::Color::GRAY
+    text_color = Gosu::Color::BLACK
+
+    TrainingButton.new(
+      @window,
+      x,
+      y,
+      width,
+      height,
+      training_name,
+      training_cost,
+      background_color,
+      hover_color,
+      text_color,
+      &callback
+    )
+  end
 end
 

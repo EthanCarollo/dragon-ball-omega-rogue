@@ -7,7 +7,7 @@ class Player
   end
 
   private_class_method :new
-  attr_accessor :name, :character, :round, :training_point, :trainings
+  attr_accessor :name, :character, :round, :training_points, :trainings
 
   def setup(name, character)
     puts("setup player...")
