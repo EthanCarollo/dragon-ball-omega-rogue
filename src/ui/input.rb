@@ -1,6 +1,18 @@
 class Input
   attr_accessor :text, :active
 
+  AZERTY_MAPPING = {
+    Gosu::KB_A => 'Q',
+    Gosu::KB_Z => 'W',
+    Gosu::KB_Q => 'A',
+    51 => 'M',
+    Gosu::KB_M => ',',
+    Gosu::KB_COMMA => ';',  # Assuming a specific mapping for AZERTY
+    Gosu::KB_SPACE => ' ',  # Space is still space
+    # Add additional mappings for numbers or special characters as needed
+    # Example: Gosu::KB_1 => '1', etc.
+  }
+
   def initialize(window, x, y, font_size, width, placeholder_text = "")
     @window = window
     @text = ""
@@ -41,9 +53,14 @@ class Input
       when Gosu::KB_RETURN
         return @text  # Returning the text to signify submission
       else
-        if id >= Gosu::KB_A && id <= Gosu::KB_Z
-          char = (id - Gosu::KB_A + 65).chr
-          @text << char
+        if AZERTY_MAPPING.key?(id)
+          char = AZERTY_MAPPING[id]
+          @text << char if char
+        else
+          if id >= Gosu::KB_A && id <= Gosu::KB_Z
+            char = (id - Gosu::KB_A + 65).chr
+            @text << char
+          end
         end
       end
     end

@@ -44,26 +44,20 @@ class CreateCharacterScene
   def draw
     @character_name_input.draw
     @submit_button.draw
-    @font.draw_text("Press ESC to exit.", 20, 20, 0)
   end
 
   def button_down(id)
     case id
     when Gosu::MS_LEFT
-      # Check if the input field was clicked to activate it
       if @character_name_input.clicked?(@window.mouse_x, @window.mouse_y)
         @character_name_input.active = true
       else
         @character_name_input.active = false
       end
-
-      # Check if the submit button was clicked
       if @submit_button.clicked?(@window.mouse_x, @window.mouse_y)
         @submit_button.trigger
       end
     end
-
-    # Handle text input if the input field is active
     if @character_name_input.active
       result = @character_name_input.button_down(id)
       submit_character if result == @character_name_input.text  # Handle input submission
@@ -73,7 +67,7 @@ class CreateCharacterScene
   def submit_character
     character_name = @character_name_input.text
     puts "Character created with name: #{character_name}"
-    @character_name_input.text = ""  # Reset input field after submission
-    @character_name_input.active = false  # Deactivate input after submission
+    @character_name_input.text = ""
+    @character_name_input.active = false
   end
 end
