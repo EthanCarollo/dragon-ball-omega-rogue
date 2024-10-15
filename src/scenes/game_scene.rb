@@ -24,6 +24,7 @@ class GameScene
       )
 
       @training_component = TrainingComponent.new(window, Player.instance)
+      @launch_fight_component = LaunchFightComponent.new(window, Player.instance)
     end
   
     def update
@@ -48,10 +49,12 @@ class GameScene
 
       @text_for_name.draw
       @training_component.draw
+      @launch_fight_component.draw
 
     end
   
     def button_down(id)
       @training_component.button_down(id)
+      @launch_fight_component.button_down(id)
     end
   end
