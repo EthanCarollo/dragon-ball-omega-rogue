@@ -1,10 +1,12 @@
 require 'gosu'
+require_relative 'characters/character'
 require_relative 'scenes/menu_scene'
+require_relative 'scenes/combat_scene'
 require_relative 'scenes/game_scene'
 
 class Game < Gosu::Window
-    WIDTH = 640
-    HEIGHT = 480
+    WIDTH = 1280
+    HEIGHT = 720
   
     def initialize
       super(WIDTH, HEIGHT)

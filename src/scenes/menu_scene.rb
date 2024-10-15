@@ -3,16 +3,17 @@ require 'gosu'
 class MenuScene
   def initialize(window)
     @window = window
-    @button_x = 270
-    @button_y = 220
     @button_width = 100
     @button_height = 40
     @button_color = Gosu::Color::WHITE
     @font = Gosu::Font.new(20)
+
+    # Center the button on the screen
+    @button_x = (@window.width - @button_width) / 2
+    @button_y = (@window.height - @button_height) / 2
   end
 
   def update
-
   end
 
   def draw
@@ -26,7 +27,7 @@ class MenuScene
   def button_down(id)
     if id == Gosu::MS_LEFT
       if mouse_over_button?
-        @window.change_scene(GameScene.new(@window))
+        @window.change_scene(CombatScene.new(@window))
       end
     end
   end
