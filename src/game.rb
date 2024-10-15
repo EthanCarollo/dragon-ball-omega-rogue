@@ -2,6 +2,8 @@ require 'gosu'
 
 require_relative 'ui/button'
 require_relative 'ui/button_factory'
+require_relative 'ui/input'
+require_relative 'ui/input_factory'
 
 require_relative 'player/player'
 
