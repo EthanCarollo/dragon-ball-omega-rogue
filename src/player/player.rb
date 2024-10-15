@@ -1,16 +1,17 @@
-require 'singleton'
 
 class Player
-  include Singleton
+  @instance = new
 
-  attr_accessor :name, :score
+  private_class_method :new
 
-  def initialize
-    @name = "Default Player"
-    @score = 0
+  def self.instance
+    @instance
   end
 
-  def display_info
-    puts "Name: #{@name}, Score: #{@score}"
+  attr_accessor :name, :character
+
+  def setup(name, character)
+    @name = name
+    @character = character
   end
 end

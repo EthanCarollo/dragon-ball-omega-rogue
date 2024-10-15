@@ -5,9 +5,7 @@ class Character
     @name = name
     @hp = hp
     @attack_options = attack_options 
-    @sprite = Gosu::Image.new(sprite_path, retro: true) 
-    @x = 100 
-    @y = 100 
+    @sprite = Gosu::Image.new(sprite_path, retro: true)
   end
 
   def alive?

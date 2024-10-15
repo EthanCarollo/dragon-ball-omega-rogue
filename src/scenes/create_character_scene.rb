@@ -71,7 +71,10 @@ class CreateCharacterScene
   def submit_character
     character_name = @character_name_input.text
     puts "Character created with name: #{character_name}"
-    @character_name_input.text = ""
+    head = @custom_character_component.head_part.current_part
+    body = @custom_character_component.body_part.current_part
+    Player.instance.setup(character_name, PlayerCharacter.new(character_name, head, body))
     @character_name_input.active = false
+    @window.change_scene(GameScene.new(@window))
   end
 end

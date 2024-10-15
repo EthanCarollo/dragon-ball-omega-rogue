@@ -51,4 +51,11 @@ class Button
   def trigger
     @callback.call if @callback
   end
+
+  # Handle mouse button down events
+  def button_down(id)
+    if id == Gosu::MS_LEFT && clicked?(@window.mouse_x, @window.mouse_y)
+      trigger
+    end
+  end
 end
