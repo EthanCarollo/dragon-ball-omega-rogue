@@ -1,5 +1,7 @@
 require 'gosu'
 
+require_relative 'events/event_manager'
+
 require_relative 'ui/button'
 require_relative 'ui/training_button'
 require_relative 'ui/button_factory'
@@ -7,6 +9,7 @@ require_relative 'ui/input'
 require_relative 'ui/input_factory'
 require_relative 'ui/text_with_background'
 require_relative 'ui/text_with_background_factory'
+require_relative 'ui/text_display'
 
 require_relative 'player/training/training'
 require_relative 'player/training/super_sayan_training'
@@ -30,21 +33,33 @@ require_relative 'scenes/game/training_component'
 class Game < Gosu::Window
     WIDTH = 1280
     HEIGHT = 720
+
+    attr_reader :event_manager
   
     def initialize
       super(WIDTH, HEIGHT)
       self.caption = "Dragon Ball Omega Rogue"
-      
-      # Start with the MenuScene
+
       @current_scene = MenuScene.new(self)
+
+      # Observer pattern here boss
+      @event_manager = EventManager.new
+      @text_display = TextDisplay.new(self)
+      @event_manager.add_observer(@text_display)
+      @event_manager.notify("Bienvenue dans ce jeu bel homme")
     end
   
     def update
+      delta_time = Gosu::milliseconds / 1000.0
+      @text_display.update(delta_time)
+
       @current_scene.update
     end
   
     def draw
       @current_scene.draw
+
+      @text_display.draw
     end
   
     def button_down(id)

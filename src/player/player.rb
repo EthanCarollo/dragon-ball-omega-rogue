@@ -31,7 +31,7 @@ class Player
     @trainings.select { |t| t.cost <= @training_points }
   end
 
-  def buy_training(training_name)
+  def buy_training(training_name, window)
     training = @trainings.find { |t| t.name == training_name }
     if training.nil?
       puts "Entraînement non trouvé."
@@ -45,6 +45,7 @@ class Player
       puts "#{training_name} acheté ! Points restants : #{@training_points}"
       training.activate(self)
       @trainings.delete(training)
+      window.event_manager.notify("Successfully trained #{training_name}")
     end
   end
 end

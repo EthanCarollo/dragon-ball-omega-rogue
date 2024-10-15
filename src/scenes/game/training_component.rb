@@ -46,7 +46,7 @@ class TrainingComponent
 
   def activate_training(training)
     if @player.available_trainings.include?(training)
-      @player.buy_training(training.name)
+      @player.buy_training(training.name, @window)
     else
       puts "Pas assez de points d'entraînement pour acheter #{training.name}."
     end
