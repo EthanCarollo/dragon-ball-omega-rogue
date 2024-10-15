@@ -1,4 +1,6 @@
 require 'gosu'
+require_relative 'characters/attack/attack_option'
+require_relative 'characters/attack/classic_attack'
 require_relative 'characters/character'
 require_relative 'scenes/menu_scene'
 require_relative 'scenes/combat_scene'

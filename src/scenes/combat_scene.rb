@@ -4,18 +4,19 @@ class CombatScene
     
     @font = Gosu::Font.new(20)
     
-    # Define attack options for each character
-    player1_attacks = {
-      "Punch" => { min: 5, max: 15 },
-      "Kick" => { min: 10, max: 20 },
-      "Special Move" => { min: 20, max: 30 }
-    }
 
-    player2_attacks = {
-      "Slap" => { min: 4, max: 12 },
-      "Headbutt" => { min: 8, max: 18 },
-      "Power Punch" => { min: 15, max: 25 }
-    }
+    player1_attacks = [
+      ClassicAttack.new("Punch", 5, 15),
+      ClassicAttack.new("Kick", 10, 20),
+      ClassicAttack.new("Special Move", 20, 30)
+    ]
+
+
+    player2_attacks = [
+      ClassicAttack.new("Slap", 4, 12),
+      ClassicAttack.new("Headbutt", 8, 18),
+      ClassicAttack.new("Power Punch", 15, 25)
+    ]
 
     # Create instances of characters
     @player1 = Character.new("Player 1", 100, player1_attacks, "assets/character/vegeta/idle.png")
@@ -79,15 +80,17 @@ class CombatScene
       @font.draw_text(attack_name, x_position + 5, start_y + 5, 1, 1.0, 1.0, Gosu::Color::BLACK)
     end
   end
+
   def button_down(id)
     if id == Gosu::MS_LEFT
       if @turn == 0 
         mouse_x, mouse_y = @window.mouse_x, @window.mouse_y 
-        attack_index = calculate_attack_index(mouse_x, mouse_y)
+        attack_index = calculate_attack_index(mouse_x, mouse_y).floor
   
         if attack_index && @player1.alive?
-          attack_name = @player1.attack_options.keys[attack_index]
-          @player1.attack(@player2, attack_name)
+          puts attack_index
+          attack = @player1.attack_options[attack_index]
+          @player1.attack(@player2, attack)
           @turn = 1 
         end
       end
