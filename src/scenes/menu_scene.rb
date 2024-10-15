@@ -27,7 +27,7 @@ class MenuScene
   def button_down(id)
     if id == Gosu::MS_LEFT
       if mouse_over_button?
-        @window.change_scene(CombatScene.new(@window))
+        @window.change_scene(CreateCharacterScene.new(@window))
       end
     end
   end

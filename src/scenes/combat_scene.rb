@@ -1,3 +1,4 @@
+# TODO : Here, I should just add to the scene the Character that needs to fight here
 class CombatScene
   def initialize(window)
     @window = window

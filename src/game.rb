@@ -1,10 +1,17 @@
 require 'gosu'
+
+
+require_relative 'player/player'
+
 require_relative 'characters/attack/attack_option'
 require_relative 'characters/attack/classic_attack'
 require_relative 'characters/character'
+
 require_relative 'scenes/menu_scene'
 require_relative 'scenes/combat_scene'
+require_relative 'scenes/create_character_scene'
 require_relative 'scenes/game_scene'
+
 
 class Game < Gosu::Window
     WIDTH = 1280
