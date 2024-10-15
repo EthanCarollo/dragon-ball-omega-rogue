@@ -47,14 +47,17 @@ class PartComponentFactory
   def self.create_head_part_component
     PartComponent.new([
       Part.new("assets/parts/head/vegeta.png", "assets/parts/head/vegeta_ego.png"),
-      Part.new("assets/parts/head/goku_gt.png", "assets/parts/head/goku_ssred.png")
+      Part.new("assets/parts/head/goku_gt.png", "assets/parts/head/goku_ssred.png"),
+      Part.new("assets/parts/head/gohan_mirai.png", "assets/parts/head/gohan_mirai_ssj.png"),
+      Part.new("assets/parts/head/trunks.png", "assets/parts/head/trunks_ssj.png")
     ])
   end
 
   def self.create_body_part_component
     PartComponent.new([
       Part.new("assets/parts/body/vegeta.png"),
-      Part.new("assets/parts/body/goku_gt.png")
+      Part.new("assets/parts/body/goku_gt.png"),
+      Part.new("assets/parts/body/gohan_mirai.png")
     ])
   end
 end

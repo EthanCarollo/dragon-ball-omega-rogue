@@ -10,8 +10,8 @@ class CustomCharacterComponent
 
     @button_factory = ButtonFactory.new(@window)
 
-    button_width = 80
-    button_height = 30
+    button_width = 140
+    button_height = 50
     button_spacing = 200
     body_center_x = @window.width.div(2)
     body_top_y = 50
