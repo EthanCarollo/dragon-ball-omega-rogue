@@ -8,10 +8,11 @@ class Player
     @instance
   end
 
-  attr_accessor :name, :character
+  attr_accessor :name, :character, :round
 
   def setup(name, character)
     @name = name
     @character = character
+    @round = 0
   end
 end

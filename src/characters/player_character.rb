@@ -20,11 +20,11 @@ class PlayerCharacter < Character
     scale_y = desired_height.to_f / sprite_height
 
     if reversed == false
-      @head.image.draw(x, y, 1, scale_x, scale_y)
       @body.image.draw(x, y, 1, scale_x, scale_y)
+      @head.image.draw(x, y, 1, scale_x, scale_y)
     else
+      @body.part.image.draw(x + desired_width, y, 1, scale_x - scale_x * 2, scale_y)
       @head.part.image.draw(x + desired_width, y, 1, scale_x - scale_x * 2, scale_y)
-      @body.part.image.draw(x, y, 1, scale_x, scale_y)
     end
     if draw_health == true
       draw_health_bar(x, y)
