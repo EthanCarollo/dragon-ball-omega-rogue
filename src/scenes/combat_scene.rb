@@ -42,7 +42,7 @@ class CombatScene
 
     # Draw characters at their designated positions
     @player1.draw_at(@player1_x, @player1_y)
-    @player2.draw_at(@player2_x, @player2_y)
+    @player2.draw_at(@player2_x, @player2_y, true)
 
     # Display HP and turn information
     display_info
@@ -52,40 +52,60 @@ class CombatScene
   end
 
   def display_info
-    # Display Player 1's HP
+    screen_width = 1280
+  
     @font.draw_text("Player 1 HP: #{@player1.hp}", 10, 10, 1, 1.0, 1.0, Gosu::Color::WHITE)
-    
-    # Display Player 2's HP
-    @font.draw_text("Player 2 HP: #{@player2.hp}", 10, 30, 1, 1.0, 1.0, Gosu::Color::WHITE)
-
-    # Display current turn
+  
+    player2_hp_text = "Player 2 HP: #{@player2.hp}"
+    player2_hp_width = @font.text_width(player2_hp_text)
+    @font.draw_text(player2_hp_text, screen_width - player2_hp_width - 10, 10, 1, 1.0, 1.0, Gosu::Color::WHITE)
+  
     current_player = @turn == 0 ? @player1.name : @player2.name
-    @font.draw_text("#{current_player}'s Turn", 10, 50, 1, 1.0, 1.0, Gosu::Color::YELLOW)
+    turn_text = "#{current_player}'s Turn"
+    turn_width = @font.text_width(turn_text) 
+    @font.draw_text(turn_text, (screen_width - turn_width) / 2, 30, 1, 1.0, 1.0, Gosu::Color::YELLOW)
   end
-
+  
   def display_attack_options
-    @font.draw_text("Attack Options:", 10, 100, 1, 1.0, 1.0, Gosu::Color::WHITE)
-    
+    start_x = 10
+    start_y = 720 - 64 - 10 
+    rect_size = 64
+  
     @player1.attack_options.each_with_index do |(attack_name, _), index|
-      @font.draw_text("#{index + 1}. #{attack_name}", 10, 120 + index * 20, 1, 1.0, 1.0, Gosu::Color::WHITE)
+      x_position = start_x + index * (rect_size + 10) 
+      
+      Gosu.draw_rect(x_position, start_y, rect_size, rect_size, Gosu::Color::WHITE)
+  
+      @font.draw_text(attack_name, x_position + 5, start_y + 5, 1, 1.0, 1.0, Gosu::Color::BLACK)
     end
   end
-
   def button_down(id)
     if id == Gosu::MS_LEFT
-      if @turn == 0 # Player 1's turn
-        attack_name = choose_attack # Replace this with actual input logic
-        if @player1.alive?
+      if @turn == 0 
+        mouse_x, mouse_y = @window.mouse_x, @window.mouse_y 
+        attack_index = calculate_attack_index(mouse_x, mouse_y)
+  
+        if attack_index && @player1.alive?
+          attack_name = @player1.attack_options.keys[attack_index]
           @player1.attack(@player2, attack_name)
-          @turn = 1 # Switch turn to Player 2
+          @turn = 1 
         end
       end
     end
   end
+  
+  def calculate_attack_index(mouse_x, mouse_y)
+    start_x = 10
+    start_y = 720 - 64 - 10 
+    rect_size = 64
+    spacing = 10 
 
-  def choose_attack
-    # Placeholder for attack selection logic. You could replace this with actual UI for selecting attacks.
-    attack_index = rand(@player1.attack_options.keys.length) # Randomly select an attack index
-    @player1.attack_options.keys[attack_index] # Return the attack name
+    if mouse_y >= start_y && mouse_y <= start_y + rect_size
+      index = (mouse_x - start_x) / (rect_size + spacing)      
+      return index if index >= 0 && index < @player1.attack_options.size
+    end
+  
+    nil 
   end
+  
 end

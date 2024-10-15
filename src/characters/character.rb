@@ -26,7 +26,7 @@ class Character
     attack(opponent, attack_name)
   end
 
-  def draw_at(x, y)
+  def draw_at(x, y, reversed = false)
     # Desired size for the character sprite
     desired_width = 128
     desired_height = 128
@@ -40,7 +40,12 @@ class Character
     scale_y = desired_height.to_f / sprite_height
   
     # Draw the character sprite at (x, y) with scaling
-    @sprite.draw(x, y, 1, scale_x, scale_y)
+    if reversed == false 
+      @sprite.draw(x, y, 1, scale_x, scale_y)
+    else
+      @sprite.draw(x + desired_width, y, 1, scale_x - scale_x * 2, scale_y)
+    end
+    
   
     # Draw the health bar below the sprite
     draw_health_bar(x, y)
@@ -53,6 +58,6 @@ class Character
     bar_height = 5
     health_ratio = @hp / 100.0 # Assuming max HP is 100
     Gosu.draw_rect(x, y + 128, bar_width * health_ratio, bar_height, Gosu::Color::GREEN)
-    Gosu.draw_rect(x + bar_width * health_ratio, y + 60, bar_width * (1 - health_ratio), bar_height, Gosu::Color::RED)
+    Gosu.draw_rect(x + bar_width * health_ratio, y + 128, bar_width * (1 - health_ratio), bar_height, Gosu::Color::RED)
   end
 end
