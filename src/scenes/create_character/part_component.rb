@@ -7,6 +7,10 @@ class PartComponent
   end
 
   def current_part
+    @parts[@current_index]
+  end
+
+  def current_part_image
     @parts[@current_index].image
   end
 

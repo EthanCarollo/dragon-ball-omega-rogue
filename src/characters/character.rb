@@ -49,7 +49,7 @@ class Character
   def draw_health_bar(x, y)
     bar_width = 128
     bar_height = 5
-    health_ratio = @hp / 100.0 # Assuming max HP is 100
+    health_ratio = @hp.div(100.0) # Assuming max HP is 100
     Gosu.draw_rect(x, y + 128, bar_width * health_ratio, bar_height, Gosu::Color::GREEN)
     Gosu.draw_rect(x + bar_width * health_ratio, y + 128, bar_width * (1 - health_ratio), bar_height, Gosu::Color::RED)
   end
