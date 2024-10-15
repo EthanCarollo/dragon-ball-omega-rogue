@@ -12,7 +12,7 @@ class Player
   def setup(name, character)
     puts("setup player...")
     @trainings = TrainingManager::initialize_trainings
-    @training_points = 0
+    @training_points = 10
     @round = 0
     @name = name
     @character = character
@@ -43,7 +43,8 @@ class Player
     else
       @training_points -= training.cost
       puts "#{training_name} acheté ! Points restants : #{@training_points}"
-      training.activate(self)  # Pass the player context to the training's activate method
+      training.activate(self)
+      @trainings.delete(training)
     end
   end
 end

@@ -52,9 +52,6 @@ class GameScene
     end
   
     def button_down(id)
-      case id
-      when Gosu::KB_ESCAPE
-        @window.close
-      end
+      @training_component.button_down(id)
     end
   end

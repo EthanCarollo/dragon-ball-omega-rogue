@@ -3,10 +3,13 @@ class TrainingComponent
 
   def initialize(window, player)
     @window = window
-    @player = player
+    @player = Player.instance
     @button_factory = ButtonFactory.new(@window)
     @text_factory = TextWithBackgroundFactory.new(@window)
-    @trainings = player.trainings
+    setup_ui
+  end
+
+  def setup_ui
     @buttons = []
 
     button_width = 250
@@ -15,19 +18,19 @@ class TrainingComponent
     start_x = 50
     start_y = 50
 
-    @training_points = player.training_points  # Get the player's training points
-
-    # Create the text displaying the number of training points
     @training_points_text = @text_factory.create_default_text_with_background(
       x: start_x,
       y: 50,  # Position above the buttons
       width: button_width,
       height: 40,
-      text: "Training Points: #{@training_points}",
+      text: "Training Points: #{Player.instance.training_points}",
       font: Gosu::Font.new(20)
     )
 
-    @trainings.each_with_index do |training, index|
+    @player.trainings.each_with_index do |training, index|
+      if index >= 5
+        break
+      end
       button_y = start_y + index * (button_height + button_spacing)
       button = @button_factory.create_training_button(
         x: start_x,
@@ -60,5 +63,6 @@ class TrainingComponent
 
   def button_down(id)
     @buttons.each { |button| button.button_down(id) }
+    setup_ui
   end
 end
