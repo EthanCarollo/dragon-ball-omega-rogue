@@ -7,6 +7,8 @@ require_relative 'ui/input_factory'
 require_relative 'ui/text_with_background'
 require_relative 'ui/text_with_background_factory'
 
+require_relative 'player/training/training'
+require_relative 'player/training/super_sayan_training'
 require_relative 'player/player'
 
 require_relative 'characters/attack/attack_option'
@@ -28,7 +30,7 @@ class Game < Gosu::Window
   
     def initialize
       super(WIDTH, HEIGHT)
-      self.caption = "Ruby Gosu Scene Switching"
+      self.caption = "Dragon Ball Omega Rogue"
       
       # Start with the MenuScene
       @current_scene = MenuScene.new(self)
