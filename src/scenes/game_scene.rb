@@ -22,6 +22,8 @@ class GameScene
         text: text_to_show,
         font: @font
       )
+
+      @training_component = TrainingComponent.new(window, Player.instance)
     end
   
     def update
@@ -38,13 +40,14 @@ class GameScene
       scale_x = desired_width.to_f / bg_width
       scale_y = desired_height.to_f / bg_height
 
-      @background.draw(0, 0, 1, scale_x, scale_y)
+      @background.draw(0, 0, 0, scale_x, scale_y)
       player_size = 350
       Player.instance.character.draw_at(@window.width / 2 - player_size / 2,
                                         @window.height / 2 - player_size / 2 + 120,
                                         false, false, player_size)
 
       @text_for_name.draw
+      @training_component.draw
 
     end
   

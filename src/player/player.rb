@@ -7,17 +7,13 @@ class Player
   end
 
   private_class_method :new
-
-  # default initializer en gros
-  def initialize
-    @trainings = []
-    @training_points = 0
-    @round = 0
-  end
-
-  attr_accessor :name, :character, :round, :training_point
+  attr_accessor :name, :character, :round, :training_point, :trainings
 
   def setup(name, character)
+    puts("setup player...")
+    @trainings = TrainingManager::initialize_trainings
+    @training_points = 0
+    @round = 0
     @name = name
     @character = character
   end

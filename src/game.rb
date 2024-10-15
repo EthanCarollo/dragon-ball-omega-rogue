@@ -9,6 +9,7 @@ require_relative 'ui/text_with_background_factory'
 
 require_relative 'player/training/training'
 require_relative 'player/training/super_sayan_training'
+require_relative 'player/training/training_manager'
 require_relative 'player/player'
 
 require_relative 'characters/attack/attack_option'
@@ -22,6 +23,7 @@ require_relative 'scenes/create_character_scene'
 require_relative 'scenes/create_character/custom_character_component'
 require_relative 'scenes/create_character/part_component'
 require_relative 'scenes/game_scene'
+require_relative 'scenes/game/training_component'
 
 # In fact, the whole scene managing of the game is a sort of state machine lol, in some funny way
 class Game < Gosu::Window
