@@ -1,41 +1,37 @@
 require 'gosu'
-
 class MenuScene
   def initialize(window)
     @window = window
-    @button_width = 100
-    @button_height = 40
-    @button_color = Gosu::Color::WHITE
     @font = Gosu::Font.new(20)
 
-    # Center the button on the screen
-    @button_x = (@window.width - @button_width) / 2
-    @button_y = (@window.height - @button_height) / 2
+    # Create a button using the factory with a hover color and callback for scene change
+    @button_factory = ButtonFactory.new(@window)
+    @start_button = @button_factory.create_default_button(
+      x: (@window.width - 200) / 2,  # Centering the button
+      y: (@window.height - 50) / 2,
+      width: 200,
+      height: 50,
+      text: "Start"
+    ) do
+      # Button callback: change the scene
+      @window.change_scene(CreateCharacterScene.new(@window))
+    end
   end
 
   def update
+
   end
 
   def draw
     Gosu.draw_rect(0, 0, @window.width, @window.height, Gosu::Color::BLACK)
-    
-    Gosu.draw_rect(@button_x, @button_y, @button_width, @button_height, @button_color)
-    
-    @font.draw_text("Start", @button_x + 20, @button_y + 10, 1, 1.0, 1.0, Gosu::Color::BLACK)
+    @start_button.draw
   end
 
   def button_down(id)
     if id == Gosu::MS_LEFT
-      if mouse_over_button?
-        @window.change_scene(CreateCharacterScene.new(@window))
+      if @start_button.clicked?(@window.mouse_x, @window.mouse_y)
+        @start_button.trigger
       end
     end
-  end
-
-  def mouse_over_button?
-    mouse_x = @window.mouse_x
-    mouse_y = @window.mouse_y
-    mouse_x >= @button_x && mouse_x <= (@button_x + @button_width) &&
-      mouse_y >= @button_y && mouse_y <= (@button_y + @button_height)
   end
 end
