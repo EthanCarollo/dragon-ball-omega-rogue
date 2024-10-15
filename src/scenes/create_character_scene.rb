@@ -8,6 +8,7 @@ class CreateCharacterScene
     # Create the input field for the character name using the factory
     create_character_name_input
     create_submit_button
+    @custom_character_component = CustomCharacterComponent.new(window)
   end
 
   def create_character_name_input
@@ -37,6 +38,7 @@ class CreateCharacterScene
 
   def update
     @character_name_input.update
+    @custom_character_component.update
     # Maybe in the future, add an update to this
     # @submit_button.update
   end
@@ -44,6 +46,7 @@ class CreateCharacterScene
   def draw
     @character_name_input.draw
     @submit_button.draw
+    @custom_character_component.draw
   end
 
   def button_down(id)
@@ -62,6 +65,7 @@ class CreateCharacterScene
       result = @character_name_input.button_down(id)
       submit_character if result == @character_name_input.text  # Handle input submission
     end
+    @custom_character_component.button_down(id)
   end
 
   def submit_character

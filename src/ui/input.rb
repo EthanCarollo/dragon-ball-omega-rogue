@@ -7,10 +7,8 @@ class Input
     Gosu::KB_Q => 'A',
     51 => 'M',
     Gosu::KB_M => ',',
-    Gosu::KB_COMMA => ';',  # Assuming a specific mapping for AZERTY
-    Gosu::KB_SPACE => ' ',  # Space is still space
-    # Add additional mappings for numbers or special characters as needed
-    # Example: Gosu::KB_1 => '1', etc.
+    Gosu::KB_COMMA => ';',
+    Gosu::KB_SPACE => ' ',
   }
 
   def initialize(window, x, y, font_size, width, placeholder_text = "")
@@ -23,12 +21,11 @@ class Input
     @width = width
     @cursor_visible = true
     @active = false
-    @cursor_blink_rate = 30  # Control the blink speed of the cursor
+    @cursor_blink_rate = 30
     @frame_count = 0
   end
 
   def update
-    # Control cursor blinking
     @frame_count += 1
     if @frame_count % @cursor_blink_rate == 0
       @cursor_visible = !@cursor_visible
@@ -36,10 +33,8 @@ class Input
   end
 
   def draw
-    # Draw the text input
     text_to_show = "#{@placeholder_text} #{@text}"
     @font.draw_text(text_to_show, @x, @y, 0)
-    # Draw the blinking cursor if the input is active
     if @active && @cursor_visible
       @font.draw_text("_", @x + @font.text_width(text_to_show), @y, 0)
     end
@@ -64,10 +59,9 @@ class Input
         end
       end
     end
-    nil  # If no submission, return nil
+    nil
   end
 
-  # Method to check if the user clicked within the input field's bounds
   def clicked?(mouse_x, mouse_y)
     mouse_x.between?(@x, @x + @width) && mouse_y.between?(@y - 20, @y + 20)
   end
