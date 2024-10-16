@@ -28,10 +28,10 @@ end
 class PartComponentFactory
   def self.create_head_part_component
     PartComponent.new([
-      Part.new("assets/parts/head/vegeta.png", "assets/parts/head/vegeta_ego.png"),
-      Part.new("assets/parts/head/goku_gt.png", "assets/parts/head/goku_ssred.png"),
-      Part.new("assets/parts/head/gohan_mirai.png", "assets/parts/head/gohan_mirai_ssj.png"),
-      Part.new("assets/parts/head/trunks.png", "assets/parts/head/trunks_ssj.png")
+      Part.new("assets/parts/head/vegeta.png", "assets/parts/head/vegeta_ssj.png", "assets/parts/head/vegeta_ssred.png"),
+      Part.new("assets/parts/head/goku_gt.png", "assets/parts/head/goku_gt_ssj.png", "assets/parts/head/goku_ssred.png"),
+      Part.new("assets/parts/head/gohan_mirai.png", "assets/parts/head/gohan_mirai_ssj.png", "assets/parts/head/gohan_mirai_ssred.png"),
+      Part.new("assets/parts/head/trunks.png", "assets/parts/head/trunks_ssj.png", "assets/parts/head/trunks_ssred.png")
     ])
   end
 
@@ -45,14 +45,20 @@ class PartComponentFactory
 end
 
 class Part
-  attr_accessor :image, :ssj_image
+  attr_accessor :image, :ssj_image, :ssred_image
 
-  def initialize(imagePath, awakenedImg = false)
+  def initialize(imagePath, ssj_image = false, ssred_image = false)
     @image = Gosu::Image.new(imagePath, retro: true)
-    if awakenedImg == false
+    if ssj_image == false
       @ssj_image = Gosu::Image.new(imagePath, retro: true)
     else
-      @ssj_image = Gosu::Image.new(awakenedImg, retro: true)
+      @ssj_image = Gosu::Image.new(ssj_image, retro: true)
+    end
+
+    if ssred_image == false
+      @ssred_image = Gosu::Image.new(imagePath, retro: true)
+    else
+      @ssred_image = Gosu::Image.new(ssred_image, retro: true)
     end
   end
 end

@@ -9,7 +9,7 @@ class AttackOption
         @asset = Gosu::Image.new(asset_path, retro: true)
     end
 
-    def execute(launcher, opponent, attack_multiplier = 1)
+    def execute(launcher, opponent)
         puts "execute attack option"
     end
 end

@@ -9,6 +9,7 @@ class CreateCharacterScene
     create_character_name_input
     create_submit_button
     @custom_character_component = CustomCharacterComponent.new(window)
+    @namek_background = Gosu::Image.new("./assets/background/namek_background.png", retro: true)
   end
 
   def create_character_name_input
@@ -44,6 +45,10 @@ class CreateCharacterScene
   end
 
   def draw
+    background_width = @namek_background.width / @window.width
+    background_height = @namek_background.height / @window.height
+    @namek_background.draw(0, 0, 0, background_width, background_height)
+    
     @character_name_input.draw
     @submit_button.draw
     @custom_character_component.draw
