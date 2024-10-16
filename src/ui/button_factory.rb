@@ -44,5 +44,18 @@ class ButtonFactory
       &callback
     )
   end
+
+  def create_image_button(x:, y:, normal_image_path:, hover_image_path:, width:, height:, &callback)
+    ImageButton.new(
+      @window,
+      x,
+      y,
+      normal_image_path,
+      hover_image_path,
+      width,
+      height,
+      &callback
+    )
+  end
 end
 

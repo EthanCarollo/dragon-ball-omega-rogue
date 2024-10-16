@@ -40,7 +40,6 @@ class Button
     mouse_x > @x && mouse_x < @x + @width && mouse_y > @y && mouse_y < @y + @height
   end
 
-  # Check if the button is being hovered
   def hovering?
     mouse_x = @window.mouse_x
     mouse_y = @window.mouse_y

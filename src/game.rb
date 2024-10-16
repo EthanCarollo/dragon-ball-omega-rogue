@@ -4,6 +4,7 @@ require_relative 'events/event_manager'
 
 require_relative 'ui/button'
 require_relative 'ui/training_button'
+require_relative 'ui/image_button'
 require_relative 'ui/button_factory'
 require_relative 'ui/input'
 require_relative 'ui/input_factory'

@@ -29,7 +29,25 @@ class CombatScene
     @player2_x = @window.width - 100 - 128 # Position for Player 2 (right side)
     @player2_y = 300
     
-    @turn = 0 # 0 for Player 1, 1 for Player 2
+    @turn = 0
+
+    @ability_buttons = []
+    @button_factory = ButtonFactory.new(window)
+    @player1.attack_options.each_with_index do |(attack, _), index|
+      start_x = 10
+      desired_size = 84
+      start_y = 720 - desired_size - 10 
+      x_position = start_x + index * (desired_size + 10) 
+      button = @button_factory.create_image_button(
+        x: x_position,
+        y: start_y,
+        normal_image_path: attack.asset_path,
+        hover_image_path: attack.asset_path,
+        width: desired_size,
+        height: desired_size,
+      ) { puts "click on button" }
+      @ability_buttons << button
+    end
   end
 
   def update
@@ -69,16 +87,8 @@ class CombatScene
   end
   
   def display_attack_options
-    start_x = 10
-    start_y = 720 - 64 - 10 
-    rect_size = 64
-  
-    @player1.attack_options.each_with_index do |(attack_name, _), index|
-      x_position = start_x + index * (rect_size + 10) 
-      
-      Gosu.draw_rect(x_position, start_y, rect_size, rect_size, Gosu::Color::WHITE)
-  
-      @font.draw_text(attack_name, x_position + 5, start_y + 5, 1, 1.0, 1.0, Gosu::Color::BLACK)
+    @ability_buttons.each_with_index do |(attack, _), index|
+      attack.draw
     end
   end
 
