@@ -87,10 +87,13 @@ class CreateCharacterScene
     head = @custom_character_component.head_part.current_part
     body = @custom_character_component.body_part.current_part
     player_character = nil
+    race = nil
     if @custom_character_component.type == "sayan"
       player_character = SayanCharacter.new(character_name)
+      race = PlayerRace.sayan
     elsif
       player_character = ChilledCharacter.new(character_name)
+      race = PlayerRace.chilled
     end
 
     player_character
@@ -100,7 +103,7 @@ class CreateCharacterScene
       .add_attack(StrengthAttack.new("Fulguro Fist", 14, 15, "./assets/ability/release_v1.2-single_17.png"))
       .add_attack(IntelligenceAttack.new("Kikoha", 8, 24, "./assets/ability/release_v1.2-single_6.png"))
       .add_attack(IntelligenceAttack.new("Masenko", 3, 30, "./assets/ability/release_v1.2-single_10.png"))
-    Player.instance.setup(@window, character_name, player_character)
+    Player.instance.setup(@window, character_name, player_character, race)
     @character_name_input.active = false
     @window.change_scene(GameScene.new(@window))
   end

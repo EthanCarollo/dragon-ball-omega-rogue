@@ -55,6 +55,7 @@ require_relative 'scenes/game/stats_component'
 
 
 # In fact, the whole scene managing of the game is a sort of state machine lol, in some funny way
+# So that's making this game, a demonstration of the state pattern itself
 class Game < Gosu::Window
     WIDTH = 1280
     HEIGHT = 720
@@ -64,11 +65,7 @@ class Game < Gosu::Window
     def initialize
       super(WIDTH, HEIGHT)
       self.caption = "Dragon Ball Omega Rogue"
-
       @current_scene = MenuScene.new(self)
-      # @current_scene = RewardScene.new(self)
-
-      # Observer pattern here boss
       @event_manager = EventManager.new
       @text_display = TextDisplay.new(self)
       @event_manager.add_observer(@text_display)

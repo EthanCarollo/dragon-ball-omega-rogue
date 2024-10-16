@@ -1,3 +1,11 @@
+class PlayerRace 
+  def self.sayan
+    "sayan"
+  end
+  def self.chilled
+    "chilled"
+  end
+end
 
 class Player
   @instance = new
@@ -7,13 +15,14 @@ class Player
   end
 
   private_class_method :new
-  attr_accessor :name, :character, :round, :training_points, :trainings, :window
+  attr_accessor :name, :character, :round, :training_points, :trainings, :window, :race
 
-  def setup(window, name, character)
+  def setup(window, name, character, race)
     puts("setup player...")
     @window = window
     @trainings = TrainingManager::initialize_trainings
     @training_points = 10
+    @race = race
 
     # FOR DEBUG
     @training_points = 20000
