@@ -30,7 +30,6 @@ class SenzuReward < Reward
     def initialize(reward)
         super("Senzu #{reward.name}", "#{reward.description}, heal completely the player", reward.asset_path, reward.hover_asset_path)
         @reward = reward
-        @amount = amount
     end
 
     def get_reward
