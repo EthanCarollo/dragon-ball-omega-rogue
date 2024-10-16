@@ -10,7 +10,6 @@ class Character
     @body = nil
   end
 
-
   def set_max_hp(max_hp)
     @max_hp = max_hp
     return self

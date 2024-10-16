@@ -81,4 +81,12 @@ class PartFactory
   def self.create_frieza_part
     Part.new("assets/parts/full/frieza.png")
   end
+
+  def self.create_zamasu_part
+    Part.new("assets/character/zamasu_fusion/zamasu.png")
+  end
+
+  def self.create_buu_part
+    Part.new("assets/character/buu/buu.png")
+  end
 end

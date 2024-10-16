@@ -1,4 +1,4 @@
-class ChilledCharacter < Character
+class NormalCharacter < Character
 
   attr_accessor :name, :hp, :attack_options, :stats, :head, :body, :max_hp
 
