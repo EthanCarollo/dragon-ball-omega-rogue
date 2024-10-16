@@ -4,6 +4,7 @@ class PlayerCharacter < Character
   def initialize(name)
     @name = name
     @hp = 100
+    @max_hp = 100
     @attack_options = []
     @head = nil
     @body = nil
@@ -20,7 +21,12 @@ class PlayerCharacter < Character
   end
 
   def add_attack(attack_option)
-    @attack_option << attack_option
+    @attack_options << attack_option
+    return self
+  end
+
+  def add_stats(character_stats)
+    @stats = character_stats
     return self
   end
 

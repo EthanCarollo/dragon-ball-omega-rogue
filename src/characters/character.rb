@@ -1,12 +1,13 @@
 class Character
-  attr_accessor :name, :hp, :attack_options
+  attr_accessor :name, :hp, :attack_options, :stats
 
-  def initialize(name, hp, attack_options, sprite_path)
+  def initialize(name, hp, attack_options, sprite_path, character_stats = CharacterStats.new(0,0,0))
     @name = name
     @hp = hp
     @max_hp = hp
     @attack_options = attack_options 
     @sprite = Gosu::Image.new(sprite_path, retro: true)
+    @stats = character_stats
   end
 
   def alive?

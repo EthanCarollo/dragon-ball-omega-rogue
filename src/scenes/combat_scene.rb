@@ -1,26 +1,18 @@
 # TODO : Here, I should just add to the scene the Character that needs to fight here
 class CombatScene
-  def initialize(window)
+  def initialize(window, player)
     @window = window
     
     @font = Gosu::Font.new(20)
-    
-
-    player1_attacks = [
-      ClassicAttack.new("Punch", 5, 15),
-      ClassicAttack.new("Kick", 10, 20),
-      ClassicAttack.new("Special Move", 20, 30)
-    ]
-
 
     player2_attacks = [
-      ClassicAttack.new("Slap", 4, 12),
-      ClassicAttack.new("Headbutt", 8, 18),
-      ClassicAttack.new("Power Punch", 15, 25)
+      StrengthAttack.new("Slap", 4, 12),
+      StrengthAttack.new("Headbutt", 8, 18),
+      StrengthAttack.new("Power Punch", 15, 25)
     ]
 
     # Create instances of characters
-    @player1 = Character.new("Player 1", 100, player1_attacks, "assets/character/vegeta/idle.png")
+    @player1 = player
     @player2 = Character.new("Player 2", 100, player2_attacks, "assets/character/vegeta/idle.png")
 
     # Set the positions for the characters
@@ -68,7 +60,7 @@ class CombatScene
 
   def draw
     Gosu.draw_rect(0, 0, @window.width, @window.height, Gosu::Color::BLACK)
-    @player1.draw_at(@player1_x, @player1_y)
+    @player1.draw_at(@player1_x, @player1_y, false, true)
     @player2.draw_at(@player2_x, @player2_y, true)
     display_info
     display_attack_options

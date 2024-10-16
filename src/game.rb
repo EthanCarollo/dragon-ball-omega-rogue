@@ -18,8 +18,10 @@ require_relative 'player/training/training_manager'
 require_relative 'player/player'
 
 require_relative 'characters/attack/attack_option'
-require_relative 'characters/attack/classic_attack'
+require_relative 'characters/attack/strength_attack'
+require_relative 'characters/attack/intelligence_attack'
 require_relative 'characters/character'
+require_relative 'characters/character_stats'
 require_relative 'characters/player_character'
 
 require_relative 'scenes/menu_scene'
