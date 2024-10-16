@@ -10,7 +10,7 @@ class ChooseFightScene
 
     @button_factory = ButtonFactory.new(@window)
 
-    @levels = LevelFactory.get_default_level
+    @levels = LevelFactory.get_random_level
     
     @level_buttons = []
     
@@ -18,16 +18,15 @@ class ChooseFightScene
     button_height = 100
     spacing = 20
     start_x = (@window.width - button_width) / 2
-    start_y = 150 
+    start_y = 75
     
     @levels.each_with_index do |level, index|
-      button = @button_factory.create_image_button(
+      button = @button_factory.create_default_button(
         x: start_x,
-        y: start_y + (button_height + spacing) * index, 
-        normal_image_path: level.asset_path, 
-        hover_image_path: level.asset_path,  
+        y: start_y + (button_height + spacing) * index,
         width: button_width,
-        height: button_height
+        height: button_height,
+        text: level.name
       ) do
         puts "Level #{index + 1} selected: #{level}"
         @window.change_scene(CombatScene.new(@window, Player.instance.character, level))

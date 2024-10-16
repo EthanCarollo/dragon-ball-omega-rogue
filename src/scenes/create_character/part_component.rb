@@ -82,6 +82,30 @@ class PartFactory
     Part.new("assets/parts/full/frieza.png")
   end
 
+  def self.create_nappa_part
+    Part.new("assets/parts/full/nappa.png")
+  end
+
+  def self.create_kaio_part
+    Part.new("assets/parts/full/kaio.png")
+  end
+
+  def self.create_hit_part
+    Part.new("assets/parts/full/hit.png")
+  end
+
+  def self.create_beerus_part
+    Part.new("assets/parts/full/beerus.png")
+  end
+
+  def self.create_dabra_part
+    Part.new("assets/parts/full/dabra.png")
+  end
+
+  def self.create_c17_part
+    Part.new("assets/parts/full/c17.png")
+  end
+
   def self.create_zamasu_part
     Part.new("assets/character/zamasu_fusion/zamasu.png")
   end

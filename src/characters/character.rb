@@ -21,15 +21,11 @@ class Character
   end
 
   def add_head(head_part)
-    puts 'added head : '
-    puts head_part
     @head = head_part
     return self
   end
 
   def add_body(body_part)
-    puts 'added body : '
-    puts body_part
     @body = body_part
     return self
   end
