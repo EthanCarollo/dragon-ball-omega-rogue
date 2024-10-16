@@ -80,7 +80,7 @@ class CreateCharacterScene
       .add_attack(StrengthAttack.new("Fulguro Fist", 14, 15, "./assets/ability/release_v1.2-single_17.png"))
       .add_attack(IntelligenceAttack.new("Kikoha", 8, 24, "./assets/ability/release_v1.2-single_6.png"))
       .add_attack(IntelligenceAttack.new("Masenko", 3, 30, "./assets/ability/release_v1.2-single_10.png"))
-    Player.instance.setup(character_name, player_character)
+    Player.instance.setup(@window, character_name, player_character)
     @character_name_input.active = false
     @window.change_scene(GameScene.new(@window))
   end

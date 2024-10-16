@@ -1,5 +1,5 @@
 class Character
-  attr_accessor :name, :hp, :attack_options, :stats
+  attr_accessor :name, :hp, :attack_options, :stats, :head, :body
 
   def initialize(name)
     @name = name
@@ -9,6 +9,10 @@ class Character
     @head = nil
     @body = nil
     @state = CharacterDefaultState.new(self)
+  end
+
+  def updateState(state)
+    @state = state
   end
 
   def awakenToSSRed
@@ -72,17 +76,17 @@ class Character
     desired_width = desired_size
     desired_height = desired_size
 
-    sprite_width = @head.image.width
-    sprite_height = @head.image.height
+    sprite_width = @state.get_character_head.width
+    sprite_height = @state.get_character_head.height
 
     scale_x = desired_width.to_f / sprite_width
     scale_y = desired_height.to_f / sprite_height
     if reversed == false
-      @body.image.draw(x, y, 1, scale_x, scale_y)
-      @head.image.draw(x, y, 1, scale_x, scale_y)
+      @state.get_character_body.draw(x, y, 1, scale_x, scale_y)
+      @state.get_character_head.draw(x, y, 1, scale_x, scale_y)
     else
-      @body.image.draw(x + desired_width, y, 1, scale_x - scale_x * 2, scale_y)
-      @head.image.draw(x + desired_width, y, 1, scale_x - scale_x * 2, scale_y)
+      @state.get_character_body.draw(x + desired_width, y, 1, scale_x - scale_x * 2, scale_y)
+      @state.get_character_head.draw(x + desired_width, y, 1, scale_x - scale_x * 2, scale_y)
     end
     if draw_health == true
       draw_health_bar(x, y)

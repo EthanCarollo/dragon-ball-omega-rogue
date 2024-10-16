@@ -45,7 +45,7 @@ class PartComponentFactory
 end
 
 class Part
-  attr_accessor :image, :awakened_img
+  attr_accessor :image, :ssj_image
 
   def initialize(imagePath, awakenedImg = false)
     @image = Gosu::Image.new(imagePath, retro: true)

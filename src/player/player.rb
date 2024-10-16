@@ -7,13 +7,14 @@ class Player
   end
 
   private_class_method :new
-  attr_accessor :name, :character, :round, :training_points, :trainings
+  attr_accessor :name, :character, :round, :training_points, :trainings, :window
 
-  def setup(name, character)
+  def setup(window, name, character)
     puts("setup player...")
+    @window = window
     @trainings = TrainingManager::initialize_trainings
     @training_points = 10
-    
+
     # FOR DEBUG
     @training_points = 20000
 
