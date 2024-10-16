@@ -73,7 +73,7 @@ class CreateCharacterScene
     puts "Character created with name: #{character_name}"
     head = @custom_character_component.head_part.current_part
     body = @custom_character_component.body_part.current_part
-    player_character = PlayerCharacter.new(character_name)
+    player_character = Character.new(character_name)
       .add_head(head)
       .add_body(body)
       .add_stats(CharacterStats.new(10, 10, 10))

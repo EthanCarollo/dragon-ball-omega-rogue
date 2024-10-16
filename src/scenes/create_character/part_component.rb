@@ -25,22 +25,6 @@ class PartComponent
   end
 end
 
-
-class Part
-  attr_accessor :image
-  attr_accessor :awakened_img
-
-  def initialize(imagePath, awakenedImg = false)
-    @image = Gosu::Image.new(imagePath, retro: true)
-    if awakenedImg == false
-      @awakened_img = Gosu::Image.new(imagePath, retro: true)
-    else
-      @awakened_img = Gosu::Image.new(awakenedImg, retro: true)
-    end
-
-  end
-end
-
 class PartComponentFactory
   def self.create_head_part_component
     PartComponent.new([
@@ -57,5 +41,28 @@ class PartComponentFactory
       Part.new("assets/parts/body/goku_gt.png"),
       Part.new("assets/parts/body/gohan_mirai.png")
     ])
+  end
+end
+
+class Part
+  attr_accessor :image, :awakened_img
+
+  def initialize(imagePath, awakenedImg = false)
+    @image = Gosu::Image.new(imagePath, retro: true)
+    if awakenedImg == false
+      @ssj_image = Gosu::Image.new(imagePath, retro: true)
+    else
+      @ssj_image = Gosu::Image.new(awakenedImg, retro: true)
+    end
+  end
+end
+
+class PartFactory 
+  def self.create_vegeta_head
+    Part.new("assets/parts/head/vegeta.png", "assets/parts/head/vegeta_ego.png")
+  end
+
+  def self.create_vegeta_body
+    Part.new("assets/parts/body/vegeta.png")
   end
 end

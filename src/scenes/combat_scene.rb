@@ -13,7 +13,8 @@ class CombatScene
 
     # Create instances of characters
     @player1 = player
-    @player2 = Character.new("Player 2", 100, player2_attacks, "assets/character/vegeta/idle.png")
+    # For example lol
+    @player2 = CharacterFactory.createVegetaCharacter
 
     # Set the positions for the characters
     @player1_x = 100 # Position for Player 1

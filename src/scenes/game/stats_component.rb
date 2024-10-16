@@ -11,9 +11,9 @@ class StatsComponent
   
     def setup_stats
       @stats = {
-        strength: { value: 0, max_value: 100, label: "Strength" },
-        intelligence: { value: 4, max_value: 100, label: "Intelligence" },
-        wisdom: { value: 20, max_value: 100, label: "Wisdom" }
+        strength: { value: 0, max_value: 150, label: "Strength" },
+        intelligence: { value: 4, max_value: 150, label: "Intelligence" },
+        wisdom: { value: 20, max_value: 150, label: "Wisdom" }
       }
     end
   
