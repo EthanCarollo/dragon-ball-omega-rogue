@@ -13,9 +13,13 @@ class Character
     @hp > 0
   end
 
+  def hit(damage)
+    @hp -= damage
+  end 
+
   def attack(opponent, attack)
     if attack
-      attack.execute(self, opponent) # Use the AttackOption's execute method
+      attack.execute(self, opponent)
     else
       puts "Attack not found!"
     end
@@ -49,6 +53,9 @@ class Character
     bar_width = 128
     bar_height = 5
     health_ratio = @hp.to_f / @max_hp.to_f
+    if health_ratio < 0
+      health_ratio = 0
+    end
 
     Gosu.draw_rect(x, y + 128, bar_width * health_ratio, bar_height, Gosu::Color::GREEN)
     Gosu.draw_rect(x + bar_width * health_ratio, y + 128, bar_width * (1 - health_ratio), bar_height, Gosu::Color::RED)

@@ -45,7 +45,11 @@ class CombatScene
         hover_image_path: attack.asset_path,
         width: desired_size,
         height: desired_size,
-      ) { puts "click on button" }
+      ) { 
+        puts "click on button" 
+        @player1.attack(@player2, attack)
+        @turn = 1 
+      }
       @ability_buttons << button
     end
   end
@@ -55,19 +59,18 @@ class CombatScene
       @player2.random_attack(@player1) # AI attacks Player 1
       @turn = 0 # Switch turn back to Player 1
     end
+    if not @player2.alive?
+      @window.change_scene(RewardScene.new(@window))
+    elsif not @player1.alive? 
+      puts "Player loose :'("
+    end
   end
 
   def draw
     Gosu.draw_rect(0, 0, @window.width, @window.height, Gosu::Color::BLACK)
-
-    # Draw characters at their designated positions
     @player1.draw_at(@player1_x, @player1_y)
     @player2.draw_at(@player2_x, @player2_y, true)
-
-    # Display HP and turn information
     display_info
-    
-    # Display attack options for Player 1
     display_attack_options
   end
 
@@ -95,14 +98,8 @@ class CombatScene
   def button_down(id)
     if id == Gosu::MS_LEFT
       if @turn == 0 
-        mouse_x, mouse_y = @window.mouse_x, @window.mouse_y 
-        attack_index = calculate_attack_index(mouse_x, mouse_y)
-  
-        if attack_index && @player1.alive?
-          puts attack_index
-          attack = @player1.attack_options[attack_index]
-          @player1.attack(@player2, attack)
-          @turn = 1 
+        @ability_buttons.each_with_index do |(attack, _), index|
+          attack.button_down(id)
         end
       end
     end

@@ -23,6 +23,7 @@ require_relative 'characters/character'
 require_relative 'characters/player_character'
 
 require_relative 'scenes/menu_scene'
+require_relative 'scenes/reward_scene'
 require_relative 'scenes/combat_scene'
 require_relative 'scenes/create_character_scene'
 require_relative 'scenes/create_character/custom_character_component'
@@ -30,6 +31,7 @@ require_relative 'scenes/create_character/part_component'
 require_relative 'scenes/game_scene'
 require_relative 'scenes/game/training_component'
 require_relative 'scenes/game/launch_fight_component'
+
 
 # In fact, the whole scene managing of the game is a sort of state machine lol, in some funny way
 class Game < Gosu::Window
