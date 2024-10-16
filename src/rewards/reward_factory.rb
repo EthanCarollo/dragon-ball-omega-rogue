@@ -8,11 +8,28 @@ class RewardFactory
         IntelligenceReward.new(reward_instance, amount)
     end
 
+    def self.get_strength_reward(amount = 5)
+        reward_instance = Reward.new("Strength Reward",
+                                     "This reward add #{amount} to strength",
+                                     "./assets/ability/release_v1.2-single_1.png",
+                                     "./assets/ability/release_v1.2-single_1.png")
+        StrengthReward.new(reward_instance, amount)
+    end
+
+    def self.get_intelligence_strength_reward(amount = 5)
+        reward_instance = Reward.new("Strength & Intelligence Reward",
+                                     "This reward add #{amount} to strength and intelligence",
+                                     "./assets/ability/release_v1.2-single_1.png",
+                                     "./assets/ability/release_v1.2-single_1.png")
+        StrengthReward.new(reward_instance, amount)
+        IntelligenceReward.new(reward_instance, amount)
+    end
+
     def self.get_random_reward()
         return [
-            RewardFactory.get_intelligence_reward(5),
-            RewardFactory.get_ssj_god_train_reward,
-            RewardFactory.get_ssj_train_reward()
+            RewardFactory.get_intelligence_reward(6),
+            RewardFactory.get_strength_reward(6),
+            RewardFactory.get_intelligence_strength_reward(3),
         ]
     end
 

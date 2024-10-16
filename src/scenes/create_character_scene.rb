@@ -78,15 +78,22 @@ class CreateCharacterScene
       @window.event_manager.notify("Character name should be at least 3 characters.")
       return
     end
-    if @character_name_input.text.length > 14
-      @window.event_manager.notify("Character name shouldn't do more than 14 characters.")
+    if @character_name_input.text.length > 20
+      @window.event_manager.notify("Character name shouldn't do more than 20 characters.")
       return
     end
     character_name = @character_name_input.text
     puts "Character created with name: #{character_name}"
     head = @custom_character_component.head_part.current_part
     body = @custom_character_component.body_part.current_part
-    player_character = Character.new(character_name)
+    player_character = nil
+    if @custom_character_component.type == "sayan"
+      player_character = SayanCharacter.new(character_name)
+    elsif
+      player_character = ChilledCharacter.new(character_name)
+    end
+
+    player_character
       .add_head(head)
       .add_body(body)
       .add_stats(CharacterStats.new(10, 10, 10))

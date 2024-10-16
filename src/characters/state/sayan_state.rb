@@ -1,5 +1,5 @@
 # TODO : kill me and implement this shit please fuck
-class CharacterState
+class SayanState
   def initialize(character)
     @character = character
   end
@@ -21,7 +21,7 @@ class CharacterState
   end
 end
 
-class CharacterDefaultState < CharacterState
+class SayanDefaultState < SayanState
   def get_character_head
     return @character.head.image
   end
@@ -47,7 +47,7 @@ class CharacterDefaultState < CharacterState
   end
 end
 
-class SSJState < CharacterState
+class SSJState < SayanState
   def get_character_head
     return @character.head.ssj_image
   end
@@ -70,7 +70,7 @@ class SSJState < CharacterState
   end
 end
 
-class SSGodState < CharacterState
+class SSGodState < SayanState
   def get_character_head
     return @character.head.ssred_image
   end

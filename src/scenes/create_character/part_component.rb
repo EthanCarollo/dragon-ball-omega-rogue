@@ -42,6 +42,12 @@ class PartComponentFactory
       Part.new("assets/parts/body/gohan_mirai.png")
     ])
   end
+
+  def self.create_chilled_part_component
+    PartComponent.new([
+      Part.new("assets/parts/full/frieza1.png")
+    ])
+  end
 end
 
 class Part

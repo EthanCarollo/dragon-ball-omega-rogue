@@ -8,24 +8,8 @@ class Character
     @attack_options = []
     @head = nil
     @body = nil
-    @state = CharacterDefaultState.new(self)
   end
 
-  def updateState(state)
-    @state = state
-  end
-
-  def awakenToSSRed
-    @state.awakenToSSRed
-  end
-
-  def awakenToSSJ
-    @state.awakenToSSJ
-  end
-
-  def awakenToEgo
-    @state.awakenToEgo
-  end
 
   def set_max_hp(max_hp)
     @max_hp = max_hp
