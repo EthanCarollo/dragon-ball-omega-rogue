@@ -33,7 +33,6 @@ class MenuScene
     wanted_height = 270*1.5.to_f
     title_width = wanted_width / @dragon_ball_title.width
     title_height = wanted_height / @dragon_ball_title.height
-    puts title_height
     x_tit_pos = @window.width / 2 - wanted_width / 2
     @dragon_ball_title.draw(x_tit_pos, 0, 1, title_width, title_height)
     @start_button.draw

@@ -73,7 +73,9 @@ class CreateCharacterScene
     puts "Character created with name: #{character_name}"
     head = @custom_character_component.head_part.current_part
     body = @custom_character_component.body_part.current_part
-    Player.instance.setup(character_name, PlayerCharacter.new(character_name, head, body))
+    player_character = PlayerCharacter.new(character_name)
+    player_character.add_head(head).add_body(body)
+    Player.instance.setup(character_name, player_character)
     @character_name_input.active = false
     @window.change_scene(GameScene.new(@window))
   end

@@ -1,12 +1,27 @@
 class PlayerCharacter < Character
   # TODO : add the logics for the Player character
 
-  def initialize(name, head_part, body_part)
+  def initialize(name)
     @name = name
     @hp = 100
-    @attack_options = attack_options
+    @attack_options = []
+    @head = nil
+    @body = nil
+  end
+
+  def add_head(head_part)
     @head = head_part
+    return self
+  end
+
+  def add_body(body_part)
     @body = body_part
+    return self
+  end
+
+  def add_attack(attack_option)
+    @attack_option << attack_option
+    return self
   end
 
   def draw_at(x, y, reversed = false, draw_health = true, desired_size = 128)
@@ -18,7 +33,6 @@ class PlayerCharacter < Character
 
     scale_x = desired_width.to_f / sprite_width
     scale_y = desired_height.to_f / sprite_height
-
     if reversed == false
       @body.image.draw(x, y, 1, scale_x, scale_y)
       @head.image.draw(x, y, 1, scale_x, scale_y)
