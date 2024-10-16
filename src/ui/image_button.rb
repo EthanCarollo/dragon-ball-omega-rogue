@@ -27,15 +27,10 @@ class ImageButton < Button
       current_image.draw(@x, @y, 0, width_button, height_button)
 
       if @description.length > 0 && hovering?
-        # Set the color and alpha for the description background
-        description_color = Gosu::Color.new(128, 255, 255, 255) # Semi-transparent white
-        description_x = @x + 10 # Adjust position as needed
-        description_y = @y + @height + 5 # Draw below the button
-  
-        # Draw the background for the description
+        description_color = Gosu::Color.new(128, 255, 255, 255)
+        description_x = @x + 10 
+        description_y = @y + @height + 5 
         @window.draw_rect(description_x - 5, description_y - 5, @font.text_width(@description) + 10, @font.height + 10, description_color, 0)
-  
-        # Draw the actual description text
         @font.draw_text(@description, description_x, description_y, 1, 1, 1, Gosu::Color::BLACK)
       end
     end

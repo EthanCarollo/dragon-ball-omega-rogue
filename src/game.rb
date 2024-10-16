@@ -2,6 +2,9 @@ require 'gosu'
 
 require_relative 'events/event_manager'
 
+require_relative 'level/level'
+require_relative 'level/level_factory'
+
 require_relative 'ui/button'
 require_relative 'ui/training_button'
 require_relative 'ui/image_button'
@@ -37,6 +40,7 @@ require_relative 'characters/state/character_state'
 require_relative 'scenes/menu_scene'
 require_relative 'scenes/reward_scene'
 require_relative 'scenes/combat_scene'
+require_relative 'scenes/choose_fight_scene'
 require_relative 'scenes/create_character_scene'
 require_relative 'scenes/create_character/custom_character_component'
 require_relative 'scenes/create_character/part_component'

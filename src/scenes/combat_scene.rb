@@ -1,20 +1,12 @@
 # TODO : Here, I should just add to the scene the Character that needs to fight here
 class CombatScene
-  def initialize(window, player)
+  def initialize(window, player, level)
     @window = window
     
     @font = Gosu::Font.new(20)
 
-    player2_attacks = [
-      StrengthAttack.new("Slap", 4, 12),
-      StrengthAttack.new("Headbutt", 8, 18),
-      StrengthAttack.new("Power Punch", 15, 25)
-    ]
-
-    # Create instances of characters
     @player1 = player
-    # For example lol
-    @player2 = CharacterFactory.createVegetaCharacter
+    @player2 = level.opponent
 
     # Set the positions for the characters
     @player1_x = 100 # Position for Player 1

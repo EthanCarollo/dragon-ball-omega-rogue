@@ -71,4 +71,8 @@ class PartFactory
   def self.create_vegeta_body
     Part.new("assets/parts/body/vegeta.png")
   end
+
+  def self.create_frieza_part
+    Part.new("assets/parts/full/frieza.png")
+  end
 end

@@ -9,4 +9,14 @@ class CharacterFactory
             .add_attack(IntelligenceAttack.new("Kikoha", 8, 24, "./assets/ability/release_v1.2-single_6.png"))
             .add_attack(IntelligenceAttack.new("Masenko", 3, 30, "./assets/ability/release_v1.2-single_10.png"))
     end
+
+    def self.createFriezaCharacter()
+        Character.new("Frieza")
+            .add_head(PartFactory.create_frieza_part)
+            .add_body(PartFactory.create_frieza_part)
+            .add_stats(CharacterStats.new(10, 10, 10))
+            .add_attack(StrengthAttack.new("Fulguro Fist", 14, 15, "./assets/ability/release_v1.2-single_17.png"))
+            .add_attack(IntelligenceAttack.new("Kikoha", 8, 24, "./assets/ability/release_v1.2-single_6.png"))
+            .add_attack(IntelligenceAttack.new("Masenko", 3, 30, "./assets/ability/release_v1.2-single_10.png"))
+    end
 end
