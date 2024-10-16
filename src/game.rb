@@ -23,6 +23,7 @@ require_relative 'player/training/training_manager'
 require_relative 'player/player'
 
 require_relative 'rewards/reward'
+require_relative 'rewards/reward_memento'
 require_relative 'rewards/stats_reward'
 require_relative 'rewards/training_reward'
 require_relative 'rewards/reward_factory'

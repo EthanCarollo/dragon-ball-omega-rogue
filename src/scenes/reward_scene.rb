@@ -9,6 +9,8 @@ class RewardScene
     @button_factory = ButtonFactory.new(window)
 
     @reward_fn = reward_fn
+    @reward_originator = RewardOriginator.new(@reward_fn.call)
+    @reward_caretaker = RewardCaretaker.new(@reward_originator)
     load_rewards
 
     # Create reload button
@@ -21,18 +23,26 @@ class RewardScene
     ) do
       reload_rewards
     end
+
+    @go_back_button = @button_factory.create_default_button(
+      x: @window.width / 2 + 125,   # Place it right of center
+      y: @window.height - 100,     # Place it near the bottom
+      width: 150,
+      height: 50,
+      text: "Go Back"
+    ) do
+      go_back
+    end
   end
 
   def load_rewards
-    @rewards = @reward_fn.call
     @reward_buttons = []
     button_width = 150
     button_height = 150
     spacing = 20
     start_x = (@window.width - (button_width * 3 + spacing * 2)) / 2
     start_y = @window.height - 400
-
-    @rewards.each_with_index do |reward, i|
+    @reward_originator.state.each_with_index do |reward, i|
       button = @button_factory.create_image_button_with_desc(
         x: start_x + (button_width + spacing) * i,
         y: start_y,
@@ -51,6 +61,14 @@ class RewardScene
   end
 
   def reload_rewards
+    @reward_caretaker.backup
+    @reward_originator.state = @reward_fn.call
+    load_rewards
+  end
+
+  def go_back
+    puts "reload rewards to anterior state"
+    @reward_caretaker.undo
     load_rewards
   end
 
@@ -68,10 +86,16 @@ class RewardScene
 
     @reward_buttons.each(&:draw)
     @reload_button.draw
+    if @reward_caretaker.mementos.length > 0
+      @go_back_button.draw
+    end
   end
 
   def button_down(id)
     @reward_buttons.each { |button| button.button_down(id) }
     @reload_button.button_down(id)
+    if @reward_caretaker.mementos.length > 0
+      @go_back_button.button_down(id)
+    end
   end
 end

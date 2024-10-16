@@ -9,6 +9,10 @@ class Reward
         @hover_asset_path = hover_asset_path
     end
 
+    def deep_copy
+        Marshal.load(Marshal.dump(self))
+    end
+
     def get_reward
 
     end
