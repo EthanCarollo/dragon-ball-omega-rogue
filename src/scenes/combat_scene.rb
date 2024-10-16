@@ -62,7 +62,8 @@ class CombatScene
 
   def player_loose
     # TODO : add loose screen scene
-    @window.event_manager.notify("#{@player1.name} Loosed !")
+    @window.event_manager.notify("#{@player1.name} Loosed ! Returning to the menu scene !")
+    @window.change_scene(MenuScene.new(@window))
   end
 
   def draw
