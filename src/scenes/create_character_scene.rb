@@ -48,7 +48,7 @@ class CreateCharacterScene
     background_width = @namek_background.width / @window.width
     background_height = @namek_background.height / @window.height
     @namek_background.draw(0, 0, 0, background_width, background_height)
-    
+
     @character_name_input.draw
     @submit_button.draw
     @custom_character_component.draw
@@ -74,6 +74,14 @@ class CreateCharacterScene
   end
 
   def submit_character
+    if @character_name_input.text.length < 3 
+      @window.event_manager.notify("Character name should be at least 3 characters.")
+      return
+    end
+    if @character_name_input.text.length > 14
+      @window.event_manager.notify("Character name shouldn't do more than 14 characters.")
+      return
+    end
     character_name = @character_name_input.text
     puts "Character created with name: #{character_name}"
     head = @custom_character_component.head_part.current_part
