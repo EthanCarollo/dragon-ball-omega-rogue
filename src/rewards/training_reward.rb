@@ -1,6 +1,6 @@
 class TrainingReward < Reward
     def initialize(reward, training)
-        super(reward.name, reward.description, reward.asset_path, reward.hover_asset_path)
+        super("Training #{reward.name}", "#{reward.description}, add #{training.name} in training access", reward.asset_path, reward.hover_asset_path)
         @reward = reward
         @training = training
     end

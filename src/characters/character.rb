@@ -10,6 +10,10 @@ class Character
     @body = nil
   end
 
+  def have_attack(attack_name)
+    @attack_options.any? { |attack| attack.name == attack_name }
+  end
+
   def set_max_hp(max_hp)
     @max_hp = max_hp
     return self

@@ -37,6 +37,10 @@ class Player
     puts "#{points} points d'entraînement ajoutés. Total : #{@training_points}"
   end
 
+  def have_training(training_name)
+    @trainings.any? { |t| t.name == training_name }
+  end
+
   def add_training(training)
     @trainings << training
   end

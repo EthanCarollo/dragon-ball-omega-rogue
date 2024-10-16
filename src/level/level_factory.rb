@@ -1,10 +1,10 @@
 class LevelFactory
     def self.get_easy_level
         [
-          Level.new("C17, kill him fock", "Just kill C17", CharacterFactory.createC17Character),
-          Level.new("Vegeta, king of dark grrr", "Just kill Vegeta", CharacterFactory.createVegetaCharacter),
+          Level.new("C17, kill him fock", "Just kill C17", CharacterFactory.createC17Character, RewardFactory.get_ssj_reward),
+          Level.new("Vegeta, king of dark grrr", "Just kill Vegeta", CharacterFactory.createVegetaCharacter, RewardFactory.get_ssj_reward),
           Level.new("Dabra", "Dabra is not a good guy :'(", CharacterFactory.createDabraCharacter),
-          Level.new("Kaio", "Kaio is a good guy :'(", CharacterFactory.createKaioCharacter),
+          Level.new("Kaio", "Kaio is a good guy :'(", CharacterFactory.createKaioCharacter, RewardFactory.get_ssj_reward),
         ]
     end
 
