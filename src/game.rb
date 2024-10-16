@@ -13,7 +13,7 @@ require_relative 'ui/text_with_background_factory'
 require_relative 'ui/text_display'
 
 require_relative 'player/training/training'
-require_relative 'player/training/super_sayan_training'
+require_relative 'player/training/attack_training'
 require_relative 'player/training/intelligence_training'
 require_relative 'player/training/strength_training'
 require_relative 'player/training/training_manager'
@@ -21,12 +21,14 @@ require_relative 'player/player'
 
 require_relative 'rewards/reward'
 require_relative 'rewards/stats_reward'
+require_relative 'rewards/training_reward'
 require_relative 'rewards/reward_factory'
 
 require_relative 'characters/attack/attack_option'
 require_relative 'characters/attack/strength_attack'
 require_relative 'characters/attack/intelligence_attack'
 require_relative 'characters/attack/super_sayan_attack'
+require_relative 'characters/attack/super_sayan_god_attack'
 require_relative 'characters/character'
 require_relative 'characters/character_stats'
 require_relative 'characters/character_factory'
@@ -56,6 +58,7 @@ class Game < Gosu::Window
       self.caption = "Dragon Ball Omega Rogue"
 
       @current_scene = MenuScene.new(self)
+      # @current_scene = RewardScene.new(self)
 
       # Observer pattern here boss
       @event_manager = EventManager.new
@@ -73,7 +76,6 @@ class Game < Gosu::Window
   
     def draw
       @current_scene.draw
-
       @text_display.draw
     end
   

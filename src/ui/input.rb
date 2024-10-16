@@ -4,6 +4,7 @@ class Input
   AZERTY_MAPPING = {
     Gosu::KB_A => 'Q',
     Gosu::KB_Z => 'W',
+    Gosu::KB_W => 'Z',
     Gosu::KB_Q => 'A',
     51 => 'M',
     Gosu::KB_M => ',',

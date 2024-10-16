@@ -48,14 +48,16 @@ class CombatScene
   end
 
   def update
+    if not @player2.alive?
+      player_win
+      return
+    elsif not @player1.alive? 
+      player_loose
+      # return
+    end
     if @turn == 1 # If it's Player 2's turn
       @player2.random_attack(@player1) # AI attacks Player 1
       @turn = 0 # Switch turn back to Player 1
-    end
-    if not @player2.alive?
-      player_win
-    elsif not @player1.alive? 
-      player_loose
     end
   end
 
@@ -65,6 +67,7 @@ class CombatScene
   end
 
   def player_loose
+    # TODO : add loose screen scene
     @window.event_manager.notify("#{@player1.name} Loosed !")
   end
 

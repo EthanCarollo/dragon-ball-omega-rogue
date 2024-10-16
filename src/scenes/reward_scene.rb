@@ -8,11 +8,7 @@ class RewardScene
     @namek_background = Gosu::Image.new("./assets/background/namek_background_pale.png", retro: true)
     @button_factory = ButtonFactory.new(window)
 
-    @rewards = [
-      RewardFactory.get_intelligence_reward(5),
-      RewardFactory.get_intelligence_reward(5),
-      RewardFactory.get_intelligence_reward(5)
-    ]
+    @rewards = RewardFactory.get_random_reward
 
     @reward_buttons = []
     button_width = 150
@@ -48,7 +44,7 @@ class RewardScene
     background_width = @namek_background.width / @window.width
     background_height = @namek_background.height / @window.height
     @namek_background.draw(0, 0, 0, background_width, background_height)
-    
+
     @choose_your_reward.draw(@window.width / 2 - @choose_your_reward.width / 2, 150, 0, 1, 1)
 
     @reward_buttons.each(&:draw)
