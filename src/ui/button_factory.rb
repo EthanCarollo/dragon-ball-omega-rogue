@@ -54,6 +54,21 @@ class ButtonFactory
       hover_image_path,
       width,
       height,
+      "",
+      &callback
+    )
+  end
+
+  def create_image_button_with_desc(x:, y:, normal_image_path:, hover_image_path:, width:, height:, description:, &callback)
+    ImageButton.new(
+      @window,
+      x,
+      y,
+      normal_image_path,
+      hover_image_path,
+      width,
+      height,
+      description,
       &callback
     )
   end
