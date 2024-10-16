@@ -25,10 +25,11 @@ class GameScene
 
       @training_component = TrainingComponent.new(window, Player.instance)
       @launch_fight_component = LaunchFightComponent.new(window, Player.instance)
+      @stats_component = StatsComponent.new(window, Player.instance)
     end
   
     def update
-    
+      @stats_component.update
     end
   
     def draw
@@ -50,6 +51,7 @@ class GameScene
       @text_for_name.draw
       @training_component.draw
       @launch_fight_component.draw
+      @stats_component.draw
 
     end
   

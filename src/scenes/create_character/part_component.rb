@@ -15,13 +15,11 @@ class PartComponent
   end
 
   def goNextPart
-    puts "go next"
     @current_index += 1
     @current_index = 0 if @current_index >= @parts.length
   end
 
   def goBackPart
-    puts "go back"
     @current_index -= 1
     @current_index = @parts.length - 1 if @current_index < 0
   end

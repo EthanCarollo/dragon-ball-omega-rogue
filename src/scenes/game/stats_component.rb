@@ -1,0 +1,46 @@
+class StatsComponent
+    def initialize(window, player)
+      @window = window
+      @player = player
+      @bar_width = 200
+      @bar_height = 20
+      @bar_spacing = 30
+      @font = Gosu::Font.new(20)
+      setup_stats
+    end
+  
+    def setup_stats
+      @stats = {
+        strength: { value: 0, max_value: 100, label: "Strength" },
+        intelligence: { value: 4, max_value: 100, label: "Intelligence" },
+        wisdom: { value: 20, max_value: 100, label: "Wisdom" }
+      }
+    end
+  
+    def draw_bar(stat, x, y)
+      @window.draw_rect(x, y, @bar_width, @bar_height, Gosu::Color::GRAY, z = 1)
+
+      fill_width = (stat[:value].to_f / stat[:max_value]) * @bar_width
+      @window.draw_rect(x, y, fill_width, @bar_height, Gosu::Color::GREEN, z = 2)
+
+      @font.draw_text("#{stat[:label]}: #{stat[:value]}/#{stat[:max_value]}", x + 5, y - 25, 3, 1.0, 1.0, Gosu::Color::WHITE)
+    end
+  
+    def update
+      @stats[:strength][:value] = @player.character.stats.strength
+      @stats[:intelligence][:value] = @player.character.stats.intelligence
+      @stats[:wisdom][:value] = @player.character.stats.wisdom
+    end
+  
+    def draw
+      start_x = @window.width - 50 - @bar_width
+      start_y = 70
+      y_offset = 0
+  
+      @stats.each do |_, stat|
+        draw_bar(stat, start_x, start_y + y_offset)
+        y_offset += @bar_height + @bar_spacing
+      end
+    end
+  end
+  
