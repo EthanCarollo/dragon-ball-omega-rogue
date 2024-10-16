@@ -19,6 +19,10 @@ require_relative 'player/training/strength_training'
 require_relative 'player/training/training_manager'
 require_relative 'player/player'
 
+require_relative 'rewards/reward'
+require_relative 'rewards/stats_reward'
+require_relative 'rewards/reward_factory'
+
 require_relative 'characters/attack/attack_option'
 require_relative 'characters/attack/strength_attack'
 require_relative 'characters/attack/intelligence_attack'
