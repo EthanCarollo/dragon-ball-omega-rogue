@@ -11,6 +11,18 @@ class Character
     @state = CharacterDefaultState.new(self)
   end
 
+  def awakenToSSRed
+    @state.awakenToSSRed
+  end
+
+  def awakenToSSJ
+    @state.awakenToSSJ
+  end
+
+  def awakenToEgo
+    @state.awakenToEgo
+  end
+
   def add_stats(character_stats)
     @stats = character_stats
     return self

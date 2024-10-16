@@ -19,10 +19,6 @@ class CharacterState
   def awakenToEgo
     raise "error"
   end
-
-  def kill
-    raise "error"
-  end
 end
 
 class CharacterDefaultState < CharacterState
@@ -39,10 +35,6 @@ class CharacterDefaultState < CharacterState
   end
 
   def awakenToEgo
-    raise "error"
-  end
-
-  def kill
     raise "error"
   end
 end

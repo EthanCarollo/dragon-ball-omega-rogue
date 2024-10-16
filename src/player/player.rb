@@ -13,6 +13,10 @@ class Player
     puts("setup player...")
     @trainings = TrainingManager::initialize_trainings
     @training_points = 10
+    
+    # FOR DEBUG
+    @training_points = 20000
+
     @round = 0
     @name = name
     @character = character
