@@ -86,7 +86,7 @@ class CombatScene
     if id == Gosu::MS_LEFT
       if @turn == 0 
         mouse_x, mouse_y = @window.mouse_x, @window.mouse_y 
-        attack_index = calculate_attack_index(mouse_x, mouse_y).floor
+        attack_index = calculate_attack_index(mouse_x, mouse_y)
   
         if attack_index && @player1.alive?
           puts attack_index
@@ -105,7 +105,7 @@ class CombatScene
     spacing = 10 
 
     if mouse_y >= start_y && mouse_y <= start_y + rect_size
-      index = (mouse_x - start_x) / (rect_size + spacing)      
+      index = ((mouse_x - start_x) / (rect_size + spacing)).floor   
       return index if index >= 0 && index < @player1.attack_options.size
     end
   

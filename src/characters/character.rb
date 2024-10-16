@@ -4,6 +4,7 @@ class Character
   def initialize(name, hp, attack_options, sprite_path)
     @name = name
     @hp = hp
+    @max_hp = hp
     @attack_options = attack_options 
     @sprite = Gosu::Image.new(sprite_path, retro: true)
   end
@@ -44,12 +45,11 @@ class Character
     draw_health_bar(x, y)
   end
   
-  
-
   def draw_health_bar(x, y)
     bar_width = 128
     bar_height = 5
-    health_ratio = @hp.div(100.0) # Assuming max HP is 100
+    health_ratio = @hp.to_f / @max_hp.to_f
+
     Gosu.draw_rect(x, y + 128, bar_width * health_ratio, bar_height, Gosu::Color::GREEN)
     Gosu.draw_rect(x + bar_width * health_ratio, y + 128, bar_width * (1 - health_ratio), bar_height, Gosu::Color::RED)
   end

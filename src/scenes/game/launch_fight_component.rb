@@ -35,7 +35,7 @@ class LaunchFightComponent
   end
 
   def launch_fight
-    puts "Fight launched!"
+    @window.change_scene(CombatScene.new(@window))
     # TODO : PUT THE LOGICS IN THIS SHIT FOR GOING TO THE COMBAT SCENE LOL
   end
 
