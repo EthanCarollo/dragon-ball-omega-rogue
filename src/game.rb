@@ -66,6 +66,7 @@ class Game < Gosu::Window
       super(WIDTH, HEIGHT)
       self.caption = "Dragon Ball Omega Rogue"
       @current_scene = MenuScene.new(self)
+      @current_scene = RewardScene.new(self, RewardFactory.method(:get_ssj_reward).to_proc)
       @event_manager = EventManager.new
       @text_display = TextDisplay.new(self)
       @event_manager.add_observer(@text_display)
