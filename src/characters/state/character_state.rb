@@ -36,6 +36,7 @@ class CharacterDefaultState < CharacterState
 
   def awakenToSSJ
     @character.updateState(SSJState.new(@character))
+    @character.set_max_hp(@character.max_hp + 50).heal(150)
     Player.instance.window.event_manager.notify("Character transformed in Super Sayan !")
   end
 

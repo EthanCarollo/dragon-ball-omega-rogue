@@ -53,10 +53,19 @@ class CombatScene
       @turn = 0 # Switch turn back to Player 1
     end
     if not @player2.alive?
-      @window.change_scene(RewardScene.new(@window))
+      player_win
     elsif not @player1.alive? 
-      puts "Player loose :'("
+      player_loose
     end
+  end
+
+  def player_win
+    @window.event_manager.notify("#{@player1.name} Winned !")
+    @window.change_scene(RewardScene.new(@window))
+  end
+
+  def player_loose
+    @window.event_manager.notify("#{@player1.name} Loosed !")
   end
 
   def draw

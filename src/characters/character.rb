@@ -1,5 +1,5 @@
 class Character
-  attr_accessor :name, :hp, :attack_options, :stats, :head, :body
+  attr_accessor :name, :hp, :attack_options, :stats, :head, :body, :max_hp
 
   def initialize(name)
     @name = name
@@ -25,6 +25,11 @@ class Character
 
   def awakenToEgo
     @state.awakenToEgo
+  end
+
+  def set_max_hp(max_hp)
+    @max_hp = max_hp
+    return self
   end
 
   def add_stats(character_stats)
@@ -58,6 +63,13 @@ class Character
   def hit(damage)
     @hp -= damage
   end 
+
+  def heal(heal_point)
+    @hp += heal_point
+    if @hp > @max_hp
+      @hp = @max_hp
+    end
+  end
 
   def attack(opponent, attack)
     if attack

@@ -11,6 +11,7 @@ class StatsComponent
   
     def setup_stats
       @stats = {
+        health: { value: @player.character.hp, max_value: @player.character.max_hp, label: "Health" },
         strength: { value: 0, max_value: 150, label: "Strength" },
         intelligence: { value: 4, max_value: 150, label: "Intelligence" },
         wisdom: { value: 20, max_value: 150, label: "Wisdom" }
@@ -27,6 +28,8 @@ class StatsComponent
     end
   
     def update
+      @stats[:health][:value] = @player.character.hp
+      @stats[:health][:max_value] = @player.character.max_hp
       @stats[:strength][:value] = @player.character.stats.strength
       @stats[:intelligence][:value] = @player.character.stats.intelligence
       @stats[:wisdom][:value] = @player.character.stats.wisdom

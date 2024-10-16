@@ -14,6 +14,8 @@ require_relative 'ui/text_display'
 
 require_relative 'player/training/training'
 require_relative 'player/training/super_sayan_training'
+require_relative 'player/training/intelligence_training'
+require_relative 'player/training/strength_training'
 require_relative 'player/training/training_manager'
 require_relative 'player/player'
 
