@@ -1,10 +1,10 @@
 class Character
   attr_accessor :name, :hp, :attack_options, :stats, :head, :body, :max_hp
 
-  def initialize(name)
+  def initialize(name, hp = 100)
     @name = name
-    @hp = 100
-    @max_hp = 100
+    @hp = hp
+    @max_hp = hp
     @attack_options = []
     @head = nil
     @body = nil
