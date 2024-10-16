@@ -21,8 +21,7 @@ class RewardFactory
                                      "This reward add #{amount} to strength and intelligence",
                                      "./assets/ability/release_v1.2-single_1.png",
                                      "./assets/ability/release_v1.2-single_1.png")
-        StrengthReward.new(reward_instance, amount)
-        IntelligenceReward.new(reward_instance, amount)
+        IntelligenceReward.new(StrengthReward.new(reward_instance, amount), amount)
     end
 
     def self.get_random_reward()

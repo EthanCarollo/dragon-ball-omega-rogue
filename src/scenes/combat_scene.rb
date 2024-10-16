@@ -2,6 +2,8 @@
 class CombatScene
   def initialize(window, player, level)
     @window = window
+
+    @level = level
     
     @font = Gosu::Font.new(20)
 
@@ -55,7 +57,7 @@ class CombatScene
 
   def player_win
     @window.event_manager.notify("#{@player1.name} Winned !")
-    @window.change_scene(RewardScene.new(@window))
+    @window.change_scene(RewardScene.new(@window, @level.rewards))
   end
 
   def player_loose

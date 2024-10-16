@@ -4,7 +4,7 @@ class ChilledCharacter < Character
 
   def initialize(name, hp = 100)
     super(name, hp)
-    @state = SayanDefaultState.new(self)
+    @state = nil
   end
 
   def updateState(state)

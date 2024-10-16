@@ -1,6 +1,6 @@
 require 'gosu'
 class RewardScene
-  def initialize(window)
+  def initialize(window, rewards)
     @window = window
     @font = Gosu::Font.new(20)
 
@@ -8,7 +8,7 @@ class RewardScene
     @namek_background = Gosu::Image.new("./assets/background/namek_background_pale.png", retro: true)
     @button_factory = ButtonFactory.new(window)
 
-    @rewards = RewardFactory.get_random_reward
+    @rewards = rewards
 
     @reward_buttons = []
     button_width = 150

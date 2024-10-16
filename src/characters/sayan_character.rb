@@ -4,7 +4,7 @@ class SayanCharacter < Character
 
   def initialize(name, hp = 100)
     super(name, hp)
-    @state = CharacterDefaultState.new(self)
+    @state = SayanDefaultState.new(self)
   end
 
   def updateState(state)
