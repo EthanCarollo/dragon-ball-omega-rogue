@@ -36,7 +36,7 @@ Créer un jeu vidéo sur le thème de Dragon Ball en utilisant des designs patte
 
 ---
 
-## 1.1 Un petit exemple de ma classe Game
+### 1.1 Un petit exemple de ma classe Game
 
 
 > Petit exemple de la classe qui "hold" le state, dans cet exemple, MainMenuScene est mon state par défaut.
@@ -66,7 +66,7 @@ end
 ```
 ---
 
-## 1.2 Un petit exemple de ma classe Scene
+### 1.2 Un petit exemple de ma classe Scene
 
 
 > La classe Scene qui represente donc un state de mon Game
@@ -96,13 +96,13 @@ end
 
 ---
 
-## 2 Le choix de personnage
+## 2. Le choix de personnage
 
 ![choose_character|60vw](assets/choose_character.png)
 
 ---
 
-## 2.1 Le build du personnage
+### 2.1 Le build du personnage
 
 > Exemple d'utilisation du build de mon personnage
 
@@ -116,7 +116,7 @@ player_character
 ```
 ---
 
-## 2.2 Le build du personnage
+### 2.2 Le build du personnage
 
 > Exemple d'utilisation du build de mon personnage plus poussé
 
@@ -140,13 +140,13 @@ end
 
 ---
 
-## 3 Le choix du niveau
+## 3. Le choix du niveau
 
 ![choose_level|60vw](assets/choose_level.png)
 
 ---
 
-## 3.1 Le load des personnages à affronter et des niveaux
+### 3.1 Le load des personnages à affronter et des niveaux
 
 > Les niveaux et les personnages sont crées à partir de deux **gros json** qui sont ensuite load dans 2 singletons.
 
@@ -174,7 +174,7 @@ end
 
 ---
 
-## 3.2 Les factorys !
+### 3.2 Les factorys !
 
 > Dans ces factory, il se passe un tas de trucs en fonction du niveau.
 
@@ -190,7 +190,7 @@ end
 
 --- 
 
-## 3.3 Pourquoi c'est nécessaire ?
+### 3.3 Pourquoi c'est nécessaire ?
 
 > Pour faciliter l'ajout de nouveau niveau, j'ai choisi d'opter pour une structure data driven, et ça commence par la création de personnages et de niveaux.
 
@@ -221,7 +221,7 @@ end
 
 ---
 
-### 4 Le combat
+## 4. Le combat
 
 ![choose_level|60vw](assets/fight_scene.png)
 
@@ -303,3 +303,173 @@ class ZTeam < Character
     end
 end  
 ```
+
+---
+
+### 4.3 - La transformation en SSJ
+
+> La transformation en SSJ, se fait par le biais d'un proxy qui va nous permettre d'effectuer quelques actions avant de passer réellement en SSJ
+
+```ruby
+class ProxyTransformation
+    def initialize(new_state)
+        @new_state = new_state
+    end
+
+    def activate
+        raise "Default proxy transformation used, shouldn't"
+    end
+end
+
+class SuperSayanProxy < ProxyTransformation
+    def activate
+        # The other action for exemple
+        @new_state.character.set_max_hp(500).heal(500)
+        # The main action
+        @new_state.character.updateState(SSJState.new(@new_state.character))
+    end
+end
+```
+
+---
+
+## 5. Les récompenses
+
+![choose_level|60vw](assets/choose_level.png)
+
+---
+
+### 5.1 - TODO
+
+---
+
+### 5.2 - L'utilisation du Memento 
+
+> Utiliser un memento dans ce genre de jeu peut se réveler quelque peu compliqué par moment, dans mon cas, j'ai décidé de l'utiliser dans les rewards afin de proposer au joueur de "reroll" ses rewards si elles ne lui conviennent pas.
+
+```ruby
+class RewardOriginator
+  def initialize(state)
+    @state = state
+  end
+
+  def save
+    deep_copied_state = @state.map(&:deep_copy)
+    RewardMemento.new(deep_copied_state)
+  end
+
+  def restore(memento)
+    @state = memento.state
+  end
+end
+
+class RewardCaretaker
+  def initialize(originator)
+    @mementos = []
+    @originator = originator
+  end
+
+  def backup
+    @mementos << @originator.save
+  end
+
+  def undo
+    return if @mementos.empty?
+    memento = @mementos.pop
+    @originator.restore(memento)
+  end
+end
+
+class RewardMemento
+  attr_reader :state
+
+  def initialize(state)
+    @state = state
+  end
+end
+```
+
+---
+
+## 6. Système de notifications
+
+---
+
+### 6.1 - Utilisation de l'observer
+
+> Dans mon cas, le systeme de notifications est un simple Events Manager avec un Text Display en observer qui écoute les events envoyés par le jeu.
+
+```ruby
+# L'objet qui va gérer et renvoyer les evenements à l'observer
+class EventManager
+    def initialize
+        @observers = []
+    end
+
+    def add_observer(observer)
+        @observers << observer
+    end
+
+    def remove_observer(observer)
+        @observers.delete(observer)
+    end
+
+    def notify(event)
+        @observers.each { |observer| observer.receive(event) }
+    end
+end
+
+class Observer
+    def receive(event)
+
+    end
+end
+
+class TextDisplay < Observer
+    def receive(event)
+        @text = event.text
+    end
+end
+```
+
+---
+
+## 7. Le Debug
+
+---
+
+### 7.1 - Utilisation de la façade
+
+> En petit bonus, j'ai décidé d'implémenter la façade pour pouvoir utilisé plus facilement de manière différente la fonction puts qui permet de logger en Ruby ! Et encore mieux, grâce à cette fçade, je peux facilement retirer tout les logs de mon jeu avec une simple condition par exemple !
+
+```ruby
+class DebugLog
+    def self.info(message)
+      log(message, :info)
+    end
+  
+    def self.warning(message)
+      log(message, :warning)
+    end
+  
+    def self.error(message)
+      log(message, :error)
+    end
+  
+    def self.log(message, level)
+        if DEBUG_MODE == true
+            timestamp = Time.now.strftime("%Y-%m-%d %H:%M:%S")
+            puts "#{COLORS[level]}[#{timestamp}] #{message}#{COLORS[:reset]}"
+        end
+    end
+  end
+```
+
+---
+
+## Conclusion
+
+---
+
+### Merci d'avoir ecouté
+
