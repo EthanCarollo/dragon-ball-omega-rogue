@@ -80,6 +80,7 @@ class Game < Gosu::Window
       # Call instance of singleton of data to preload them
       CharacterData.instance
       LevelData.instance
+      CharacterPartData.instance
 
       # Initialize logics
       @current_scene = MenuScene.new(self)

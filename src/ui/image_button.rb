@@ -26,6 +26,7 @@ class ImageButton < Button
 
       current_image.draw(@x, @y, 0, width_button, height_button)
 
+      # Ensure the text to not overflow for no stupid reason
       if @description.length > 0 && hovering?
         description_color = Gosu::Color.new(128, 255, 255, 255)
         description_x = @x + 10 

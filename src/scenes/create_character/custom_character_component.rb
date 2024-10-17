@@ -3,8 +3,8 @@ class CustomCharacterComponent
 
   def initialize(window)
     @window = window
-    @head_part = PartComponentFactory.create_head_part_component
-    @body_part = PartComponentFactory.create_body_part_component
+    @head_part = CharacterPartData.instance.sayan_heads
+    @body_part = CharacterPartData.instance.sayan_bodys
     @active = false
     @type = "sayan"
 
@@ -70,8 +70,8 @@ class CustomCharacterComponent
   end
 
   def create_sayan_character
-    @head_part = PartComponentFactory.create_head_part_component
-    @body_part = PartComponentFactory.create_body_part_component
+    @head_part = CharacterPartData.instance.sayan_heads
+    @body_part = CharacterPartData.instance.sayan_bodys
     @type = "sayan"
   end
 

@@ -1,0 +1,13 @@
+{
+    "head": [
+        {"normal": "assets/parts/head/vegeta.png", "ssj": "assets/parts/head/vegeta_ssj.png", "ssjgod": "assets/parts/head/vegeta_ssred.png"},
+        {"normal": "assets/parts/head/goku_gt.png", "ssj": "assets/parts/head/goku_gt_ssj.png", "ssjgod": "assets/parts/head/goku_ssred.png"},
+        {"normal": "assets/parts/head/gohan_mirai.png", "ssj": "assets/parts/head/gohan_mirai_ssj.png", "ssjgod": "assets/parts/head/gohan_mirai_ssred.png"},
+        {"normal": "assets/parts/head/trunks.png", "ssj": "assets/parts/head/trunks_ssj.png", "ssjgod": "assets/parts/head/trunks_ssred.png"}
+    ],
+    "body": [
+        {"normal": "assets/parts/body/vegeta.png"},
+        {"normal": "assets/parts/body/goku_gt.png"},
+        {"normal": "assets/parts/body/gohan_mirai.png"}
+    ]
+}

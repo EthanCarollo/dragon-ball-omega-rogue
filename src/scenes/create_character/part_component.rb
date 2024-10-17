@@ -53,15 +53,15 @@ end
 class Part
   attr_accessor :image, :ssj_image, :ssred_image
 
-  def initialize(imagePath, ssj_image = false, ssred_image = false)
+  def initialize(imagePath, ssj_image = nil, ssred_image = nil)
     @image = Gosu::Image.new(imagePath, retro: true)
-    if ssj_image == false
+    if ssj_image == nil
       @ssj_image = Gosu::Image.new(imagePath, retro: true)
     else
       @ssj_image = Gosu::Image.new(ssj_image, retro: true)
     end
 
-    if ssred_image == false
+    if ssred_image == nil
       @ssred_image = Gosu::Image.new(imagePath, retro: true)
     else
       @ssred_image = Gosu::Image.new(ssred_image, retro: true)
@@ -75,55 +75,12 @@ end
 
 class PartFactory 
 
-  def self.create_vegeta_head
-    Part.new("assets/parts/head/vegeta.png", "assets/parts/head/vegeta_ego.png")
+  def self.create_part_component(part_component)
+    begin 
+      Part.new(part_component["normal"], part_component["ssj"], part_component["ssjgod"])
+    rescue StandardError => e
+      DebugLog.error("Got an error in creating part component for : #{part_component["normal"]} : #{e}")
+    end
   end
 
-  def self.create_vegeta_body
-    Part.new("assets/parts/body/vegeta.png")
-  end
-
-  def self.create_frieza_part
-    Part.new("assets/parts/full/frieza.png")
-  end
-
-  def self.create_nappa_part
-    Part.new("assets/parts/full/nappa.png")
-  end
-
-  def self.create_kaio_part
-    Part.new("assets/parts/full/kaio.png")
-  end
-
-  def self.create_hit_part
-    Part.new("assets/parts/full/hit.png")
-  end
-
-  def self.create_beerus_part
-    Part.new("assets/parts/full/beerus.png")
-  end
-
-  def self.create_dabra_part
-    Part.new("assets/parts/full/dabra.png")
-  end
-
-  def self.create_c17_bis_part
-    Part.new("assets/parts/full/c17-bis.png")
-  end
-
-  def self.create_c18_part
-    Part.new("assets/parts/full/c18.png")
-  end
-
-  def self.create_c17_part
-    Part.new("assets/parts/full/c17.png")
-  end
-
-  def self.create_zamasu_part
-    Part.new("assets/character/zamasu_fusion/zamasu.png")
-  end
-
-  def self.create_buu_part
-    Part.new("assets/character/buu/buu.png")
-  end
 end
