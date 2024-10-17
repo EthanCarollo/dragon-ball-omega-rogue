@@ -49,15 +49,15 @@ class CombatScene
       player_loose
       # return
     end
-    if @turn == 1 # If it's Player 2's turn
-      @player2.random_attack(@player1) # AI attacks Player 1
-      @turn = 0 # Switch turn back to Player 1
+    if @turn == 1 
+      @player2.random_attack(@player1)
+      @turn = 0
     end
   end
 
   def player_win
     @window.event_manager.notify("#{@player1.name} Winned !")
-    @window.change_scene(RewardScene.new(@window, @level.rewards))
+    @window.change_scene(RewardScene.new(@window, @level.reward_fn))
   end
 
   def player_loose

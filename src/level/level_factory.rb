@@ -1,7 +1,7 @@
 class LevelFactory
     def self.get_easy_level
         [
-          Level.new("C17, kill him fock", "Just kill C17", CharacterFactory.createC17Character, RewardFactory.method(:get_ssj_reward).to_proc),
+          Level.new("C17, kill him fock", "Just kill C17", ZTeam.new("C17 & C18").add_member(CharacterFactory.createC17Character).add_member(CharacterFactory.createC17Character), RewardFactory.method(:get_ssj_reward).to_proc),
           Level.new("Vegeta, king of dark grrr", "Just kill Vegeta", CharacterFactory.createVegetaCharacter, RewardFactory.method(:get_ssj_reward).to_proc),
           Level.new("Dabra", "Dabra is not a good guy :'(", CharacterFactory.createDabraCharacter),
           Level.new("Kaio", "Kaio is a good guy :'(", CharacterFactory.createKaioCharacter, RewardFactory.method(:get_ssj_reward).to_proc),

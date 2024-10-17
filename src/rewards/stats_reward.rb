@@ -28,7 +28,7 @@ end
 
 class SenzuReward < Reward
     def initialize(reward)
-        super("Senzu #{reward.name}", "#{reward.description}, heal completely the player", reward.asset_path, reward.hover_asset_path)
+        super("Senzu #{reward.name}", "#{reward.description}, heal completely the player", "./assets/rewards/senzu_reward.png", "./assets/rewards/senzu_reward.png")
         @reward = reward
     end
 

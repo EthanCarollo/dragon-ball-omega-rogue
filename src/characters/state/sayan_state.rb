@@ -1,5 +1,7 @@
 # TODO : kill me and implement this shit please fuck
 class SayanState
+  attr_accessor :character
+
   def initialize(character)
     @character = character
   end
@@ -31,15 +33,11 @@ class SayanDefaultState < SayanState
   end
 
   def awakenToSSRed
-    @character.updateState(SSGodState.new(@character))
-    @character.set_max_hp(@character.max_hp + 300).heal(1000000)
-    Player.instance.window.event_manager.notify("Character transformed in Super Sayan God !")
+    SuperSayanGodProxy.new(self).activate
   end
 
   def awakenToSSJ
-    @character.updateState(SSJState.new(@character))
-    @character.set_max_hp(@character.max_hp + 50).heal(150)
-    Player.instance.window.event_manager.notify("Character transformed in Super Sayan !")
+    SuperSayanProxy.new(self).activate
   end
 
   def awakenToEgo
@@ -57,7 +55,7 @@ class SSJState < SayanState
   end
 
   def awakenToSSRed
-    raise "error"
+    SuperSayanGodProxy.new(self).activate
   end
 
   def awakenToSSJ
@@ -80,11 +78,12 @@ class SSGodState < SayanState
   end
 
   def awakenToSSRed
-    Player.instance.window.event_manager.notify("Character already transformed in Super Sayan !")
+    Player.instance.window.event_manager.notify("Character already transformed in Super Sayan God !")
     return
   end
 
   def awakenToSSJ
+    Player.instance.window.event_manager.notify("Cannot transform in Super Sayan while in Super Sayan God !")
     return
   end
 

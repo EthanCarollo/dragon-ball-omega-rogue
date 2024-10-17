@@ -34,11 +34,13 @@ require_relative 'characters/attack/intelligence_attack'
 require_relative 'characters/attack/super_sayan_attack'
 require_relative 'characters/attack/super_sayan_god_attack'
 require_relative 'characters/character'
+require_relative 'characters/z_team'
 require_relative 'characters/normal_character'
 require_relative 'characters/sayan_character'
 require_relative 'characters/chilled_character'
 require_relative 'characters/character_stats'
 require_relative 'characters/character_factory'
+require_relative 'characters/proxy/proxy_transformation'
 require_relative 'characters/state/sayan_state'
 require_relative 'characters/state/character_state'
 
@@ -67,7 +69,7 @@ class Game < Gosu::Window
       super(WIDTH, HEIGHT)
       self.caption = "Dragon Ball Omega Rogue"
       @current_scene = MenuScene.new(self)
-      @current_scene = RewardScene.new(self, RewardFactory.method(:get_ssj_reward).to_proc)
+      # @current_scene = RewardScene.new(self, RewardFactory.method(:get_ssj_reward).to_proc)
       @event_manager = EventManager.new
       @text_display = TextDisplay.new(self)
       @event_manager.add_observer(@text_display)
