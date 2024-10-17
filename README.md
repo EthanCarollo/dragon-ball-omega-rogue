@@ -1,27 +1,42 @@
 # Dragon Ball Omega Rogue
 
-Petit jeu en Ruby inspiré de **Dragon Ball** et développé avec **Gosu**.
+<p align="center">
+  <img src="./assets/title/dbrogue.png" alt="Dragon Ball Omega Rogue Banner" />
+</p>
 
-En gros, c'est un Rogue Like au tour par tour un peu, et en vrai y a pas grand chose de plus à dire.
-T'as un combat à faire à chaque fois et entre chaque combat t'as des nouveaux bonus. C'est l'idée en sah.
+A small game in Ruby inspired by **Dragon Ball** and developed with **Gosu**.
 
-## Explications en vifff
+Basically, it's a turn-based rogue-like, and there’s not much more to say.
+You have a fight every time, and between each fight, you get new bonuses. That's the idea in a nutshell.
 
-> TODO MDR
+This game was created to explore and test various design patterns in object-oriented programming.
+
+## Gameplay Overview
+
+### Game Concepts
+- **Character Creation**
+    - You can create your own character by choosing the body and the head for the **sayan**, this feature is currently not disponible for the **chilled** race. 
+- **Character Training**: 
+    - You can train your character with a system of point.
+- **Combat Mechanics**: 
+    - It's turn based fight.
+- **New Bonuses**: 
+    - At the end of every fight you can choose between 3 rewards
 
 ## Installation
 
-1. Clonez le repo :
-```bash
-git clone https://github.com/EthanCarollo/dragon-ball-omega-rogue.git
-cd dragon-ball-omega-rogue
-```
-2. Installez **Gosu** :
-```bash
-gem install gosu
-```
-3. Lancez le jeu :
-```bash
-ruby main.rb
-```
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/EthanCarollo/dragon-ball-omega-rogue.git
+   cd dragon-ball-omega-rogue
+   ```
+   
+2. Install **Gosu**:
+   ```bash
+   gem install gosu
+   ```
 
+3. Run the game:
+   ```bash
+   ruby main.rb
+   ```
