@@ -64,7 +64,9 @@ class Character
   end
 
   def hit(damage)
-    @hp -= damage
+    effective_damage = damage - armor
+    effective_damage = [effective_damage, 0].max
+    @hp -= effective_damage
   end 
 
   def heal(heal_point)
