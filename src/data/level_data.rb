@@ -28,14 +28,14 @@ class LevelData
         json_data = JSON.parse(file)
         @levels = json_data['data'].map do |level_data|
             level = LevelFactory.create_level_from_json(level_data)
-            DebugLog.warning "SUCCESS : Successfully create level : #{level.name}"
+            DebugLog.info "SUCCESS : Successfully create level : #{level.name}"
             level
         end
     rescue Errno::ENOENT
-        DebugLog.warning "Le fichier JSON n'a pas été trouvé."
+        DebugLog.error "Le fichier JSON n'a pas été trouvé."
         @data = {}
     rescue JSON::ParserError => e
-        DebugLog.warning "Erreur de syntaxe dans le fichier JSON : #{e.message}"
+        DebugLog.error "Erreur de syntaxe dans le fichier JSON : #{e.message}"
         @data = {}
     end
 end

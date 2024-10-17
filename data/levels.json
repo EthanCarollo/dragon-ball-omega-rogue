@@ -130,7 +130,13 @@
         "description": "Defeat Cell in his first form to stop his plans.",
         "difficulty": "hard",
         "character": "cell1st",
-        "reward": "get_cell_reward"
+        "reward": [
+          { "decor": [{"name": "strength", "amount": 5}, {"name": "senzu"}] },
+          { "decor": [{"name": "strength", "amount": 5}, {"name": "senzu"}] },
+          { "decor": [{"name": "intelligence", "amount": 5}, {"name": "senzu"}] },
+          { "decor": [{"name": "strength", "amount": 5}, {"name": "senzu"}] },
+          { "decor": [{"name": "ssj_reward"}, {"name": "senzu"}] }
+        ]
       }
     ]
   }

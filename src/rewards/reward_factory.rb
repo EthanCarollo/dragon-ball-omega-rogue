@@ -53,4 +53,34 @@ class RewardFactory
         return RewardFactory.get_random_reward
     end
 
+    def self.decorateReward(reward, decorator)
+        if decorator["name"] == "senzu"
+            return SenzuReward.new(reward)
+        elsif decorator["name"] == "strength"
+            return StrengthReward.new(reward, decorator["amount"])
+        elsif decorator["name"] == "intelligence"
+            return IntelligenceReward.new(reward, decorator["amount"])
+        elsif decorator["name"] == "ssj_reward"
+            return TrainingReward.new(reward, AttackTraining.new("Entraînement Super Saiyan", 12, SuperSayanAttack.new()))
+        else
+            DebugLog.error("Decorator doesn't exist for : #{decorator}")
+            return reward
+        end
+    end
+
+    def self.get_reward(rewards, name)
+            all_rewards = rewards.map{ |reward| 
+                returned_reward = Reward.new
+                reward["decor"].each do |decorator_string|
+                    returned_reward = RewardFactory.decorateReward(returned_reward, decorator_string)
+                end
+                returned_reward
+            }
+            DebugLog.info("SUCCESS : Successfully created rewards : #{name}")
+            return all_rewards
+        rescue
+            DebugLog.error("ERROR : Error with creating reward with : #{name}")
+            RewardFactory.get_random_reward
+    end
+
 end

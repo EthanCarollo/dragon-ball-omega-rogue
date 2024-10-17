@@ -57,7 +57,7 @@ class CombatScene
 
   def player_win
     @window.event_manager.notify("#{@player1.name} Winned !")
-    @window.change_scene(RewardScene.new(@window, @level.reward_fn))
+    @window.change_scene(RewardScene.new(@window, @level.reward_object))
   end
 
   def player_loose

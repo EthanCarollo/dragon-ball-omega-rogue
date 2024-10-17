@@ -6,10 +6,10 @@ class LevelFactory
 				character = CharacterData.instance.get_character(member_id)
 				team.add_member(character)
 			end
-			Level.new(level_data["title"], level_data["description"], team, level_data["difficulty"])
+			Level.new(level_data["title"], level_data["description"], team, level_data["difficulty"], level_data["reward"])
 		elsif level_data.key?("character")
 			character = CharacterData.instance.get_character(level_data['character'])
-			Level.new(level_data["title"], level_data["description"], character, level_data["difficulty"])
+			Level.new(level_data["title"], level_data["description"], character, level_data["difficulty"], level_data["reward"])
 		else
 			raise "Invalid level data: #{level_data}"
 		end

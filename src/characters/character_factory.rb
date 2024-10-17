@@ -1,8 +1,19 @@
 # Factory Builder, yes yes i know
 class CharacterFactory
     def self.create_character_from_json(char_data)
-        if char_data['type'] == "normal" 
-            character = NormalCharacter.new(char_data['name'], 34)
+        char_hp = 0
+        begin
+            if char_data['hp'] == nil
+                raise "error"
+            end
+            char_hp = char_data['hp']
+        rescue
+            DebugLog.error("ERROR : Cannot get hp of the character : #{char_data['name']} ")
+            char_hp = 100
+        end
+
+        if char_data['type'] == "normal"  
+            character = NormalCharacter.new(char_data['name'], char_hp)
                                     .add_head(Part.new(char_data['full_body']))
                                     .add_body(Part.new(char_data['full_body']))
                                     .add_stats(CharacterStats.new(char_data['stats']['strength'], 
