@@ -37,6 +37,100 @@
         "difficulty": "hard",
         "character": "beerus",
         "reward": "get_god_mode_reward"
+      },
+      {
+        "id": "level_medium_1",
+        "title": "Dabra's Dark Challenge",
+        "description": "Confront Dabra in his lair.",
+        "difficulty": "medium",
+        "character": "dabra",
+        "reward": "get_medium_reward"
+      },
+      {
+        "id": "level_hard_1",
+        "title": "Kaio's Ultimate Trial",
+        "description": "Survive Kaio's final test.",
+        "difficulty": "hard",
+        "character": "kaio",
+        "reward": "get_hard_reward"
+      },
+      {
+        "id": "level_hard_2",
+        "title": "Zamasu's Judgment Day",
+        "description": "Face Zamasu and his divine power.",
+        "difficulty": "hard",
+        "character": "zamasu",
+        "reward": "get_zamasu_reward"
+      },
+      {
+        "id": "level_hard_3",
+        "title": "Beerus's Destruction Test",
+        "description": "Survive the wrath of Beerus.",
+        "difficulty": "hard",
+        "character": "beerus",
+        "reward": "get_god_reward"
+      },
+      {
+        "id": "level_hard_4",
+        "title": "Ultimate Showdown: The Trio",
+        "description": "Face off against the combined might of Hit, Zamasu, and Beerus in a battle for survival.",
+        "difficulty": "hard",
+        "team": {
+          "name": "Hit & Zamasu & Beerus",
+          "members":  ["hit", "zamasu", "beerus"]
+        },
+        "reward": "get_ultimate_reward"
+      },
+      {
+        "id": "level_easy_1_32",
+        "title": "Krillin's Challenge",
+        "description": "Just defeat Krillin in a friendly match.",
+        "difficulty": "easy",
+        "character": "krillin",
+        "reward": "get_krillin_reward"
+      },
+      {
+        "id": "level_easy_2_45",
+        "title": "Piccolo's Training",
+        "description": "Face Piccolo in a training session to improve your skills.",
+        "difficulty": "easy",
+        "character": "picolo",
+        "reward": "get_training_reward"
+      },
+      {
+        "id": "level_medium_1_78",
+        "title": "Thales' Ambush",
+        "description": "Defeat Thales before he can escape.",
+        "difficulty": "medium",
+        "team": {
+          "name": "Thales & Sushinron",
+          "members": ["thales", "sushinron"]
+        },
+        "reward": "get_thales_reward"
+      },
+      {
+        "id": "level_medium_2_56",
+        "title": "Gohan's Test",
+        "description": "Prove your worth by defeating Gohan in a duel.",
+        "difficulty": "medium",
+        "character": "gohan_ultime",
+        "reward": "get_gohan_reward"
+      },
+      {
+        "id": "level_hard_1_89",
+        "title": "Broly's Wrath",
+        "description": "Survive against Broly's furious onslaught.",
+        "difficulty": "hard",
+        "character": "broly_ssj",
+        "reward": "get_broly_reward"
+      },
+      {
+        "id": "level_hard_2_12",
+        "title": "Cell's Resurrection",
+        "description": "Defeat Cell in his first form to stop his plans.",
+        "difficulty": "hard",
+        "character": "cell1st",
+        "reward": "get_cell_reward"
       }
     ]
   }

@@ -186,6 +186,309 @@
           "min": 80,
           "max": 300
         }]
+      },{
+        "id": "krillin",
+        "type": "normal",
+        "name": "Krillin",
+        "full_body": "./assets/parts/full/krillin.png",
+        "stats": {
+          "strength": 45,
+          "intelligence": 90,
+          "wisdom": 75
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Destructo Disk",
+            "min": 30,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "picolo",
+        "type": "normal",
+        "name": "Piccolo",
+        "full_body": "./assets/parts/full/picolo.png",
+        "stats": {
+          "strength": 75,
+          "intelligence": 110,
+          "wisdom": 85
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Special Beam Cannon",
+            "min": 60,
+            "max": 200
+          }
+        ]
+      },
+      {
+        "id": "thales",
+        "type": "normal",
+        "name": "Thales",
+        "full_body": "./assets/parts/full/thales.png",
+        "stats": {
+          "strength": 80,
+          "intelligence": 70,
+          "wisdom": 50
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Energy Blast",
+            "min": 50,
+            "max": 180
+          }
+        ]
+      },
+      {
+        "id": "sushinron",
+        "type": "normal",
+        "name": "Sushinron",
+        "full_body": "./assets/parts/full/sushinron.png",
+        "stats": {
+          "strength": 70,
+          "intelligence": 60,
+          "wisdom": 90
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Dragon Roar",
+            "min": 40,
+            "max": 160
+          }
+        ]
+      },
+      {
+        "id": "buuhan",
+        "type": "normal",
+        "name": "Buuhan",
+        "full_body": "./assets/parts/full/buuhan.png",
+        "stats": {
+          "strength": 100,
+          "intelligence": 50,
+          "wisdom": 40
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Majin Blast",
+            "min": 90,
+            "max": 350
+          }
+        ]
+      },
+      {
+        "id": "broly_ssj",
+        "type": "normal",
+        "name": "Broly (SSJ)",
+        "full_body": "./assets/parts/full/broly_ssj.png",
+        "stats": {
+          "strength": 120,
+          "intelligence": 30,
+          "wisdom": 60
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Rage Blast",
+            "min": 100,
+            "max": 400
+          }
+        ]
+      },
+      {
+        "id": "gotenksssj3",
+        "type": "normal",
+        "name": "Gotenks (SSJ3)",
+        "full_body": "./assets/parts/full/gotenksssj3.png",
+        "stats": {
+          "strength": 110,
+          "intelligence": 40,
+          "wisdom": 30
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Super Ghost Kamikaze Attack",
+            "min": 80,
+            "max": 300
+          }
+        ]
+      },
+      {
+        "id": "krillin",
+        "type": "normal",
+        "name": "Krillin",
+        "full_body": "./assets/parts/full/krillin.png",
+        "stats": {
+          "strength": 30,
+          "intelligence": 80,
+          "wisdom": 70
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Destructo Disk",
+            "min": 20,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "id": "picolo",
+        "type": "normal",
+        "name": "Piccolo",
+        "full_body": "./assets/parts/full/picolo.png",
+        "stats": {
+          "strength": 50,
+          "intelligence": 90,
+          "wisdom": 80
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Special Beam Cannon",
+            "min": 30,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "thales",
+        "type": "normal",
+        "name": "Thales",
+        "full_body": "./assets/parts/full/thales.png",
+        "stats": {
+          "strength": 60,
+          "intelligence": 70,
+          "wisdom": 50
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Energy Blast",
+            "min": 25,
+            "max": 80
+          }
+        ]
+      },
+      {
+        "id": "sushinron",
+        "type": "normal",
+        "name": "Sushinron",
+        "full_body": "./assets/parts/full/sushinron.png",
+        "stats": {
+          "strength": 40,
+          "intelligence": 60,
+          "wisdom": 65
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Dragon Roar",
+            "min": 20,
+            "max": 70
+          }
+        ]
+      },
+      {
+        "id": "buuhan",
+        "type": "normal",
+        "name": "Buuhan",
+        "full_body": "./assets/parts/full/buuhan.png",
+        "stats": {
+          "strength": 70,
+          "intelligence": 40,
+          "wisdom": 50
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Majin Blast",
+            "min": 40,
+            "max": 120
+          }
+        ]
+      },
+      {
+        "id": "broly_ssj",
+        "type": "normal",
+        "name": "Broly (SSJ)",
+        "full_body": "./assets/parts/full/broly_ssj.png",
+        "stats": {
+          "strength": 80,
+          "intelligence": 30,
+          "wisdom": 40
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Rage Blast",
+            "min": 50,
+            "max": 150
+          }
+        ]
+      },
+      {
+        "id": "cell1st",
+        "type": "normal",
+        "name": "Cell (1st Form)",
+        "full_body": "./assets/parts/full/cell1st.png",
+        "stats": {
+          "strength": 60,
+          "intelligence": 85,
+          "wisdom": 55
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Solar Flare",
+            "min": 35,
+            "max": 90
+          }
+        ]
+      },
+      {
+        "id": "gohan_ultime",
+        "type": "normal",
+        "name": "Gohan (Ultimate)",
+        "full_body": "./assets/parts/full/gohan_ultime.png",
+        "stats": {
+          "strength": 75,
+          "intelligence": 95,
+          "wisdom": 75
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Masenko",
+            "min": 45,
+            "max": 110
+          }
+        ]
+      },
+      {
+        "id": "gotenksssj3",
+        "type": "normal",
+        "name": "Gotenks (SSJ3)",
+        "full_body": "./assets/parts/full/gotenksssj3.png",
+        "stats": {
+          "strength": 90,
+          "intelligence": 40,
+          "wisdom": 30
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Super Ghost Kamikaze Attack",
+            "min": 55,
+            "max": 140
+          }
+        ]
       }
     ]
   }
