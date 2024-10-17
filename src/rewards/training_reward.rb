@@ -10,3 +10,15 @@ class TrainingReward < Reward
         Player.instance.add_training(@training)
     end
 end
+
+class TrainingPointReward < Reward
+    def initialize(reward, maount)
+        super("Training #{reward.name}", "#{reward.description}, add #{amount} to training point", "./assets/rewards/training_reward.png", "./assets/rewards/training_reward.png")
+        @reward = reward
+    end
+    
+    def get_reward
+        @reward.get_reward
+        Player.instance.add_training_points(@amount)
+    end
+end
