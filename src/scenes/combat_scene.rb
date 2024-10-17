@@ -12,10 +12,11 @@ class CombatScene
 
     # Set the positions for the characters
     @player1_x = 200 # Position for Player 1
-    @player1_y = 300
+    @player1_y = 400
     @player2_x = @window.width - 200 - 128 # Position for Player 2 (right side)
-    @player2_y = 300
-    
+    @player2_y = 400
+
+    @background_image = Gosu::Image.new("./assets/map/fight_map.png", retro: true)
     @turn = 0
 
     @ability_buttons = []
@@ -55,6 +56,17 @@ class CombatScene
     end
   end
 
+  def draw
+    background_width =  @window.width.to_f / @background_image.width
+    background_height =  @window.height.to_f / @background_image.height
+    @background_image.draw(0, 0, 0, background_width, background_height)
+
+    @player1.draw_at(@player1_x, @player1_y, false, true, 160)
+    @player2.draw_at(@player2_x, @player2_y, true, true, 160)
+    display_info
+    display_attack_options
+  end
+
   def player_win
     @window.event_manager.notify("#{@player1.name} Winned !")
     @window.change_scene(RewardScene.new(@window, @level.reward_object, @level.name))
@@ -64,14 +76,6 @@ class CombatScene
     # TODO : add loose screen scene
     @window.event_manager.notify("#{@player1.name} Loosed ! Returning to the menu scene !")
     @window.change_scene(MenuScene.new(@window))
-  end
-
-  def draw
-    Gosu.draw_rect(0, 0, @window.width, @window.height, Gosu::Color::BLACK)
-    @player1.draw_at(@player1_x, @player1_y, false, true)
-    @player2.draw_at(@player2_x, @player2_y, true)
-    display_info
-    display_attack_options
   end
 
   def display_info

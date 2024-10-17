@@ -106,18 +106,18 @@ class Character
       @state.get_character_head.draw(x + desired_width, y, 1, scale_x - scale_x * 2, scale_y)
     end
     
-    draw_health_bar(x, y) if draw_health
+    draw_health_bar(x, y, desired_size) if draw_health
   end
   
-  def draw_health_bar(x, y)
-    bar_width = 128
+  def draw_health_bar(x, y, desired_size)
+    bar_width = desired_size
     bar_height = 5
     health_ratio = @hp.to_f / @max_hp.to_f
     if health_ratio < 0
       health_ratio = 0
     end
 
-    Gosu.draw_rect(x, y + 128, bar_width * health_ratio, bar_height, Gosu::Color::GREEN)
-    Gosu.draw_rect(x + bar_width * health_ratio, y + 128, bar_width * (1 - health_ratio), bar_height, Gosu::Color::RED)
+    Gosu.draw_rect(x, y + desired_size, bar_width * health_ratio, bar_height, Gosu::Color::GREEN)
+    Gosu.draw_rect(x + bar_width * health_ratio, y + desired_size, bar_width * (1 - health_ratio), bar_height, Gosu::Color::RED)
   end
 end
