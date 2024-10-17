@@ -1,0 +1,22 @@
+{
+    "data" : [
+        {
+            "type": "normal",
+            "name": "C17",
+            "full_body": "./assets/parts/full/c17.png",
+            "stats": {
+                "strength": 5,
+                "intelligence": 5,
+                "wisdom": 5
+            },
+            "attack": [
+                {
+                    "type": "strength",
+                    "name": "Kamehameha",
+                    "min": 5,
+                    "max": 15
+                }
+            ]
+        }
+    ]
+}

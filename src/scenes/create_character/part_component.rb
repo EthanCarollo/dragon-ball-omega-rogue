@@ -67,9 +67,14 @@ class Part
       @ssred_image = Gosu::Image.new(ssred_image, retro: true)
     end
   end
+
+  def self.get_normal_character_part(key)
+    Part.new(CharacterDataPart.instance.get_value(key))
+  end
 end
 
 class PartFactory 
+
   def self.create_vegeta_head
     Part.new("assets/parts/head/vegeta.png", "assets/parts/head/vegeta_ego.png")
   end

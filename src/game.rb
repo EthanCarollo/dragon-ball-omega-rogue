@@ -5,6 +5,9 @@ require_relative 'events/event_manager'
 require_relative 'level/level'
 require_relative 'level/level_factory'
 
+require_relative 'data/character_part_data'
+require_relative 'data/character_data'
+
 require_relative 'ui/button'
 require_relative 'ui/training_button'
 require_relative 'ui/image_button'
@@ -68,6 +71,8 @@ class Game < Gosu::Window
     def initialize
       super(WIDTH, HEIGHT)
       self.caption = "Dragon Ball Omega Rogue"
+      CharacterData.instance
+      # Initialize logics
       @current_scene = MenuScene.new(self)
       # @current_scene = RewardScene.new(self, RewardFactory.method(:get_ssj_reward).to_proc)
       @event_manager = EventManager.new

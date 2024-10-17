@@ -54,16 +54,16 @@ class CharacterFactory
 
     def self.createC17BisCharacter()
         NormalCharacter.new("C17", 34)
-                       .add_head(PartFactory.create_c17_bis_part)
-                       .add_body(PartFactory.create_c17_bis_part)
+                       .add_head(Part.get_normal_character_part("c17_full"))
+                       .add_body(Part.get_normal_character_part("c17_full"))
                        .add_stats(CharacterStats.new(2, 5, 4))
                        .add_attack(StrengthAttack.new("Kameha", 3, 24, ))
     end
 
     def self.createC18Character()
         NormalCharacter.new("C18", 34)
-                       .add_head(PartFactory.create_c18_part)
-                       .add_body(PartFactory.create_c18_part)
+                       .add_head(Part.get_normal_character_part("c18_full"))
+                       .add_body(Part.get_normal_character_part("c18_full"))
                        .add_stats(CharacterStats.new(8, 3, 4))
                        .add_attack(StrengthAttack.new("Kameha", 7, 15, ))
     end
