@@ -76,8 +76,8 @@ class ZTeam < Character
         offset_x = 0
         @members.each do |member|
             member.draw_at(x + offset_x, y + offset_y, reversed, draw_health, desired_size)
-            offset_y += 30
-            offset_x += 90
+            offset_y += 40
+            offset_x += 100
         end
     end
   end

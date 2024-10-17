@@ -9,7 +9,14 @@
           "name": "C17 & C18",
           "members": ["c17_bis", "c18"]
         },
-        "reward": "get_ssj_reward"
+        "reward": [
+  { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "ssjgod_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "kamehameha_reward"}, {"name": "strength", "amount": 2}] },
+  { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 12}, {"name": "genki_dama_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "supernova_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "hellzone_grenade_reward"}] }
+]
+
       },
       {
         "id": "level_easy_2",
@@ -17,7 +24,14 @@
         "description": "Face Hit during a training session",
         "difficulty": "easy",
         "character": "hit",
-        "reward": "get_small_training_reward"
+        "reward": [
+  { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "ssjgod_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "kamehameha_reward"}, {"name": "strength", "amount": 2}] },
+  { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 12}, {"name": "genki_dama_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "supernova_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "hellzone_grenade_reward"}] }
+]
+
       },
       {
         "id": "level_medium_1",
@@ -28,7 +42,14 @@
           "name": "Vegeta & Frieza",
           "members": ["vegeta", "frieza"]
         },
-        "reward": "get_final_flash_reward"
+        "reward": [
+  { "decor": [{"name": "senzu"}, {"name": "ssj_reward"}, {"name": "strength", "amount": 15}] },
+  { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 9}, {"name": "masenko_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "ssjgod_reward"}, {"name": "intelligence", "amount": 12}] },
+  { "decor": [{"name": "senzu"}, {"name": "garic_cannon_reward"}, {"name": "strength", "amount": 2}] },
+  { "decor": [{"name": "senzu"}, {"name": "spirit_sword_reward"}, {"name": "training_point", "amount": 24}] }
+]
+
       },
       {
         "id": "level_hard_1",
@@ -36,7 +57,12 @@
         "description": "Fight Beerus to save the universe",
         "difficulty": "hard",
         "character": "beerus",
-        "reward": "get_god_mode_reward"
+        "reward": [
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "intelligence", "amount": 9}] },
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "ssj_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "death_ball_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}, {"name": "garic_cannon_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}, {"name": "spirit_sword_reward"}] }]
       },
       {
         "id": "level_medium_1",
@@ -44,7 +70,14 @@
         "description": "Confront Dabra in his lair.",
         "difficulty": "medium",
         "character": "dabra",
-        "reward": "get_medium_reward"
+        "reward": [
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "intelligence", "amount": 9}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "ssj_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "death_ball_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}, {"name": "garic_cannon_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}, {"name": "spirit_sword_reward"}] }
+]
+
       },
       {
         "id": "level_hard_1",
@@ -52,7 +85,13 @@
         "description": "Survive Kaio's final test.",
         "difficulty": "hard",
         "character": "kaio",
-        "reward": "get_hard_reward"
+        "reward": [
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "intelligence", "amount": 9}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "ssj_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "death_ball_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}, {"name": "garic_cannon_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}, {"name": "spirit_sword_reward"}] }
+]
       },
       {
         "id": "level_hard_2",
@@ -60,7 +99,13 @@
         "description": "Face Zamasu and his divine power.",
         "difficulty": "hard",
         "character": "zamasu",
-        "reward": "get_zamasu_reward"
+        "reward": [
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "intelligence", "amount": 9}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "ssj_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "death_ball_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}, {"name": "garic_cannon_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}, {"name": "spirit_sword_reward"}] }
+]
       },
       {
         "id": "level_hard_3",
@@ -68,7 +113,13 @@
         "description": "Survive the wrath of Beerus.",
         "difficulty": "hard",
         "character": "beerus",
-        "reward": "get_god_reward"
+        "reward": [
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "hellzone_grenade_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "supernova_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}, {"name": "death_ball_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}, {"name": "kamehameha_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "ssj_reward"}, {"name": "training_point", "amount": 24}] }
+        ]
       },
       {
         "id": "level_hard_4",
@@ -79,7 +130,13 @@
           "name": "Hit & Zamasu & Beerus",
           "members":  ["hit", "zamasu", "beerus"]
         },
-        "reward": "get_ultimate_reward"
+       "reward": [
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "intelligence", "amount": 9}] },
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "ssj_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "death_ball_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}, {"name": "garic_cannon_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}, {"name": "spirit_sword_reward"}] }
+        ]
       },
       {
         "id": "level_easy_1_32",
@@ -87,7 +144,13 @@
         "description": "Just defeat Krillin in a friendly match.",
         "difficulty": "easy",
         "character": "krillin",
-        "reward": "get_krillin_reward"
+        "reward": [
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "intelligence", "amount": 9}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "ssj_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "death_ball_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}, {"name": "garic_cannon_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}, {"name": "spirit_sword_reward"}] }
+]
       },
       {
         "id": "level_easy_2_45",
@@ -95,7 +158,13 @@
         "description": "Face Piccolo in a training session to improve your skills.",
         "difficulty": "easy",
         "character": "picolo",
-        "reward": "get_training_reward"
+        "reward": [
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "intelligence", "amount": 9}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "ssj_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "death_ball_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}, {"name": "garic_cannon_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}, {"name": "spirit_sword_reward"}] }
+]
       },
       {
         "id": "level_medium_1_78",
@@ -104,9 +173,15 @@
         "difficulty": "medium",
         "team": {
           "name": "Thales & Sushinron",
-          "members": ["thales", "sushinron"]
+          "members": ["sushinron", "thales"]
         },
-        "reward": "get_thales_reward"
+        "reward": [
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}, {"name": "intelligence", "amount": 9}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "ssj_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "death_ball_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}, {"name": "garic_cannon_reward"}] },
+  { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}, {"name": "spirit_sword_reward"}] }
+]
       },
       {
         "id": "level_medium_2_56",
@@ -114,7 +189,12 @@
         "description": "Prove your worth by defeating Gohan in a duel.",
         "difficulty": "medium",
         "character": "gohan_ultime",
-        "reward": "get_gohan_reward"
+        "reward": [
+          { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 16}, {"name": "strength", "amount": 5}] },
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "training_point", "amount": 24}] },
+          { "decor": [{"name": "senzu"}, {"name": "ssj_reward"}, {"name": "training_point", "amount": 24}] },
+          { "decor": [{"name": "senzu"}, {"name": "ssj_reward"}, {"name": "training_point", "amount": 24}] }
+        ]
       },
       {
         "id": "level_hard_1_89",
@@ -122,7 +202,15 @@
         "description": "Survive against Broly's furious onslaught.",
         "difficulty": "hard",
         "character": "broly_ssj",
-        "reward": "get_broly_reward"
+        "reward": [
+          { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 16}, {"name": "strength", "amount": 5}] },
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "training_point", "amount": 24}] },
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}] },
+          { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}] },
+          { "decor": [{"name": "senzu"}, {"name": "ssj_reward"}, {"name": "training_point", "amount": 24}] },
+          { "decor": [{"name": "senzu"}, {"name": "hellzone_grenade_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "supernova_reward"}, {"name": "training_point", "amount": 32}] }
+        ]
       },
       {
         "id": "level_hard_2_12",
@@ -131,14 +219,22 @@
         "difficulty": "hard",
         "character": "cell1st",
         "reward": [
-          { "decor": [{"name": "strength", "amount": 5}, {"name": "senzu"}] },
-          { "decor": [{"name": "strength", "amount": 2}, {"name": "senzu"}, {"name": "training_point", "amount": 24}] },
-          { "decor": [{"name": "intelligence", "amount": 9}, {"name": "senzu"}] },
-          { "decor": [{"name": "strength", "amount": 15}, {"name": "senzu"}] },
-          { "decor": [{"name": "ssj_reward"}, {"name": "senzu"}, {"name": "training_point", "amount": 24}] },
-          { "decor": [{"name": "ssjgod_reward"}, {"name": "senzu"}] },
-          { "decor": [{"name": "kamehameha_reward"}, {"name": "senzu"}] },
-          { "decor": [{"name": "garic_cannon_reward"}, {"name": "senzu"}] }
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 5}] },
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 2}, {"name": "training_point", "amount": 24}] },
+          { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 9}] },
+          { "decor": [{"name": "senzu"}, {"name": "strength", "amount": 15}] },
+          { "decor": [{"name": "senzu"}, {"name": "intelligence", "amount": 24}] },
+          { "decor": [{"name": "senzu"}, {"name": "training_point", "amount": 24}, {"name": "intelligence", "amount": 12}] },
+          { "decor": [{"name": "senzu"}, {"name": "ssj_reward"}, {"name": "training_point", "amount": 24}] },
+          { "decor": [{"name": "senzu"}, {"name": "ssjgod_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "kamehameha_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "garic_cannon_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "death_ball_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "masenko_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "hellzone_grenade_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "spirit_sword_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "supernova_reward"}] }
         ]
       }
     ]

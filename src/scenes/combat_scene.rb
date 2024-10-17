@@ -11,9 +11,9 @@ class CombatScene
     @player2 = level.opponent
 
     # Set the positions for the characters
-    @player1_x = 100 # Position for Player 1
+    @player1_x = 200 # Position for Player 1
     @player1_y = 300
-    @player2_x = @window.width - 100 - 128 # Position for Player 2 (right side)
+    @player2_x = @window.width - 200 - 128 # Position for Player 2 (right side)
     @player2_y = 300
     
     @turn = 0
@@ -57,7 +57,7 @@ class CombatScene
 
   def player_win
     @window.event_manager.notify("#{@player1.name} Winned !")
-    @window.change_scene(RewardScene.new(@window, @level.reward_object))
+    @window.change_scene(RewardScene.new(@window, @level.reward_object, @level.name))
   end
 
   def player_loose
