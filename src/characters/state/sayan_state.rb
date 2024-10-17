@@ -63,13 +63,15 @@ class SSJState < SayanState
   def initialize(character)
     super(character)
 
-    @auras = [
-      Gosu::Image.new("./assets/aura/sayan/sayan_1_aura.png", retro: true),
-      Gosu::Image.new("./assets/aura/sayan/sayan_2_aura.png", retro: true),
-      Gosu::Image.new("./assets/aura/sayan/sayan_3_aura.png", retro: true),
-      Gosu::Image.new("./assets/aura/sayan/sayan_4_aura.png", retro: true)
+
+    @images_aura = [
+        "./assets/aura/sayan/sayan_1_aura.png",
+        "./assets/aura/sayan/sayan_2_aura.png",
+        "./assets/aura/sayan/sayan_3_aura.png",
+        "./assets/aura/sayan/sayan_4_aura.png"
     ]
-    
+
+
     @current_aura_frame = 0 
     @frame_time = 0 
   end
@@ -86,16 +88,12 @@ class SSJState < SayanState
     @frame_time += 1 
     if @frame_time >= 5
       @frame_time = 0
-      @current_aura_frame = (@current_aura_frame + 1) % @auras.size
+      @current_aura_frame = (@current_aura_frame + 1) % @images_aura.size
     end
   end
 
-  def aura
-    return @auras
-  end
-
   def current_aura_image
-    @auras[@current_aura_frame]
+    Gosu::Image.new(@images_aura[@current_aura_frame], retro: true)
   end
 
   def awakenToSSRed
@@ -118,11 +116,11 @@ class SSGodState < SayanState
   def initialize(character)
     super(character)
 
-    @auras = [
-      Gosu::Image.new("./assets/aura/ssred/sayan_1_aura.png", retro: true),
-      Gosu::Image.new("./assets/aura/ssred/sayan_2_aura.png", retro: true),
-      Gosu::Image.new("./assets/aura/ssred/sayan_3_aura.png", retro: true),
-      Gosu::Image.new("./assets/aura/ssred/sayan_4_aura.png", retro: true)
+    @images_aura = [
+        "./assets/aura/ssred/sayan_1_aura.png",
+        "./assets/aura/ssred/sayan_2_aura.png",
+        "./assets/aura/ssred/sayan_3_aura.png",
+        "./assets/aura/ssred/sayan_4_aura.png"
     ]
     
     @current_aura_frame = 0 
@@ -141,16 +139,12 @@ class SSGodState < SayanState
     @frame_time += 1 
     if @frame_time >= 5
       @frame_time = 0
-      @current_aura_frame = (@current_aura_frame + 1) % @auras.size
+      @current_aura_frame = (@current_aura_frame + 1) % @images_aura.size
     end
   end
 
-  def aura
-    return @auras
-  end
-
   def current_aura_image
-    @auras[@current_aura_frame]
+    Gosu::Image.new(@images_aura[@current_aura_frame], retro: true)
   end
 
   def awakenToSSRed

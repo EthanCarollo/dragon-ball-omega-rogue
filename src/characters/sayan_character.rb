@@ -14,14 +14,12 @@ class SayanCharacter < Character
 	def draw_at(x, y, reversed = false, draw_health = true, desired_size = 128)
 		super(x, y, reversed, draw_health, desired_size)
 		self.update
-		aura_image = @state.current_aura_image
-		desired_width = desired_size
-		desired_height = desired_size
-		if aura_image != nil 
-			scale = (desired_width.to_f+120) / aura_image.width
+		if  @state.current_aura_image != nil
+			desired_width = desired_size
+			scale = (desired_width.to_f+120) /  @state.current_aura_image.width
 			aura_x = x
 			aura_y = y
-			aura_image.draw(aura_x - 60, aura_y - 125, 0, scale, scale)
+			@state.current_aura_image.draw(aura_x - 60, aura_y - 125, 0, scale, scale)
 		end
 	end
 

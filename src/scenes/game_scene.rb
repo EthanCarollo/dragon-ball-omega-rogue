@@ -6,7 +6,7 @@ class GameScene
   
     def initialize(window)
       @window = window
-      @background = Gosu::Image.new("./assets/background/namek.png", retro: true)
+      @background = Gosu::Image.new("./assets/background/namek_background.png", retro: true)
       @font = Gosu::Font.new(30, name: "./assets/fonts/upheavtt.ttf")
 
       @text_factory = TextWithBackgroundFactory.new(self)
