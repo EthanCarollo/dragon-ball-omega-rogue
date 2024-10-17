@@ -36,7 +36,7 @@ class RewardFactory
             [int_reward, RewardFactory.get_intelligence_reward(2)].sample,
             str_reward,
             [SenzuReward.new(int_str_reward), int_str_reward, SenzuReward.new(RewardFactory.get_strength_reward(2))].sample,
-        ]
+        ].shuffle
     end
 
     def self.get_ssj_reward()
@@ -48,13 +48,13 @@ class RewardFactory
                 [intelligence_reward, SenzuReward.new(intelligence_reward)].sample,
                 RewardFactory.get_ssj_train_reward,
                 RewardFactory.get_intelligence_strength_reward(3),
-            ]
+        ].shuffle
         end
         return [
             [intelligence_reward, SenzuReward.new(intelligence_reward)].sample,
             RewardFactory.get_strength_reward(6),
             RewardFactory.get_intelligence_strength_reward(3),
-        ]
+        ].shuffle
     end
 
 end

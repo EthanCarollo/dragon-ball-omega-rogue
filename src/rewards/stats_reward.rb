@@ -2,7 +2,7 @@
 
 class IntelligenceReward < Reward
     def initialize(reward, amount)
-        super("Intelligence #{reward.name}", "#{reward.description}, add #{amount} to intelligence", reward.asset_path, reward.hover_asset_path)
+        super("Intelligence #{reward.name}", "#{reward.description}, add #{amount} to intelligence", "./assets/rewards/intelligence_reward.png", "./assets/rewards/intelligence_reward.png")
         @reward = reward
         @amount = amount
     end
@@ -15,7 +15,7 @@ end
 
 class StrengthReward < Reward
     def initialize(reward, amount)
-        super("Strength #{reward.name}", "#{reward.description}, add #{amount} to strength", reward.asset_path, reward.hover_asset_path)
+        super("Strength #{reward.name}", "#{reward.description}, add #{amount} to strength", "./assets/rewards/muscle_reward.png", "./assets/rewards/muscle_reward.png")
         @reward = reward
         @amount = amount
     end
