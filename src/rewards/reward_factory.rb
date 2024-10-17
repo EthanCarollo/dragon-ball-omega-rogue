@@ -33,8 +33,8 @@ class RewardFactory
         str_reward = RewardFactory.get_strength_reward(6)
         int_str_reward = RewardFactory.get_intelligence_strength_reward(3)
         return [
-            [int_reward, RewardFactory.get_intelligence_reward(2), TrainingPointReward(RewardFactory.get_intelligence_reward(2), [4,7].sample)].sample,
-            [str_reward, RewardFactory.get_strength_reward(2), TrainingPointReward(RewardFactory.get_strength_reward(2), 8)].sample,
+            [int_reward, RewardFactory.get_intelligence_reward(2), TrainingPointReward.new(RewardFactory.get_intelligence_reward(2), [4,7].sample)].sample,
+            [str_reward, RewardFactory.get_strength_reward(2), TrainingPointReward.new(RewardFactory.get_strength_reward(2), 8)].sample,
             [SenzuReward.new(int_str_reward), int_str_reward, SenzuReward.new(RewardFactory.get_strength_reward(2))].sample,
         ].shuffle
     end
@@ -50,11 +50,7 @@ class RewardFactory
                 RewardFactory.get_intelligence_strength_reward(3),
         ].shuffle
         end
-        return [
-            [intelligence_reward, SenzuReward.new(intelligence_reward)].sample,
-            RewardFactory.get_strength_reward(6),
-            RewardFactory.get_intelligence_strength_reward(3),
-        ].shuffle
+        return RewardFactory.get_random_reward
     end
 
 end

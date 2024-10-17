@@ -12,9 +12,10 @@ class TrainingReward < Reward
 end
 
 class TrainingPointReward < Reward
-    def initialize(reward, maount)
+    def initialize(reward, amount)
         super("Training #{reward.name}", "#{reward.description}, add #{amount} to training point", "./assets/rewards/training_reward.png", "./assets/rewards/training_reward.png")
         @reward = reward
+        @amount = amount
     end
     
     def get_reward
