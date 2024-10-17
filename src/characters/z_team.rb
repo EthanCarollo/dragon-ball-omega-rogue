@@ -1,12 +1,40 @@
+# This is the demonstration of the composite pattern.
+
 class ZTeam < Character
     def initialize(name)
       super(name)
       @members = []
     end
 
-    def stats
-        CharacterStats.new(5,5,5)
+    def hp
+        hp = 0
+        @members.each do |member|
+            hp += member.hp
+        end
+        hp 
     end
+
+    def max_hb
+        max_hb = 0
+        @members.each do |member|
+            max_hb += member.max_hb
+        end
+        max_hb 
+    end
+
+    def stats
+        total_stats = CharacterStats.new(0, 0, 0)
+    
+        @members.each do |member|
+          if member.stats
+            total_stats.intelligence += member.stats.intelligence
+            total_stats.strength += member.stats.strength
+            total_stats.wisdom += member.stats.wisdom
+          end
+        end
+    
+        total_stats 
+      end
   
     def add_member(character)
       @members << character
@@ -44,13 +72,12 @@ class ZTeam < Character
     end
   
     def draw_at(x, y, reversed = false, draw_health = true, desired_size = 128)
-        puts "draw Z-Team"
         offset_y = 0
         offset_x = 0
         @members.each do |member|
             member.draw_at(x + offset_x, y + offset_y, reversed, draw_health, desired_size)
             offset_y += 30
-            offset_x += 75
+            offset_x += 90
         end
     end
   end

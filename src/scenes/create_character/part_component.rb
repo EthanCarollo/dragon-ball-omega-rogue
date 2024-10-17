@@ -102,6 +102,14 @@ class PartFactory
     Part.new("assets/parts/full/dabra.png")
   end
 
+  def self.create_c17_bis_part
+    Part.new("assets/parts/full/c17-bis.png")
+  end
+
+  def self.create_c18_part
+    Part.new("assets/parts/full/c18.png")
+  end
+
   def self.create_c17_part
     Part.new("assets/parts/full/c17.png")
   end
