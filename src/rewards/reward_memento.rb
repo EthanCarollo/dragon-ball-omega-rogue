@@ -12,7 +12,7 @@ class RewardOriginator
   end
 
   def restore(memento)
-    puts memento.state
+    DebugLog.warning memento.state
     @state = memento.state
   end
 end
@@ -35,7 +35,7 @@ class RewardCaretaker
   end
 
   def show_history
-    @mementos.each { |memento| puts memento }
+    @mementos.each { |memento| DebugLog.warning memento }
   end
 end
 

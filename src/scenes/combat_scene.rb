@@ -33,7 +33,7 @@ class CombatScene
         width: desired_size,
         height: desired_size,
       ) { 
-        puts "click on button" 
+        DebugLog.warning "click on button" 
         @player1.attack(@player2, attack)
         @turn = 1 
       }

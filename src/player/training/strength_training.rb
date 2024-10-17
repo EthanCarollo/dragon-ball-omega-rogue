@@ -7,7 +7,7 @@ class StrengthTraining < Training
     end
   
     def activate(player)
-      puts "strength training : #{@name} a été activé par #{player.name}."
+      DebugLog.warning "strength training : #{@name} a été activé par #{player.name}."
       player.character.stats.strength += @amount
       
     end

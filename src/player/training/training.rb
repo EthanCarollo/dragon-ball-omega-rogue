@@ -7,6 +7,6 @@ class Training
   end
 
   def activate(player)
-    puts "#{@name} a été activé par #{player.name}."
+    DebugLog.warning "#{@name} a été activé par #{player.name}."
   end
 end

@@ -7,7 +7,7 @@ class IntelligenceTraining < Training
     end
   
     def activate(player)
-      puts "intelligence training : #{@name} a été activé par #{player.name}."
+      DebugLog.warning "intelligence training : #{@name} a été activé par #{player.name}."
       player.character.stats.intelligence += @amount
     end
   end

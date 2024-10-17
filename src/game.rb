@@ -1,5 +1,7 @@
 require 'gosu'
 
+require_relative 'debug/debug_log'
+
 require_relative 'events/event_manager'
 
 require_relative 'level/level'
@@ -72,7 +74,7 @@ class Game < Gosu::Window
     def initialize
       super(WIDTH, HEIGHT)
       self.caption = "Dragon Ball Omega Rogue"
-      
+
       # Call instance of singleton of data to preload them
       CharacterData.instance
       LevelData.instance

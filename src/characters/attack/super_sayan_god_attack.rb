@@ -5,7 +5,7 @@ class SuperSayanGodAttack < AttackOption
     end
 
     def execute(launcher, opponent)
-      puts "#{launcher.name} transformed into Super Sayan God"
+      DebugLog.warning "#{launcher.name} transformed into Super Sayan God"
       launcher.awakenToSSRed()
     end
   end

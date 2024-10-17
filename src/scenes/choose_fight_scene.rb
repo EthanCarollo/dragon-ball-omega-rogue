@@ -28,7 +28,7 @@ class ChooseFightScene
         height: button_height,
         text: level.name
       ) do
-        puts "Level #{index + 1} selected: #{level}"
+        DebugLog.warning "Level #{index + 1} selected: #{level}"
         @window.change_scene(CombatScene.new(@window, Player.instance.character, level))
       end
 

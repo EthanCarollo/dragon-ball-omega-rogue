@@ -67,7 +67,7 @@ class RewardScene
   end
 
   def go_back
-    puts "reload rewards to anterior state"
+    DebugLog.warning "reload rewards to anterior state"
     @reward_caretaker.undo
     load_rewards
   end

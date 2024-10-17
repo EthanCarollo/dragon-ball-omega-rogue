@@ -13,6 +13,6 @@ class AttackOption
     end
 
     def execute(launcher, opponent)
-        puts "execute attack option"
+        DebugLog.warning "execute attack option"
     end
 end

@@ -9,7 +9,7 @@ class CharacterFactory
                                                                     char_data['stats']['intelligence'], 
                                                                     char_data['stats']['wisdom']))
         else 
-            puts "ERROR : #{char_data['type']} isn't a valid type in character_factory.rb"
+            DebugLog.warning "ERROR : #{char_data['type']} isn't a valid type in character_factory.rb"
             return
         end
 
@@ -24,7 +24,7 @@ class CharacterFactory
                                                             attack_data['min'], 
                                                             attack_data['max']))
             else
-                    puts "WARNING : attack type of #{attack_data["type"]} doesn't exist in character_factory.rb"
+                    DebugLog.warning "WARNING : attack type of #{attack_data["type"]} doesn't exist in character_factory.rb"
             end
         end
     

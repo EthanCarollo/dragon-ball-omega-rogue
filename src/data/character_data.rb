@@ -22,14 +22,14 @@ class CharacterData
         json_data = JSON.parse(file)
         @characters = json_data['data'].map do |char_data|
             char = CharacterFactory.create_character_from_json(char_data)
-            puts "SUCCESS : Successfully create character : #{char.id}"
+            DebugLog.warning "SUCCESS : Successfully create character : #{char.id}"
             char
         end
     rescue Errno::ENOENT
-        puts "Le fichier JSON n'a pas été trouvé."
+        DebugLog.warning "Le fichier JSON n'a pas été trouvé."
         @data = {}
     rescue JSON::ParserError => e
-        puts "Erreur de syntaxe dans le fichier JSON : #{e.message}"
+        DebugLog.warning "Erreur de syntaxe dans le fichier JSON : #{e.message}"
         @data = {}
     end
 end

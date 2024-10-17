@@ -64,7 +64,7 @@ class Character
     if attack
       attack.execute(self, opponent)
     else
-      puts "Attack not found!"
+      DebugLog.warning "Attack not found!"
     end
   end
 

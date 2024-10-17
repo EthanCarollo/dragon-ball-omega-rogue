@@ -83,7 +83,7 @@ class CreateCharacterScene
       return
     end
     character_name = @character_name_input.text
-    puts "Character created with name: #{character_name}"
+    DebugLog.warning "Character created with name: #{character_name}"
     head = @custom_character_component.head_part.current_part
     body = @custom_character_component.body_part.current_part
     player_character = nil

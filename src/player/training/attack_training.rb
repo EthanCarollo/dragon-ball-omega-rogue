@@ -6,7 +6,7 @@ class AttackTraining < Training
 
   def activate(player)
     super(player)  
-    puts "#{player.name} se transforme grâce à #{@name} !"
+    DebugLog.warning "#{player.name} se transforme grâce à #{@name} !"
     perform_special_action(player) 
   end
 

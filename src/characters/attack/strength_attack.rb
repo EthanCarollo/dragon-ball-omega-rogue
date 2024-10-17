@@ -4,6 +4,6 @@ class StrengthAttack < AttackOption
     intelligence_multiplier = 1 + (launcher.stats.strength * 0.1)
     damage = rand(@min_attack..@max_attack) * intelligence_multiplier
     opponent.hit(damage)
-    puts "#{launcher.name} used intelligence #{@name} on #{opponent.name} for #{damage} damage!"
+    DebugLog.warning "#{launcher.name} used intelligence #{@name} on #{opponent.name} for #{damage} damage!"
   end
 end

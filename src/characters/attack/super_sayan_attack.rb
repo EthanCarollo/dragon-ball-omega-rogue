@@ -5,7 +5,7 @@ class SuperSayanAttack < AttackOption
     end
 
     def execute(launcher, opponent)
-      puts "#{launcher.name} transformed into Super Sayan"
+      DebugLog.warning "#{launcher.name} transformed into Super Sayan"
       launcher.awakenToSSJ()
     end
   end

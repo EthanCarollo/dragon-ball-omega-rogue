@@ -18,7 +18,7 @@ class Player
   attr_accessor :name, :character, :round, :training_points, :trainings, :window, :race
 
   def setup(window, name, character, race)
-    puts("setup player...")
+    DebugLog.warning("setup player...")
     @window = window
     @trainings = TrainingManager::initialize_trainings
     @training_points = 10
@@ -34,7 +34,7 @@ class Player
 
   def add_training_points(points)
     @training_points += points
-    puts "#{points} points d'entraînement ajoutés. Total : #{@training_points}"
+    DebugLog.warning "#{points} points d'entraînement ajoutés. Total : #{@training_points}"
   end
 
   def have_training(training_name)
@@ -52,15 +52,15 @@ class Player
   def buy_training(training_name, window)
     training = @trainings.find { |t| t.name == training_name }
     if training.nil?
-      puts "Entraînement non trouvé."
+      DebugLog.warning "Entraînement non trouvé."
       return
     end
 
     if training.cost > @training_points
-      puts "Pas assez de points d'entraînement pour acheter #{training_name}."
+      DebugLog.warning "Pas assez de points d'entraînement pour acheter #{training_name}."
     else
       @training_points -= training.cost
-      puts "#{training_name} acheté ! Points restants : #{@training_points}"
+      DebugLog.warning "#{training_name} acheté ! Points restants : #{@training_points}"
       training.activate(self)
       @trainings.delete(training)
       window.event_manager.notify("Successfully trained #{training_name}")
