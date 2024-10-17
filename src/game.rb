@@ -70,8 +70,8 @@ require_relative 'scenes/game/stats_component'
 # In fact, the whole scene managing of the game is a sort of state machine lol, in some funny way
 # So that's making this game, a demonstration of the state pattern itself
 class Game < Gosu::Window
-    WIDTH = 1280
-    HEIGHT = 720
+    WIDTH = WINDOW_WIDTH
+    HEIGHT = WINDOW_HEIGHT
 
     attr_reader :event_manager
   
@@ -80,9 +80,10 @@ class Game < Gosu::Window
       self.caption = "Dragon Ball Omega Rogue"
 
       # Call instance of singleton of data to preload them
+      # Before the game is launching
+      CharacterPartData.instance
       CharacterData.instance
       LevelData.instance
-      CharacterPartData.instance
 
       # Initialize logics
       @current_scene = MenuScene.new(self)
@@ -96,7 +97,6 @@ class Game < Gosu::Window
     def update
       delta_time = Gosu::milliseconds / 1000.0
       @text_display.update(delta_time)
-
       @current_scene.update
     end
   
@@ -112,4 +112,4 @@ class Game < Gosu::Window
     def change_scene(scene)
       @current_scene = scene
     end
-  end
+end
