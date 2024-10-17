@@ -20,7 +20,7 @@ class TrainingComponent
 
         @training_points_text = @text_factory.create_default_text_with_background(
             x: start_x,
-            y: 50,  # Position above the buttons
+            y: 50, 
             width: button_width,
             height: 40,
             text: "Training Points: #{Player.instance.training_points}",
