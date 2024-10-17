@@ -13,6 +13,10 @@ class CharacterData
         load_json
     end
 
+    def refill_health_for_all_player
+        @characters.each { |character| character.heal(99999999999999) }
+    end
+
     def get_character(id)
         @characters.find { |character| character.id == id }
     end

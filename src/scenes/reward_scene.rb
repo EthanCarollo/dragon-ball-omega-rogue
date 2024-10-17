@@ -58,6 +58,9 @@ class RewardScene
       end
 
       @reward_buttons << button
+
+      # Heal every character health
+      CharacterData.instance.refill_health_for_all_player
     end
   end
 

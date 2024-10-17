@@ -96,6 +96,11 @@ class CreateCharacterScene
       race = PlayerRace.chilled
     end
 
+    if DEBUG_MODE == true
+      player_character.max_hp = 100000
+      player_character.hp = 100000
+    end
+
     player_character
       .add_head(head)
       .add_body(body)
