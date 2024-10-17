@@ -1,6 +1,6 @@
 require 'json'
 
-class CharacterData
+class LevelData
     @instance = nil
 
     def self.instance
@@ -13,17 +13,23 @@ class CharacterData
         load_json
     end
 
-    def get_character(id)
-        @characters.find { |character| character.id == id }
+    def get_level(name)
+        @level.find { |level| level.name == name }
     end
 
+
+    def get_levels_by_difficulty(difficulty)
+        @levels.select { |level| level.difficulty == difficulty }
+    end
+
+
     private def load_json
-        file = File.read('./data/character.json')
+        file = File.read('./data/levels.json')
         json_data = JSON.parse(file)
-        @characters = json_data['data'].map do |char_data|
-            char = CharacterFactory.create_character_from_json(char_data)
-            puts "SUCCESS : Successfully create character : #{char.id}"
-            char
+        @levels = json_data['data'].map do |level_data|
+            level = LevelFactory.create_level_from_json(level_data)
+            puts "SUCCESS : Successfully create level : #{level.name}"
+            level
         end
     rescue Errno::ENOENT
         puts "Le fichier JSON n'a pas été trouvé."

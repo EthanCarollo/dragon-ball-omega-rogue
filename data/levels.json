@@ -1,0 +1,43 @@
+{
+    "data": [
+      {
+        "id": "level_easy_1",
+        "title": "C17 & C18, crazy fight lol",
+        "description": "Just kill C17",
+        "difficulty": "easy",
+        "team": {
+          "name": "C17 & C18",
+          "members": ["c17_bis", "c18"]
+        },
+        "reward": "get_ssj_reward"
+      },
+      {
+        "id": "level_easy_2",
+        "title": "Hit's Training",
+        "description": "Face Hit during a training session",
+        "difficulty": "easy",
+        "character": "hit",
+        "reward": "get_small_training_reward"
+      },
+      {
+        "id": "level_medium_1",
+        "title": "Vegeta's Last Stand",
+        "description": "Defeat Vegeta in his final form",
+        "difficulty": "medium",
+        "team": {
+          "name": "Vegeta & Frieza",
+          "members": ["vegeta", "frieza"]
+        },
+        "reward": "get_final_flash_reward"
+      },
+      {
+        "id": "level_hard_1",
+        "title": "Battle of Gods",
+        "description": "Fight Beerus to save the universe",
+        "difficulty": "hard",
+        "character": "beerus",
+        "reward": "get_god_mode_reward"
+      }
+    ]
+  }
+  

@@ -1,33 +1,25 @@
 class LevelFactory
-    def self.get_easy_level
-        [
-          Level.new("C17 & C18, crazy fight lol", "Just kill C17", ZTeam.new("C17 & C18").add_member(CharacterFactory.createC17BisCharacter).add_member(CharacterFactory.createC18Character), RewardFactory.method(:get_ssj_reward).to_proc),
-          Level.new("Vegeta, king of dark grrr", "Just kill Vegeta", CharacterFactory.createVegetaCharacter, RewardFactory.method(:get_ssj_reward).to_proc),
-          Level.new("Dabra", "Dabra is not a good guy :'(", CharacterFactory.createDabraCharacter),
-          Level.new("Kaio", "Kaio is a good guy :'(", CharacterFactory.createKaioCharacter, RewardFactory.method(:get_ssj_reward).to_proc),
-        ]
-    end
+	def self.create_level_from_json(level_data)
+		if level_data.key?("team")
+			team = ZTeam.new(level_data["team"]["name"])
+			level_data["team"]["members"].each do |member_id|
+				character = CharacterData.instance.get_character(member_id)
+				team.add_member(character)
+			end
+			Level.new(level_data["title"], level_data["description"], team, level_data["difficulty"])
+		elsif level_data.key?("character")
+			character = CharacterData.instance.get_character(level_data['character'])
+			Level.new(level_data["title"], level_data["description"], character, level_data["difficulty"])
+		else
+			raise "Invalid level data: #{level_data}"
+		end
+	end
 
-    def self.get_medium_level
-        [
-          Level.new("KILL BUU PLZ", "Just kill Buu", CharacterFactory.createBuuCharacter),
-          Level.new("Frieza, weird white guy", "Just kill Frieza", CharacterFactory.createFriezaCharacter)
-        ]
-    end
-
-    def self.get_high_level
-        [
-          Level.new("Fock.. Zamasu", "Just kill Zamasu", CharacterFactory.createZamasuCharacter),
-          Level.new("Kill Hit", "Just kill Hit", CharacterFactory.createHitCharacter),
-          Level.new("Kill Beerus", "Just kill Beerus", CharacterFactory.createBeerusCharacter)
-        ]
-    end
-
-    def self.get_random_level
-        easy_level = get_easy_level.sample
-        easy_level2 = get_easy_level.reject { |level| level.name == easy_level.name }.sample
-        medium_level = get_medium_level.sample
-        high_level = get_high_level.sample
-        [easy_level, easy_level2, medium_level, high_level].shuffle
-    end
+	def self.get_random_level
+		easy_level = LevelData.instance.get_levels_by_difficulty("easy").sample
+		easy_level2 = LevelData.instance.get_levels_by_difficulty("easy").reject { |level| level.name == easy_level.name }.sample
+		medium_level = LevelData.instance.get_levels_by_difficulty("medium").sample
+		high_level = LevelData.instance.get_levels_by_difficulty("hard").sample
+		[easy_level, easy_level2, medium_level, high_level].shuffle
+	end
 end 

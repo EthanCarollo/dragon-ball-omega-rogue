@@ -19,7 +19,7 @@
       },
       {
         "id": "vegeta",
-        "type": "sayan",
+        "type": "normal",
         "name": "Vegeta",
         "full_body": "./assets/parts/full/chillvegeta.png",
         "stats": {
@@ -36,7 +36,7 @@
       },
       {
         "id": "frieza",
-        "type": "sayan",
+        "type": "normal",
         "name": "Frieza",
         "full_body": "./assets/parts/full/frieza.png",
         "stats": {

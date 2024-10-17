@@ -7,6 +7,7 @@ require_relative 'level/level_factory'
 
 require_relative 'data/character_part_data'
 require_relative 'data/character_data'
+require_relative 'data/level_data'
 
 require_relative 'ui/button'
 require_relative 'ui/training_button'
@@ -71,7 +72,11 @@ class Game < Gosu::Window
     def initialize
       super(WIDTH, HEIGHT)
       self.caption = "Dragon Ball Omega Rogue"
+      
+      # Call instance of singleton of data to preload them
       CharacterData.instance
+      LevelData.instance
+
       # Initialize logics
       @current_scene = MenuScene.new(self)
       # @current_scene = RewardScene.new(self, RewardFactory.method(:get_ssj_reward).to_proc)

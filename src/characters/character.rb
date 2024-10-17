@@ -1,13 +1,19 @@
 class Character
-  attr_accessor :name, :hp, :attack_options, :stats, :head, :body, :max_hp
+  attr_accessor :name, :hp, :attack_options, :stats, :head, :body, :max_hp, :id
 
   def initialize(name, hp = 100)
     @name = name
     @hp = hp
     @max_hp = hp
+    @id = nil
     @attack_options = []
     @head = nil
     @body = nil
+  end
+
+  def set_id(id)
+    @id = id
+    return self
   end
 
   def have_attack(attack_name)

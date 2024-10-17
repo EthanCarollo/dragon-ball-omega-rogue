@@ -28,7 +28,7 @@ class CharacterFactory
             end
         end
     
-        character
+        character.set_id(char_data["id"])
       end
 
     def self.createVegetaCharacter()
