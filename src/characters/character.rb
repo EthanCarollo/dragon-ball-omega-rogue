@@ -11,6 +11,10 @@ class Character
     @body = nil
   end
 
+  def update
+
+  end
+
   def set_id(id)
     @id = id
     return self
@@ -89,9 +93,8 @@ class Character
       @state.get_character_body.draw(x + desired_width, y, 1, scale_x - scale_x * 2, scale_y)
       @state.get_character_head.draw(x + desired_width, y, 1, scale_x - scale_x * 2, scale_y)
     end
-    if draw_health == true
-      draw_health_bar(x, y)
-    end
+    
+    draw_health_bar(x, y) if draw_health
   end
   
   def draw_health_bar(x, y)
