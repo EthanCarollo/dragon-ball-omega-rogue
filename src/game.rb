@@ -85,6 +85,7 @@ class Game < Gosu::Window
       CharacterPartData.instance
       CharacterData.instance
       LevelData.instance
+      DebugLog.disclaimer
       @debug_fps = DebugFPS.new()
 
       # Initialize logics

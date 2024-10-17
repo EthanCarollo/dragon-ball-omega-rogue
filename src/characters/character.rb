@@ -64,7 +64,7 @@ class Character
   end
 
   def hit(damage)
-    effective_damage = damage - armor
+    effective_damage = damage - @stats.armor
     effective_damage = [effective_damage, 0].max
     @hp -= effective_damage
   end 

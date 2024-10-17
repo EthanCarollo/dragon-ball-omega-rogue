@@ -10,12 +10,13 @@ class StatsComponent
     end
   
     def setup_stats
-      @stats = {
-        health: { value: @player.character.hp, max_value: @player.character.max_hp, label: "Health" },
-        strength: { value: 0, max_value: 150, label: "Strength" },
-        intelligence: { value: 4, max_value: 150, label: "Intelligence" },
-        wisdom: { value: 20, max_value: 150, label: "Wisdom" }
-      }
+          @stats = {
+            health: { value: @player.character.hp, max_value: @player.character.max_hp, label: "Health" },
+            strength: { value: 0, max_value: 150, label: "Strength" },
+            intelligence: { value: 4, max_value: 150, label: "Intelligence" },
+            wisdom: { value: 20, max_value: 150, label: "Wisdom" },
+            armor: { value: 20, max_value: 1000, label: "Armor" }
+          }
     end
   
     def draw_bar(stat, x, y)
@@ -33,6 +34,7 @@ class StatsComponent
       @stats[:strength][:value] = @player.character.stats.strength
       @stats[:intelligence][:value] = @player.character.stats.intelligence
       @stats[:wisdom][:value] = @player.character.stats.wisdom
+      @stats[:armor][:value] = @player.character.stats.armor
     end
   
     def draw

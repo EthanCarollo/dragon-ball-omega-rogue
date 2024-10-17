@@ -9,7 +9,8 @@
         "stats": {
           "strength": 5,
           "intelligence": 5,
-          "wisdom": 5
+          "wisdom": 5,
+          "armor": 8
         },
         "attack":[ {
           "type": "strength",
@@ -27,7 +28,8 @@
         "stats": {
           "strength": 8,
           "intelligence": 6,
-          "wisdom": 15
+          "wisdom": 15,
+          "armor": 5
         },
         "attack":[ {
           "type": "strength",
@@ -45,7 +47,8 @@
         "stats": {
           "strength": 54,
           "intelligence": 24,
-          "wisdom": 19
+          "wisdom": 19,
+          "armor": 25
         },
         "attack":[ {
           "type": "strength",
@@ -63,7 +66,8 @@
         "stats": {
           "strength": 30,
           "intelligence": 50,
-          "wisdom": 19
+          "wisdom": 19,
+          "armor": 1
         },
         "attack":[ {
           "type": "strength",
@@ -81,7 +85,8 @@
         "stats": {
           "strength": 2,
           "intelligence": 1,
-          "wisdom": 4
+          "wisdom": 4,
+          "armor": 5
         },
         "attack":[ {
           "type": "strength",
@@ -99,7 +104,8 @@
         "stats": {
           "strength": 2,
           "intelligence": 42,
-          "wisdom": 21
+          "wisdom": 21,
+          "armor": 70
         },
         "attack":[ {
           "type": "strength",
@@ -117,7 +123,8 @@
         "stats": {
           "strength": 225,
           "intelligence": 542,
-          "wisdom": 421
+          "wisdom": 421,
+          "armor": 9
         },
         "attack":[ {
           "type": "strength",
@@ -135,7 +142,8 @@
         "stats": {
           "strength": 2,
           "intelligence": 5,
-          "wisdom": 4
+          "wisdom": 4,
+          "armor": 50
         },
         "attack":[ {
           "type": "strength",
@@ -153,7 +161,8 @@
         "stats": {
           "strength": 8,
           "intelligence": 3,
-          "wisdom": 4
+          "wisdom": 4,
+          "armor": 8
         },
         "attack":[ {
           "type": "strength",
@@ -171,7 +180,8 @@
         "stats": {
           "strength": 250,
           "intelligence": 230,
-          "wisdom": 219
+          "wisdom": 219,
+          "armor": 155
         },
         "attack":[ {
           "type": "strength",
@@ -189,7 +199,8 @@
         "stats": {
           "strength": 98,
           "intelligence": 130,
-          "wisdom": 19
+          "wisdom": 19,
+          "armor": 19
         },
         "attack":[ {
           "type": "strength",
@@ -204,9 +215,10 @@
         "name": "Krillin",
         "full_body": "./assets/parts/full/krillin.png",
         "stats": {
-          "strength": 45,
-          "intelligence": 90,
-          "wisdom": 75
+          "strength": 1,
+          "intelligence": 2,
+          "wisdom": 75,
+          "armor": 3
         },
         "attack": [
           {
@@ -226,7 +238,8 @@
         "stats": {
           "strength": 75,
           "intelligence": 110,
-          "wisdom": 85
+          "wisdom": 85,
+          "armor": 4
         },
         "attack": [
           {
@@ -246,7 +259,8 @@
         "stats": {
           "strength": 80,
           "intelligence": 70,
-          "wisdom": 50
+          "wisdom": 50,
+          "armor": 90
         },
         "attack": [
           {
@@ -266,7 +280,8 @@
         "stats": {
           "strength": 70,
           "intelligence": 60,
-          "wisdom": 90
+          "wisdom": 90,
+          "armor": 179
         },
         "attack": [
           {
@@ -286,7 +301,8 @@
         "stats": {
           "strength": 100,
           "intelligence": 50,
-          "wisdom": 40
+          "wisdom": 40,
+          "armor": 189
         },
         "attack": [
           {
@@ -306,7 +322,8 @@
         "stats": {
           "strength": 120,
           "intelligence": 30,
-          "wisdom": 60
+          "wisdom": 60,
+          "armor": 190
         },
         "attack": [
           {
@@ -326,7 +343,8 @@
         "stats": {
           "strength": 110,
           "intelligence": 40,
-          "wisdom": 30
+          "wisdom": 30,
+          "armor": 199
         },
         "attack": [
           {
@@ -346,7 +364,8 @@
         "stats": {
           "strength": 60,
           "intelligence": 85,
-          "wisdom": 55
+          "wisdom": 55,
+          "armor": 39
         },
         "attack": [
           {
@@ -366,7 +385,8 @@
         "stats": {
           "strength": 75,
           "intelligence": 95,
-          "wisdom": 75
+          "wisdom": 75,
+          "armor": 400
         },
         "attack": [
           {
@@ -386,7 +406,8 @@
         "stats": {
           "strength": 135,
           "intelligence": 140,
-          "wisdom": 130
+          "wisdom": 130,
+          "armor": 850
         },
         "attack": [
           {

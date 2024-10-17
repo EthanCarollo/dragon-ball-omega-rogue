@@ -68,6 +68,11 @@ class ChooseFightScene
     character_size = 450
     Player.instance.character.draw_at(10, @window.height / 2 - character_size / 2 + 50, false, false, character_size)
 
+    # TODO ----------
+    # This logics works well, the only problem is that it is really not cpu efficient, it takes a lot of
+    # memory for weird reason and cpu cannot follow it, so I will need to make it more efficient
+    # if I want to make this game really playable
+    # TODO ----------
     if @hovered_level
         opponent = @hovered_level.opponent
       
@@ -87,12 +92,11 @@ class ChooseFightScene
         name_rect_width = name_width + rect_padding * 2
         name_rect_height = name_font.height + rect_padding * 2
         Gosu.draw_rect(name_rect_x, name_rect_y, name_rect_width, name_rect_height, Gosu::Color.new(200, 0, 0, 0), 0)
-      
         name_font.draw_text(name_text, name_x, name_y, 1, 1, 1, Gosu::Color::WHITE)
-      
         stats_text = "Intelligence: #{opponent.stats.intelligence}\n" \
                      "Strength: #{opponent.stats.strength}\n" \
                      "Wisdom: #{opponent.stats.wisdom}\n" \
+                     "Armor: #{opponent.stats.armor}\n" \
                      "HP: #{opponent.hp}"
       
         stats_x_right = opponent_x + character_size - 20  

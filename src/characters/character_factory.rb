@@ -18,7 +18,8 @@ class CharacterFactory
                                     .add_body(Part.new(char_data['full_body']))
                                     .add_stats(CharacterStats.new(char_data['stats']['strength'], 
                                                                     char_data['stats']['intelligence'], 
-                                                                    char_data['stats']['wisdom']))
+                                                                    char_data['stats']['wisdom'],
+                                                                    char_data['stats']['armor']))
         else 
             DebugLog.warning "ERROR : #{char_data['type']} isn't a valid type in character_factory.rb"
             return
