@@ -1,22 +1,192 @@
 {
-    "data" : [
-        {
-            "type": "normal",
-            "name": "C17",
-            "full_body": "./assets/parts/full/c17.png",
-            "stats": {
-                "strength": 5,
-                "intelligence": 5,
-                "wisdom": 5
-            },
-            "attack": [
-                {
-                    "type": "strength",
-                    "name": "Kamehameha",
-                    "min": 5,
-                    "max": 15
-                }
-            ]
-        }
+    "data": [
+      {
+        "id": "c17",
+        "type": "normal",
+        "name": "C17",
+        "full_body": "./assets/parts/full/c17.png",
+        "stats": {
+          "strength": 5,
+          "intelligence": 5,
+          "wisdom": 5
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Kamehameha",
+          "min": 5,
+          "max": 15
+        }]
+      },
+      {
+        "id": "vegeta",
+        "type": "sayan",
+        "name": "Vegeta",
+        "full_body": "./assets/parts/full/chillvegeta.png",
+        "stats": {
+          "strength": 8,
+          "intelligence": 6,
+          "wisdom": 15
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Fulguro Fist",
+          "min": 14,
+          "max": 15
+        }]
+      },
+      {
+        "id": "frieza",
+        "type": "sayan",
+        "name": "Frieza",
+        "full_body": "./assets/parts/full/frieza.png",
+        "stats": {
+          "strength": 54,
+          "intelligence": 24,
+          "wisdom": 19
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Fulguro Fist",
+          "min": 14,
+          "max": 15
+        }]
+      },
+      {
+        "id": "buu",
+        "type": "normal",
+        "name": "Buu",
+        "full_body": "./assets/parts/full/buu.png",
+        "stats": {
+          "strength": 30,
+          "intelligence": 50,
+          "wisdom": 19
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Kameha",
+          "min": 40,
+          "max": 90
+        }]
+      },
+      {
+        "id": "kaio",
+        "type": "normal",
+        "name": "Kaio",
+        "full_body": "./assets/parts/full/kaio.png",
+        "stats": {
+          "strength": 2,
+          "intelligence": 1,
+          "wisdom": 4
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Finger Stip",
+          "min": 3,
+          "max": 5
+        }]
+      },
+      {
+        "id": "dabra",
+        "type": "normal",
+        "name": "Dabra",
+        "full_body": "./assets/parts/full/dabra.png",
+        "stats": {
+          "strength": 2,
+          "intelligence": 42,
+          "wisdom": 21
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Transform in Stone",
+          "min": 3,
+          "max": 40
+        }]
+      },
+      {
+        "id": "hit",
+        "type": "normal",
+        "name": "Hit",
+        "full_body": "./assets/parts/full/hit.png",
+        "stats": {
+          "strength": 225,
+          "intelligence": 542,
+          "wisdom": 421
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Kameha",
+          "min": 300,
+          "max": 389
+        }]
+      },
+      {
+        "id": "c17_bis",
+        "type": "normal",
+        "name": "C17",
+        "full_body": "./assets/parts/full/c17-bis.png",
+        "stats": {
+          "strength": 2,
+          "intelligence": 5,
+          "wisdom": 4
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Kameha",
+          "min": 3,
+          "max": 24
+        }]
+      },
+      {
+        "id": "c18",
+        "type": "normal",
+        "name": "C18",
+        "full_body": "./assets/parts/full/c18.png",
+        "stats": {
+          "strength": 8,
+          "intelligence": 3,
+          "wisdom": 4
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Kameha",
+          "min": 7,
+          "max": 15
+        }]
+      },
+      {
+        "id": "beerus",
+        "type": "normal",
+        "name": "Beerus",
+        "full_body": "./assets/parts/full/beerus.png",
+        "stats": {
+          "strength": 250,
+          "intelligence": 230,
+          "wisdom": 219
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Kameha",
+          "min": 830,
+          "max": 1300
+        }]
+      },
+      {
+        "id": "zamasu",
+        "type": "normal",
+        "name": "Zamasu",
+        "full_body": "./assets/parts/full/zamasu.png",
+        "stats": {
+          "strength": 98,
+          "intelligence": 130,
+          "wisdom": 19
+        },
+        "attack":[ {
+          "type": "strength",
+          "name": "Kameha",
+          "min": 80,
+          "max": 300
+        }]
+      }
     ]
-}
+  }
+  
