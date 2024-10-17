@@ -23,8 +23,9 @@ class DebugLog
     def self.log(message, level)
         timestamp = Time.now.strftime("%Y-%m-%d %H:%M:%S")
     
-        puts "#{COLORS[level]}[#{timestamp}] #{message}#{COLORS[:reset]}"
-      
+        if DEBUG_MODE == true
+            puts "#{COLORS[level]}[#{timestamp}] #{message}#{COLORS[:reset]}"
+        end
     end
   end
   

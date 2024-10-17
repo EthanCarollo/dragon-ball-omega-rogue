@@ -102,7 +102,12 @@ class CreateCharacterScene
       .add_stats(CharacterStats.new(10, 10, 10))
       .add_attack(StrengthAttack.new("Fulguro Fist", 14, 15, "./assets/ability/release_v1.2-single_17.png"))
       .add_attack(IntelligenceAttack.new("Kikoha", 8, 24, "./assets/ability/release_v1.2-single_6.png"))
-      .add_attack(IntelligenceAttack.new("Masenko", 3, 30, "./assets/ability/release_v1.2-single_10.png"))
+    if DEBUG_MODE == true
+      player_character
+        .add_attack(IntelligenceAttack.new("JUST KILL", 60000, 30000000, "./assets/ability/release_v1.2-single_10.png"))
+        .add_attack(SuperSayanGodAttack.new())
+        .add_attack(SuperSayanAttack.new())
+    end
     Player.instance.setup(@window, character_name, player_character, race)
     @character_name_input.active = false
     @window.change_scene(GameScene.new(@window))

@@ -19,10 +19,9 @@ class SayanCharacter < Character
 		desired_height = desired_size
 		if aura_image != nil 
 			scale = (desired_width.to_f+120) / aura_image.width
-			puts scale
 			aura_x = x
 			aura_y = y
-			aura_image.draw(aura_x - 60, aura_y - 130, 0, scale, scale)
+			aura_image.draw(aura_x - 60, aura_y - 125, 0, scale, scale)
 		end
 	end
 

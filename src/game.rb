@@ -1,5 +1,7 @@
 require 'gosu'
 
+require_relative 'config.rb'
+
 require_relative 'debug/debug_log'
 
 require_relative 'events/event_manager'
