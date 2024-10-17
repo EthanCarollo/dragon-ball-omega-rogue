@@ -236,6 +236,33 @@
           { "decor": [{"name": "senzu"}, {"name": "spirit_sword_reward"}] },
           { "decor": [{"name": "senzu"}, {"name": "supernova_reward"}] }
         ]
+      },
+      {
+        "id": "level_hard_2_122",
+        "title": "Final Baby Black Vegito",
+        "description": "Defeat Baby Black Vegito.",
+        "difficulty": "hard",
+        "character": "baby_black_vegito",
+        "reward": [
+          { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] }
+        ]
+      },
+      {
+        "id": "level_hard_2_132",
+        "title": "Ultra Final Baby Black Vegito",
+        "description": "Defeat Baby Black Vegito.",
+        "difficulty": "hard",
+        "team": {
+          "name": "Baby Black Vegito",
+          "members": ["baby_black_vegito", "baby_black_vegito"]
+        },
+        "reward": [
+          { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] }
+        ]
       }
     ]
   }

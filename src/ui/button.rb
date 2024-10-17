@@ -16,18 +16,18 @@ class Button
     @is_hovered = false
   end
 
-  def draw
-    @is_hovered = hovering?
+    def draw
+        @is_hovered = hovering?
 
-    current_color = @is_hovered ? @hover_color : @background_color
+        current_color = @is_hovered ? @hover_color : @background_color
 
-    Gosu.draw_rect(@x, @y, @width, @height, current_color)
+        Gosu.draw_rect(@x, @y, @width, @height, current_color)
 
-    text_x = @x + (@width - @font.text_width(@text)) / 2
-    text_y = @y + (@height - @font.height) / 2
+        text_x = @x + (@width - @font.text_width(@text)) / 2
+        text_y = @y + (@height - @font.height) / 2
 
-    @font.draw_text(@text, text_x, text_y, 1, 1.0, 1.0, @text_color)
-  end
+        @font.draw_text(@text, text_x, text_y, 1, 1.0, 1.0, @text_color)
+    end
 
   def clicked?(mouse_x, mouse_y)
     mouse_x > @x && mouse_x < @x + @width && mouse_y > @y && mouse_y < @y + @height

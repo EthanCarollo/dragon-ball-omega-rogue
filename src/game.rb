@@ -7,6 +7,8 @@ require_relative 'events/event_manager'
 require_relative 'level/level'
 require_relative 'level/level_factory'
 
+require_relative 'utils/text_utils'
+
 require_relative 'data/character_part_data'
 require_relative 'data/character_data'
 require_relative 'data/level_data'

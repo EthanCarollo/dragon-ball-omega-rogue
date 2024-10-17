@@ -45,6 +45,16 @@ class Character
   end
 
   def add_attack(attack_option)
+	if have_attack(attack_option.name) == true
+		begin
+			DebugLog.warning("Try to add #{attack_option.name} to #{self.name} but can't cause attack already exists in the character.")
+			Player.instance.event_manager.notify("Try to add #{attack_option.name} to #{self.name} but can't cause attack already exists in the character.")
+			return self
+		rescue StandardError => e
+			DebugLog.error("Error in add attack not handled #{e}")
+			return self
+		end
+	end
     @attack_options << attack_option
     return self
   end

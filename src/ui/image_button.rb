@@ -30,8 +30,12 @@ class ImageButton < Button
         description_color = Gosu::Color.new(128, 255, 255, 255)
         description_x = @x + 10 
         description_y = @y + @height + 5 
-        @window.draw_rect(description_x - 5, description_y - 5, @font.text_width(@description) + 10, @font.height + 10, description_color, 0)
-        @font.draw_text(@description, description_x, description_y, 1, 1, 1, Gosu::Color::BLACK)
+        wrapped_description = TextUtils.wrap_text(@font, @description, 300)
+        total_description_height = wrapped_description.size * @font.height
+        @window.draw_rect(description_x - 5, description_y - 5, 310, total_description_height + 10, description_color, 0)
+        wrapped_description.each_with_index do |line, index|
+          @font.draw_text(line, description_x, description_y + index * @font.height, 1, 1, 1, Gosu::Color::BLACK)
+        end
       end
     end
   end

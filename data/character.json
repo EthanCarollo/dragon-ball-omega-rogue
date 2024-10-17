@@ -376,6 +376,26 @@
             "max": 110
           }
         ]
+      },
+      {
+        "id": "baby_black_vegito",
+        "hp": 9999,
+        "type": "normal",
+        "name": "Baby Black Vegito",
+        "full_body": "./assets/parts/full/babyblackvegito.png",
+        "stats": {
+          "strength": 135,
+          "intelligence": 140,
+          "wisdom": 130
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Death Ball",
+            "min": 450,
+            "max": 550
+          }
+        ]
       }
     ]
   }
