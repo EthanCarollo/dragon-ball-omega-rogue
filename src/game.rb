@@ -3,6 +3,7 @@ require 'gosu'
 require_relative 'config.rb'
 
 require_relative 'debug/debug_log'
+require_relative 'debug/debug_fps'
 
 require_relative 'events/event_manager'
 
@@ -84,6 +85,7 @@ class Game < Gosu::Window
       CharacterPartData.instance
       CharacterData.instance
       LevelData.instance
+      @debug_fps = DebugFPS.new()
 
       # Initialize logics
       @current_scene = MenuScene.new(self)
@@ -103,6 +105,7 @@ class Game < Gosu::Window
     def draw
       @current_scene.draw
       @text_display.draw
+      @debug_fps.draw
     end
   
     def button_down(id)
