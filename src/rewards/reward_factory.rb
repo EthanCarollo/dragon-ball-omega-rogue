@@ -60,8 +60,16 @@ class RewardFactory
             return StrengthReward.new(reward, decorator["amount"])
         elsif decorator["name"] == "intelligence"
             return IntelligenceReward.new(reward, decorator["amount"])
+        elsif decorator["name"] == "training_point"
+            return TrainingPointReward.new(reward, decorator["amount"])
         elsif decorator["name"] == "ssj_reward"
             return TrainingReward.new(reward, AttackTraining.new("Entraînement Super Saiyan", 12, SuperSayanAttack.new()))
+        elsif decorator["name"] == "ssjgod_reward"
+            return TrainingReward.new(reward, AttackTraining.new("Entraînement Super Saiyan God", 30, SuperSayanGodAttack.new()))
+        elsif decorator["name"] == "kamehameha_reward"
+            return TrainingReward.new(reward, AttackTraining.new("Entraînement Kamehameha", 6, StrengthAttack.new("Kamehameha", 40, 60)))
+        elsif decorator["name"] == "garic_cannon_reward"
+            return TrainingReward.new(reward, AttackTraining.new("Entraînement Garric Cannon", 6, IntelligenceAttack.new("Garric Cannon", 40, 60)))
         else
             DebugLog.error("Decorator doesn't exist for : #{decorator}")
             return reward
@@ -77,7 +85,7 @@ class RewardFactory
                 returned_reward
             }
             DebugLog.info("SUCCESS : Successfully created rewards : #{name}")
-            return all_rewards
+            return all_rewards.sample(3)
         rescue
             DebugLog.error("ERROR : Error with creating reward with : #{name}")
             RewardFactory.get_random_reward

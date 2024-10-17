@@ -132,10 +132,13 @@
         "character": "cell1st",
         "reward": [
           { "decor": [{"name": "strength", "amount": 5}, {"name": "senzu"}] },
-          { "decor": [{"name": "strength", "amount": 5}, {"name": "senzu"}] },
-          { "decor": [{"name": "intelligence", "amount": 5}, {"name": "senzu"}] },
-          { "decor": [{"name": "strength", "amount": 5}, {"name": "senzu"}] },
-          { "decor": [{"name": "ssj_reward"}, {"name": "senzu"}] }
+          { "decor": [{"name": "strength", "amount": 2}, {"name": "senzu"}, {"name": "training_point", "amount": 24}] },
+          { "decor": [{"name": "intelligence", "amount": 9}, {"name": "senzu"}] },
+          { "decor": [{"name": "strength", "amount": 15}, {"name": "senzu"}] },
+          { "decor": [{"name": "ssj_reward"}, {"name": "senzu"}, {"name": "training_point", "amount": 24}] },
+          { "decor": [{"name": "ssjgod_reward"}, {"name": "senzu"}] },
+          { "decor": [{"name": "kamehameha_reward"}, {"name": "senzu"}] },
+          { "decor": [{"name": "garic_cannon_reward"}, {"name": "senzu"}] }
         ]
       }
     ]
