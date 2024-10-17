@@ -2,6 +2,7 @@
     "data": [
       {
         "id": "c17",
+        "hp": 40,
         "type": "normal",
         "name": "C17",
         "full_body": "./assets/parts/full/c17.png",
@@ -19,6 +20,7 @@
       },
       {
         "id": "vegeta",
+        "hp": 130,
         "type": "normal",
         "name": "Vegeta",
         "full_body": "./assets/parts/full/chillvegeta.png",
@@ -36,6 +38,7 @@
       },
       {
         "id": "frieza",
+        "hp": 230,
         "type": "normal",
         "name": "Frieza",
         "full_body": "./assets/parts/full/frieza.png",
@@ -53,6 +56,7 @@
       },
       {
         "id": "buu",
+        "hp": 450,
         "type": "normal",
         "name": "Buu",
         "full_body": "./assets/parts/full/buu.png",
@@ -70,6 +74,7 @@
       },
       {
         "id": "kaio",
+        "hp": 58,
         "type": "normal",
         "name": "Kaio",
         "full_body": "./assets/parts/full/kaio.png",
@@ -87,6 +92,7 @@
       },
       {
         "id": "dabra",
+        "hp": 178,
         "type": "normal",
         "name": "Dabra",
         "full_body": "./assets/parts/full/dabra.png",
@@ -104,6 +110,7 @@
       },
       {
         "id": "hit",
+        "hp": 890,
         "type": "normal",
         "name": "Hit",
         "full_body": "./assets/parts/full/hit.png",
@@ -121,6 +128,7 @@
       },
       {
         "id": "c17_bis",
+        "hp": 234,
         "type": "normal",
         "name": "C17",
         "full_body": "./assets/parts/full/c17-bis.png",
@@ -138,6 +146,7 @@
       },
       {
         "id": "c18",
+        "hp": 230,
         "type": "normal",
         "name": "C18",
         "full_body": "./assets/parts/full/c18.png",
@@ -155,6 +164,7 @@
       },
       {
         "id": "beerus",
+        "hp": 1800,
         "type": "normal",
         "name": "Beerus",
         "full_body": "./assets/parts/full/beerus.png",
@@ -172,6 +182,7 @@
       },
       {
         "id": "zamasu",
+        "hp": 400,
         "type": "normal",
         "name": "Zamasu",
         "full_body": "./assets/parts/full/zamasu.png",
@@ -188,6 +199,7 @@
         }]
       },{
         "id": "krillin",
+        "hp": 24,
         "type": "normal",
         "name": "Krillin",
         "full_body": "./assets/parts/full/krillin.png",
@@ -207,6 +219,7 @@
       },
       {
         "id": "picolo",
+        "hp": 98,
         "type": "normal",
         "name": "Piccolo",
         "full_body": "./assets/parts/full/picolo.png",
@@ -226,6 +239,7 @@
       },
       {
         "id": "thales",
+        "hp": 800,
         "type": "normal",
         "name": "Thales",
         "full_body": "./assets/parts/full/thales.png",
@@ -245,6 +259,7 @@
       },
       {
         "id": "sushinron",
+        "hp": 1200,
         "type": "normal",
         "name": "Sushinron",
         "full_body": "./assets/parts/full/sushinron.png",
@@ -264,6 +279,7 @@
       },
       {
         "id": "buuhan",
+        "hp": 1100,
         "type": "normal",
         "name": "Buuhan",
         "full_body": "./assets/parts/full/buuhan.png",
@@ -283,6 +299,7 @@
       },
       {
         "id": "broly_ssj",
+        "hp": 2400,
         "type": "normal",
         "name": "Broly (SSJ)",
         "full_body": "./assets/parts/full/broly_ssj.png",
@@ -302,6 +319,7 @@
       },
       {
         "id": "gotenksssj3",
+        "hp": 1300,
         "type": "normal",
         "name": "Gotenks (SSJ3)",
         "full_body": "./assets/parts/full/gotenksssj3.png",
@@ -320,121 +338,8 @@
         ]
       },
       {
-        "id": "krillin",
-        "type": "normal",
-        "name": "Krillin",
-        "full_body": "./assets/parts/full/krillin.png",
-        "stats": {
-          "strength": 30,
-          "intelligence": 80,
-          "wisdom": 70
-        },
-        "attack": [
-          {
-            "type": "strength",
-            "name": "Destructo Disk",
-            "min": 20,
-            "max": 60
-          }
-        ]
-      },
-      {
-        "id": "picolo",
-        "type": "normal",
-        "name": "Piccolo",
-        "full_body": "./assets/parts/full/picolo.png",
-        "stats": {
-          "strength": 50,
-          "intelligence": 90,
-          "wisdom": 80
-        },
-        "attack": [
-          {
-            "type": "strength",
-            "name": "Special Beam Cannon",
-            "min": 30,
-            "max": 100
-          }
-        ]
-      },
-      {
-        "id": "thales",
-        "type": "normal",
-        "name": "Thales",
-        "full_body": "./assets/parts/full/thales.png",
-        "stats": {
-          "strength": 60,
-          "intelligence": 70,
-          "wisdom": 50
-        },
-        "attack": [
-          {
-            "type": "strength",
-            "name": "Energy Blast",
-            "min": 25,
-            "max": 80
-          }
-        ]
-      },
-      {
-        "id": "sushinron",
-        "type": "normal",
-        "name": "Sushinron",
-        "full_body": "./assets/parts/full/sushinron.png",
-        "stats": {
-          "strength": 40,
-          "intelligence": 60,
-          "wisdom": 65
-        },
-        "attack": [
-          {
-            "type": "strength",
-            "name": "Dragon Roar",
-            "min": 20,
-            "max": 70
-          }
-        ]
-      },
-      {
-        "id": "buuhan",
-        "type": "normal",
-        "name": "Buuhan",
-        "full_body": "./assets/parts/full/buuhan.png",
-        "stats": {
-          "strength": 70,
-          "intelligence": 40,
-          "wisdom": 50
-        },
-        "attack": [
-          {
-            "type": "strength",
-            "name": "Majin Blast",
-            "min": 40,
-            "max": 120
-          }
-        ]
-      },
-      {
-        "id": "broly_ssj",
-        "type": "normal",
-        "name": "Broly (SSJ)",
-        "full_body": "./assets/parts/full/broly_ssj.png",
-        "stats": {
-          "strength": 80,
-          "intelligence": 30,
-          "wisdom": 40
-        },
-        "attack": [
-          {
-            "type": "strength",
-            "name": "Rage Blast",
-            "min": 50,
-            "max": 150
-          }
-        ]
-      },
-      {
         "id": "cell1st",
+        "hp": 140,
         "type": "normal",
         "name": "Cell (1st Form)",
         "full_body": "./assets/parts/full/cell1st.png",
@@ -454,6 +359,7 @@
       },
       {
         "id": "gohan_ultime",
+        "hp": 1400,
         "type": "normal",
         "name": "Gohan (Ultimate)",
         "full_body": "./assets/parts/full/gohan_ultime.png",
@@ -468,25 +374,6 @@
             "name": "Masenko",
             "min": 45,
             "max": 110
-          }
-        ]
-      },
-      {
-        "id": "gotenksssj3",
-        "type": "normal",
-        "name": "Gotenks (SSJ3)",
-        "full_body": "./assets/parts/full/gotenksssj3.png",
-        "stats": {
-          "strength": 90,
-          "intelligence": 40,
-          "wisdom": 30
-        },
-        "attack": [
-          {
-            "type": "strength",
-            "name": "Super Ghost Kamikaze Attack",
-            "min": 55,
-            "max": 140
           }
         ]
       }
