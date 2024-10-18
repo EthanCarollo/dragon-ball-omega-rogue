@@ -5,6 +5,7 @@
     "preview": "compiiile preview"
   },
   "dependencies": {
-    "@compiiile/compiiile": "^2.14.3"
+    "@compiiile/compiiile": "^2.14.3",
+    "@compiiile/compiiile-pro": "^1.1.8"
   }
 }

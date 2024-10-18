@@ -17,6 +17,7 @@ Créer un jeu vidéo sur le thème de Dragon Ball en utilisant des designs patte
 
 ## De quoi on va parler
 
+0. Le jeu
 1. Le systeme de scene (State Pattern)
 
 2. Le choix de personnage (Builder Pattern)
@@ -27,6 +28,27 @@ Créer un jeu vidéo sur le thème de Dragon Ball en utilisant des designs patte
 7. Debug Log (Facade Pattern)
 
 <Alert message="Ceci est un message important!" />
+
+---
+
+## 0. Le jeu
+
+---
+
+### 0.1 - Ruby, Gosu
+
+> Ruby est un langage de programmation orienté objet simple et efficace, sa syntaxe claire permet d'augmenter la productivité des développeurs.
+
+![roby gosu image |40%](assets/ruby_gosu.png)
+
+> Gosu est une bibliothèque 2D pour créer des jeux vidéo simples et interactifs en Ruby.
+
+---
+
+### 0.2 - Un rogue like simple
+
+> Ma boucle de jeu se concentre sur la création de personnage, entrainement, combat, et récompenses.
+
 
 ---
 
@@ -108,12 +130,15 @@ end
 
 ```ruby
 player_character
-      .set_head(head)
-      .set_body(body)
-      .set_stats(CharacterStats.new(...))
-      .add_attack(Attack.new("Fulguro Fist", ...))
-      .add_attack(Attack.new("Kikoha", ...))
+    .set_head(head)
+    .set_body(body)
+    .set_stats(CharacterStats.new(...))
+    .add_attack(Attack.new("Fulguro Fist", ...))
+    .add_attack(Attack.new("Kikoha", ...))
 ```
+
+    
+
 ---
 
 ### 2.2 Le build du personnage
@@ -192,7 +217,7 @@ end
 
 ### 3.3 Pourquoi c'est nécessaire ?
 
-> Pour faciliter l'ajout de nouveau niveau, j'ai choisi d'opter pour une structure data driven, et ça commence par la création de personnages et de niveaux.
+> Pour faciliter l'ajout de nouveaux niveaux, j'ai choisi d'opter pour une structure data driven, et ça commence par la création de personnages et de niveaux.
 
 ```json
 // Exemple de création de personnage
@@ -256,7 +281,14 @@ end
 
 ### 4.2 - Les équipes ✨
 
-> Il est possible de se battre contre une équipe de character ! Le Composite Pattern nous permet, d'une facon élégante, de créer un Character (Z-Team) composé d'autres Character, magnifique !
+
+<div class="flex" style="gap:4vw">
+
+<div style="width: 40%;">
+
+> Le composite pattern me permet dans ce cas précis de créer des équipes de character sans avoir à repenser à toute ma logique de combat. ✨
+
+</div>
 
 ```ruby
 class Character
@@ -304,6 +336,23 @@ class ZTeam < Character
 end  
 ```
 
+</div>
+
+---
+
+### 4.2 - Les équipes ✨
+
+> Ce qui peut donner naissance à des combats de ce genre 
+
+<div class="flex">
+
+![vegeta_frieza team fight | 90%](assets/vegeta_frieza.png)
+
+![vegeta_frieza team fight | 90%](assets/hit_zam_beerus.png)
+
+</div>
+
+
 ---
 
 ### 4.3 - La transformation en SSJ
@@ -341,9 +390,13 @@ end
 
 ### 5.1 - Décoration des récompenses
 
----
-
-
+```ruby
+reward_instance = Reward.new()
+reward_instance = IntelligenceReward.new(reward_instance, amount)
+reward_instance = StrengthReward.new(reward_instance, amount)
+reward_instance = TrainingReward.new(reward_instance, AttackTraining.new("Canon Garic" ...))
+reward_instance = TrainingReward.new(reward_instance, AttackTraining.new("Genkidama" ...))
+```
 
 ---
 
@@ -472,6 +525,22 @@ class DebugLog
 ---
 
 ## Conclusion
+
+---
+
+### Les Design Pattern non adaptés aux jeux vidéos
+
+<br>
+
+#### Le Singleton Abusif
+
+> Abusé du Singleton peut amené à un code moins rigide et un surplus de dépendances.
+
+<br>
+
+#### Le Pattern de l'observer
+
+> Bien qu'utile pour un système de notifications par exemples, le pattern de l'observer peut mené à des surcouts en performance.
 
 ---
 
