@@ -1,6 +1,6 @@
-class LevelFactory
+class LevelDirector
 	def self.create_level_from_json(level_data)
-		RewardFactory.get_reward(level_data["reward"], level_data["title"])
+		RewardDirector.get_reward(level_data["reward"], level_data["title"])
 		if level_data.key?("team")
 			team = ZTeam.new(level_data["team"]["name"])
 			level_data["team"]["members"].each do |member_id|

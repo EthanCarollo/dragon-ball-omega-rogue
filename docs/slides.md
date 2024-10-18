@@ -139,17 +139,29 @@ end
 > Exemple d'utilisation du build de mon personnage
 
 ```ruby
-player_character
-    .set_head(head)
-    .set_body(body)
-    .set_stats(CharacterStats.new(...))
-    .add_attack(Attack.new("Fulguro Fist", ...))
-    .add_attack(Attack.new("Kikoha", ...))
+class CharacterDirector
+    def self.create_character_from_json(char_data)
+        ...
+        character = NormalCharacter.new(char_data['name'], char_hp)
+                        .add_head(Part.new(char_data['full_body']))
+                        .add_body(Part.new(char_data['full_body']))
+                        .add_stats(CharacterStats.new(char_data['stats']['strength'], 
+                                                        char_data['stats']['intelligence'], 
+                                                        char_data['stats']['wisdom'],
+                                                        char_data['stats']['armor']))
+        char_data['attack'].each do |attack_data|
+            if attack_data['type'] == 'strength'
+                character.add_attack(StrengthAttack.new(attack_data['name'], 
+                                                        attack_data['min'], 
+                                                        attack_data['max']))
+            ...
+        end
+        ...
+    end
+end
 ```
 
 </div>
-
-    
 
 ---
 
@@ -208,7 +220,7 @@ class LevelData
     private def load_json_levels
         json_data = load_json('./data/levels.json')
         @levels = json_data['data'].map do |level_data|
-            level = LevelFactory.create_level_from_json(level_data)
+            level = LevelDirector.create_level_from_json(level_data)
         end
     end
 end
@@ -222,17 +234,41 @@ end
 
 <div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
-> Dans ces factory, il se passe un tas de trucs en fonction du niveau.
+> Dans mes factory, je fabrique des éléments d'UI principalement.
 
 ```ruby
-class LevelFactory
-	def self.create_level_from_json(level_data)
-		RewardFactory.get_reward(level_data["reward"], level_data["title"])
-        character = CharacterData.instance.get_character(level_data['character'])
-        Level.new(level_data["title"], level_data["description"], character, level_data["difficulty"], level_data["reward"])
-	end
-end 
+class ButtonFactory
+  def initialize(window)
+    @window = window
+  end
+
+  def create_button(x:, y:, width:, height:, text:, background_color:, hover_color:, text_color:, &callback)
+    Button.new(@window, x, y, width, height, text, background_color, hover_color, text_color, &callback)
+  end
+
+  def create_training_button(x:, y:, width:, height:, training_name:, training_cost:, &callback)
+    background_color = Gosu::Color::WHITE
+    hover_color = Gosu::Color::GRAY
+    text_color = Gosu::Color::BLACK
+
+    TrainingButton.new(
+      @window,
+      x,
+      y,
+      width,
+      height,
+      training_name,
+      training_cost,
+      background_color,
+      hover_color,
+      text_color,
+      &callback
+    )
+  end
+  ...
+end
 ```
+
 
 </div>
 

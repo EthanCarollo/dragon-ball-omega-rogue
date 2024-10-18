@@ -8,7 +8,7 @@ require_relative 'debug/debug_fps'
 require_relative 'events/event_manager'
 
 require_relative 'level/level'
-require_relative 'level/level_factory'
+require_relative 'level/level_director'
 
 require_relative 'utils/text_utils'
 
@@ -37,7 +37,7 @@ require_relative 'rewards/reward'
 require_relative 'rewards/reward_memento'
 require_relative 'rewards/stats_reward'
 require_relative 'rewards/training_reward'
-require_relative 'rewards/reward_factory'
+require_relative 'rewards/reward_director'
 
 require_relative 'characters/attack/attack_option'
 require_relative 'characters/attack/strength_attack'
@@ -50,7 +50,7 @@ require_relative 'characters/normal_character'
 require_relative 'characters/sayan_character'
 require_relative 'characters/chilled_character'
 require_relative 'characters/character_stats'
-require_relative 'characters/character_factory'
+require_relative 'characters/character_director'
 require_relative 'characters/proxy/proxy_transformation'
 require_relative 'characters/state/sayan_state'
 require_relative 'characters/state/character_state'
@@ -90,7 +90,7 @@ class Game < Gosu::Window
 
       # Initialize logics
       @current_scene = MenuScene.new(self)
-      # @current_scene = RewardScene.new(self, RewardFactory.method(:get_ssj_reward).to_proc)
+      # @current_scene = RewardScene.new(self, RewardDirector.method(:get_ssj_reward).to_proc)
       @event_manager = EventManager.new
       @text_display = TextDisplay.new(self)
       @event_manager.add_observer(@text_display)

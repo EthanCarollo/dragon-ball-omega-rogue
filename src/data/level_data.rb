@@ -27,7 +27,7 @@ class LevelData
         file = File.read('./data/levels.json')
         json_data = JSON.parse(file)
         @levels = json_data['data'].map do |level_data|
-            level = LevelFactory.create_level_from_json(level_data)
+            level = LevelDirector.create_level_from_json(level_data)
             DebugLog.info "SUCCESS : Successfully create level : #{level.name}"
             level
         end

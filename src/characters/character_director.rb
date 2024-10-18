@@ -1,5 +1,5 @@
-# Factory Builder, yes yes i know
-class CharacterFactory
+# Director for the Character Builder
+class CharacterDirector
     def self.create_character_from_json(char_data)
         char_hp = 0
         begin

@@ -25,7 +25,7 @@ class CharacterData
         file = File.read('./data/character.json')
         json_data = JSON.parse(file)
         @characters = json_data['data'].map do |char_data|
-            char = CharacterFactory.create_character_from_json(char_data)
+            char = CharacterDirector.create_character_from_json(char_data)
             DebugLog.info "SUCCESS : Successfully create character : #{char.id}"
             char
         end

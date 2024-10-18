@@ -10,7 +10,7 @@ class ChooseFightScene
 
     @button_factory = ButtonFactory.new(@window)
 
-    @levels = LevelFactory.get_random_level
+    @levels = LevelDirector.get_random_level
     
     @level_buttons = []
     

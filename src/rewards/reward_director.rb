@@ -1,4 +1,4 @@
-class RewardFactory
+class RewardDirector
 
     def self.get_intelligence_reward(amount = 5)
         reward_instance = Reward.new()
@@ -16,28 +16,28 @@ class RewardFactory
     end
 
     def self.get_random_reward()
-        int_reward = RewardFactory.get_intelligence_reward(6)
-        str_reward = RewardFactory.get_strength_reward(6)
-        int_str_reward = RewardFactory.get_intelligence_strength_reward(3)
+        int_reward = RewardDirector.get_intelligence_reward(6)
+        str_reward = RewardDirector.get_strength_reward(6)
+        int_str_reward = RewardDirector.get_intelligence_strength_reward(3)
         return [
-            [int_reward, RewardFactory.get_intelligence_reward(2), TrainingPointReward.new(RewardFactory.get_intelligence_reward(2), [4,7].sample)].sample,
-            [str_reward, RewardFactory.get_strength_reward(2), TrainingPointReward.new(RewardFactory.get_strength_reward(2), 8)].sample,
-            [SenzuReward.new(int_str_reward), int_str_reward, SenzuReward.new(RewardFactory.get_strength_reward(2))].sample,
+            [int_reward, RewardDirector.get_intelligence_reward(2), TrainingPointReward.new(RewardDirector.get_intelligence_reward(2), [4,7].sample)].sample,
+            [str_reward, RewardDirector.get_strength_reward(2), TrainingPointReward.new(RewardDirector.get_strength_reward(2), 8)].sample,
+            [SenzuReward.new(int_str_reward), int_str_reward, SenzuReward.new(RewardDirector.get_strength_reward(2))].sample,
         ].shuffle
     end
 
     def self.get_ssj_reward()
         player = Player.instance
-        intelligence_reward = RewardFactory.get_intelligence_reward(6)
+        intelligence_reward = RewardDirector.get_intelligence_reward(6)
         
         if player.race == PlayerRace.sayan and player.have_training("Entraînement Super Saiyan") == false and player.character.have_attack("Super Sayan transformation") == false
             return [
                 [intelligence_reward, SenzuReward.new(intelligence_reward)].sample,
-                RewardFactory.get_ssj_train_reward,
-                RewardFactory.get_intelligence_strength_reward(3),
+                RewardDirector.get_ssj_train_reward,
+                RewardDirector.get_intelligence_strength_reward(3),
         ].shuffle
         end
-        return RewardFactory.get_random_reward
+        return RewardDirector.get_random_reward
     end
 
     # This is like my little shitty function where I do a big switch for decorate the reward, cause it's data driven
@@ -80,7 +80,7 @@ class RewardFactory
             all_rewards = rewards.map{ |reward| 
                 returned_reward = Reward.new
                 reward["decor"].each do |decorator_string|
-                    returned_reward = RewardFactory.decorateReward(returned_reward, decorator_string)
+                    returned_reward = RewardDirector.decorateReward(returned_reward, decorator_string)
                 end
                 returned_reward
             }
@@ -88,7 +88,7 @@ class RewardFactory
             return all_rewards.sample(3)
         rescue
             DebugLog.error("ERROR : Error with creating reward with : #{name}, return default random reward")
-            RewardFactory.get_random_reward
+            RewardDirector.get_random_reward
     end
 
 end

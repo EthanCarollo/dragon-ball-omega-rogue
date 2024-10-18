@@ -10,7 +10,7 @@ class RewardScene
 
     @level_name = level_name
     @reward_object = reward_object
-    @reward_originator = RewardOriginator.new(RewardFactory.get_reward(reward_object, level_name))
+    @reward_originator = RewardOriginator.new(RewardDirector.get_reward(reward_object, level_name))
     @reward_caretaker = RewardCaretaker.new(@reward_originator)
     load_rewards
 
@@ -66,7 +66,7 @@ class RewardScene
 
   def reload_rewards
     @reward_caretaker.backup
-    @reward_originator.state = RewardFactory.get_reward(@reward_object, @level_name)
+    @reward_originator.state = RewardDirector.get_reward(@reward_object, @level_name)
     load_rewards
   end
 
