@@ -417,6 +417,27 @@
             "max": 550
           }
         ]
+      },
+      {
+        "id": "naruto_4_tails",
+        "hp": 1000000,
+        "type": "normal",
+        "name": "Naruto 4 tails",
+        "full_body": "./assets/parts/full/naruto_4tails_evolved.png",
+        "stats": {
+          "strength": 9999,
+          "intelligence": 9999,
+          "wisdom": 9999,
+          "armor": 9999
+        },
+        "attack": [
+          {
+            "type": "strength",
+            "name": "Death Ball",
+            "min": 1000,
+            "max": 40000000
+          }
+        ]
       }
     ]
   }

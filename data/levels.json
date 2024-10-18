@@ -263,6 +263,21 @@
           { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] },
           { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] }
         ]
+      },
+      {
+        "id": "level_hard_221_132",
+        "title": "Naruto 4 Tails wtf",
+        "description": "Defeat All the Naruto.",
+        "difficulty": "hard",
+        "team": {
+          "name": "Naruto 4 tails x3",
+          "members": ["naruto_4_tails", "naruto_4_tails", "naruto_4_tails"]
+        },
+        "reward": [
+          { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] },
+          { "decor": [{"name": "senzu"}, {"name": "genki_dama_reward"}] }
+        ]
       }
     ]
   }
