@@ -1,5 +1,5 @@
 ---
-title: "The design patterns used"
+title: "2. The design patterns used"
 description: The different design pattern used in the game
 ---
 

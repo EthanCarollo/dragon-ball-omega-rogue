@@ -4,6 +4,8 @@
   <img src="./assets/title/dbrogue.png" alt="Dragon Ball Omega Rogue Banner" />
 </p>
 
+> You can see more about the project on this [link]("https://dragon-ball-omega-rogue.vercel.app")
+
 A small game in Ruby inspired by **Dragon Ball** and developed with **Gosu**.
 
 Basically, it's a turn-based rogue-like, and there’s not much more to say.
