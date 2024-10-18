@@ -2,7 +2,7 @@
 # and it changes depending on the attack
 # The main role of this is to encapsulate attack
 # So this class is much like the Command abstract class in top of the Command pattern.
-class AttackOption 
+class AttackCommand 
     attr_reader :name, :min_attack, :max_attack, :asset_path, :deal_damage
     
     def initialize(name, min_attack, max_attack, asset_path = "./assets/ability/release_v1.2-single_1.png", deal_damage = true)

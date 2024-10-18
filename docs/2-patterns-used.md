@@ -9,6 +9,8 @@ A design pattern is a reusable solution to a common problem in software design. 
 
 So in our case, in this project, we had to includes a lot of them.
 
+## The basic Design Pattern to implements
+
 ### Singleton Pattern
 
 In our case, the Singleton pattern is primarly used when we need to load data, so in that way, we ensure that the data is only loaded once and accessible everywhere
@@ -198,5 +200,284 @@ end
 
 ### Observer Pattern
 
+For the Observer Pattern, I did a simple notifications//events management system like that
+
+```ruby
+class EventManager
+  def initialize
+    @observers = []
+  end
+
+  def add_observer(observer)
+    @observers << observer
+  end
+
+  def remove_observer(observer)
+    @observers.delete(observer)
+  end
+
+  def notify(event)
+    @observers.each { |observer| observer.receive(event) }
+  end
+end
+
+class TextDisplay < EventObserver
+  ...
+
+  def receive(new_text)
+    @text = new_text
+    @visible = true
+    @time_displayed = Gosu::milliseconds / 1000.0
+  end
+end
+```
+
 ### Decorator Pattern
 
+In my case, the Decorator Pattern is used to decorate reward to add modifier to them
+
+```ruby
+class Reward
+    attr_accessor :name, :description, :asset_path, :hover_asset_path
+
+    def initialize(name = "Reward", ...)
+        @name = name
+        ...
+    end
+
+    def get_reward
+
+    end
+end
+class StrengthReward < Reward
+    def initialize(reward, amount)
+        super("Strength #{reward.name}", ...)
+        @reward = reward
+        @amount = amount
+    end
+
+    def get_reward
+        @reward.get_reward
+        Player.instance.character.stats.strength += @amount
+    end
+end
+
+class SenzuReward < Reward
+    def initialize(reward)
+        super("Senzu #{reward.name}", ...)
+        @reward = reward
+    end
+
+    def get_reward
+        @reward.get_reward
+        Player.instance.character.hp = Player.instance.character.max_hp
+    end
+end
+```
+
+## The "advanced" Design Pattern to implements
+
+### Command Pattern
+
+Command Pattern is used for the Attack Option, the Player can have option for attacking, and they are using the Command Pattern.
+
+```ruby
+class AttackCommand
+    def initialize(...)
+        ...
+    end
+
+    def execute(launcher, opponent)
+        DebugLog.warning "execute attack option"
+    end
+end
+
+class IntelligenceAttack < AttackCommand 
+    def execute(launcher, opponent)
+        intelligence_multiplier = 1 + (launcher.stats.intelligence * 0.1)
+        damage = rand(@min_attack..@max_attack) * intelligence_multiplier
+        opponent.hit(damage)
+        DebugLog.warning "#{launcher.name} used intelligence #{@name} on #{opponent.name} for #{damage} damage!"
+    end
+end
+```
+
+### Composite Pattern
+
+The Composite Pattern is used to create some teams from character, it's usefull in our case !
+
+![example of the composite](assets/vegeta_frieza.png)
+
+```ruby
+# This is the demonstration of the composite pattern.
+
+class ZTeam < Character
+    def initialize(name)
+      super(name)
+      @members = []
+    end
+
+    def add_member(character)
+      @members << character
+      return self
+    end
+  
+    def remove_member(character)
+      @members.delete(character)
+      return self
+    end
+  
+    def alive?
+      @members.any?(&:alive?)
+    end
+  
+    def random_attack(opponent)
+      @members.each do |member|
+        if member.alive?
+          member.random_attack(opponent)
+        end
+      end
+    end
+  
+    def hit(damage)
+      damage_per_member = damage / @members.size.to_f
+      @members.each do |member|
+        member.hit(damage_per_member)
+      end
+    end
+  
+    def heal(heal_point)
+      @members.each do |member|
+        member.heal(heal_point)
+      end
+    end
+  
+    def draw_at(x, y, reversed = false, draw_health = true, desired_size = 128)
+        offset_y = 0
+        offset_x = 0
+        @members.each do |member|
+            member.draw_at(x + offset_x, y + offset_y, reversed, draw_health, desired_size)
+            offset_y += 40
+            offset_x += 100
+        end
+    end
+  end
+```
+
+### Memento Pattern
+
+With the rewards, I wanted that the player to reroll if he wants to get other rewards if he wants but also rollback to get the past rewards
+
+So it's a classic and usefull Memento Pattern
+
+```ruby
+class RewardOriginator
+  attr_accessor :state
+
+  def initialize(state)
+    @state = state
+  end
+
+  def save
+    deep_copied_state = @state.map(&:deep_copy)
+    RewardMemento.new(deep_copied_state)
+  end
+
+  def restore(memento)
+    DebugLog.warning memento.state
+    @state = memento.state
+  end
+end
+
+class RewardCaretaker
+  attr_accessor :mementos
+  def initialize(originator)
+    @mementos = []
+    @originator = originator
+  end
+
+  def backup
+    @mementos << @originator.save
+  end
+
+  def undo
+    return if @mementos.empty?
+    memento = @mementos.pop
+    @originator.restore(memento)
+  end
+
+  def show_history
+    @mementos.each { |memento| DebugLog.warning memento }
+  end
+end
+
+class RewardMemento
+  attr_reader :state
+  attr_reader :date
+
+  def initialize(state)
+    @state = state
+    @date = Time.now.strftime('%F %T')
+  end
+end
+```
+
+### Proxy Pattern
+
+Proxy pattern is used when we wan't to tranformate to assure that every statistics is updated for the player
+
+```ruby
+class ProxyTransformation
+    def initialize(state)
+        @state = state
+    end
+
+    def activate
+        raise "Default proxy transformation used, shouldn't"
+    end
+end
+
+class SuperSayanProxy < ProxyTransformation
+    def activate
+        @state.character.updateState(SSJState.new(@state.character))
+        @state.character.set_max_hp(500).heal(500)
+        Player.instance.window.event_manager.notify("Character transformed in Super Sayan !")
+    end
+end
+```
+
+### Facade Pattern
+
+Little bonus, my DebugLog use a facade to communicate with "puts" in an elegant way
+
+```ruby
+class DebugLog
+    COLORS = {
+      info: "\e[34m",    
+      warning: "\e[33m", 
+      error: "\e[31m",
+      disclaimer: "\e[36m",
+      reset: "\e[0m"    
+    }
+  
+    def self.info(message)
+      log(message, :info)
+    end
+  
+    def self.warning(message)
+      log(message, :warning)
+    end
+  
+    def self.error(message)
+      log(message, :error)
+    end
+  
+    def self.log(message, level)
+        timestamp = Time.now.strftime("%Y-%m-%d %H:%M:%S")
+    
+        if DEBUG_MODE == true
+            puts "#{COLORS[level]}[#{timestamp}] #{message}#{COLORS[:reset]}"
+        end
+    end
+end
+```

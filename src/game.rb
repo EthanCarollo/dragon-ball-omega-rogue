@@ -39,7 +39,7 @@ require_relative 'rewards/stats_reward'
 require_relative 'rewards/training_reward'
 require_relative 'rewards/reward_director'
 
-require_relative 'characters/attack/attack_option'
+require_relative 'characters/attack/attack_command'
 require_relative 'characters/attack/strength_attack'
 require_relative 'characters/attack/intelligence_attack'
 require_relative 'characters/attack/super_sayan_attack'

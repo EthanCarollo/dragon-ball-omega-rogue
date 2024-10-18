@@ -1,5 +1,5 @@
 # The difference between strength attack and intelligence attack is the stats used by the player
-class SuperSayanGodAttack < AttackOption 
+class SuperSayanGodAttack < AttackCommand 
     def initialize()
         super("Super Sayan God transformation", 0, 0, "./assets/rewards/ssjgod_reward.png")
     end

@@ -1,4 +1,4 @@
-class TextDisplay
+class TextDisplay < EventObserver
   attr_reader :visible
 
   def initialize(window)

@@ -1,4 +1,4 @@
-class IntelligenceAttack < AttackOption 
+class IntelligenceAttack < AttackCommand 
     def execute(launcher, opponent)
         intelligence_multiplier = 1 + (launcher.stats.intelligence * 0.1)
         damage = rand(@min_attack..@max_attack) * intelligence_multiplier
