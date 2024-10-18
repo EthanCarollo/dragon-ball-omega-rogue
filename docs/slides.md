@@ -629,5 +629,5 @@ class DebugLog
 
 ---
 
-### Merci d'avoir ecouté
+### Merci d'avoir écouté
 
