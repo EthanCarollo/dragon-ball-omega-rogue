@@ -98,7 +98,7 @@ end
 
 ## 2. Le choix de personnage
 
-![choose_character|60vw](assets/choose_character.png)
+![choose_character alt text|80%](assets/choose_character.png)
 
 ---
 
@@ -142,7 +142,7 @@ end
 
 ## 3. Le choix du niveau
 
-![choose_level|60vw](assets/choose_level.png)
+![choose_level|80%](assets/choose_level.png)
 
 ---
 
@@ -223,7 +223,7 @@ end
 
 ## 4. Le combat
 
-![choose_level|60vw](assets/fight_scene.png)
+![choose_level|80%](assets/fight_scene.png)
 
 ---
 
@@ -335,11 +335,15 @@ end
 
 ## 5. Les récompenses
 
-![choose_level|60vw](assets/choose_level.png)
+![choose_level|80%](assets/choose_level.png)
 
 ---
 
-### 5.1 - TODO
+### 5.1 - Décoration des récompenses
+
+---
+
+
 
 ---
 
