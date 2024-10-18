@@ -60,6 +60,7 @@ Créer un jeu vidéo sur le thème de Dragon Ball en utilisant des designs patte
 
 ### 1.1 Un petit exemple de ma classe Game
 
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > Petit exemple de la classe qui "hold" le state, dans cet exemple, MainMenuScene est mon state par défaut.
 
@@ -86,10 +87,15 @@ class Game
     end
 end
 ```
+
+</div>
+
 ---
 
 ### 1.2 Un petit exemple de ma classe Scene
 
+
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > La classe Scene qui represente donc un state de mon Game
 
@@ -113,8 +119,9 @@ class MenuScene < Scene
     end
   end
 end
-
 ```
+
+</div>
 
 ---
 
@@ -124,7 +131,10 @@ end
 
 ---
 
+
 ### 2.1 Le build du personnage
+
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > Exemple d'utilisation du build de mon personnage
 
@@ -137,11 +147,15 @@ player_character
     .add_attack(Attack.new("Kikoha", ...))
 ```
 
+</div>
+
     
 
 ---
 
 ### 2.2 Le build du personnage
+
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > Exemple d'utilisation du build de mon personnage plus poussé
 
@@ -163,6 +177,8 @@ if DEBUG_MODE == true
 end
 ```
 
+</div>
+
 ---
 
 ## 3. Le choix du niveau
@@ -172,6 +188,8 @@ end
 ---
 
 ### 3.1 Le load des personnages à affronter et des niveaux
+
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > Les niveaux et les personnages sont crées à partir de deux **gros json** qui sont ensuite load dans 2 singletons.
 
@@ -194,12 +212,15 @@ class LevelData
         end
     end
 end
-
 ```
+
+</div>
 
 ---
 
 ### 3.2 Les factorys !
+
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > Dans ces factory, il se passe un tas de trucs en fonction du niveau.
 
@@ -213,9 +234,13 @@ class LevelFactory
 end 
 ```
 
+</div>
+
 --- 
 
 ### 3.3 Pourquoi c'est nécessaire ?
+
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > Pour faciliter l'ajout de nouveaux niveaux, j'ai choisi d'opter pour une structure data driven, et ça commence par la création de personnages et de niveaux.
 
@@ -244,6 +269,8 @@ end
 }
 ```
 
+</div>
+
 ---
 
 ## 4. Le combat
@@ -253,6 +280,8 @@ end
 ---
 
 ### 4.1 - Les compétences
+
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > Les compétences utilisent le Command Pattern visant a encapsuler et parametrer des actions, dans notre cas, des attaques.
 
@@ -276,6 +305,8 @@ class SuperSayanTransformation < AbilityCommand
     end
 end
 ```
+
+</div>
 
 ---
 
@@ -357,6 +388,8 @@ end
 
 ### 4.3 - La transformation en SSJ
 
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
+
 > La transformation en SSJ, se fait par le biais d'un proxy qui va nous permettre d'effectuer quelques actions avant de passer réellement en SSJ
 
 ```ruby
@@ -380,6 +413,8 @@ class SuperSayanProxy < ProxyTransformation
 end
 ```
 
+</div>
+
 ---
 
 ## 5. Les récompenses
@@ -401,6 +436,8 @@ reward_instance = TrainingReward.new(reward_instance, AttackTraining.new("Genkid
 ---
 
 ### 5.2 - L'utilisation du Memento 
+
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > Utiliser un memento dans ce genre de jeu peut se réveler quelque peu compliqué par moment, dans mon cas, j'ai décidé de l'utiliser dans les rewards afin de proposer au joueur de "reroll" ses rewards si elles ne lui conviennent pas.
 
@@ -446,6 +483,8 @@ class RewardMemento
 end
 ```
 
+</div>
+
 ---
 
 ## 6. Système de notifications
@@ -453,6 +492,9 @@ end
 ---
 
 ### 6.1 - Utilisation de l'observer
+
+
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > Dans mon cas, le systeme de notifications est un simple Events Manager avec un Text Display en observer qui écoute les events envoyés par le jeu.
 
@@ -489,6 +531,8 @@ class TextDisplay < Observer
 end
 ```
 
+</div>
+
 ---
 
 ## 7. Le Debug
@@ -496,6 +540,9 @@ end
 ---
 
 ### 7.1 - Utilisation de la façade
+
+
+<div style="height: 80vh; display: flex; flex-direction: column; gap: 16px;">
 
 > En petit bonus, j'ai décidé d'implémenter la façade pour pouvoir utilisé plus facilement de manière différente la fonction puts qui permet de logger en Ruby ! Et encore mieux, grâce à cette fçade, je peux facilement retirer tout les logs de mon jeu avec une simple condition par exemple !
 
@@ -521,6 +568,8 @@ class DebugLog
     end
   end
 ```
+
+</div>
 
 ---
 
