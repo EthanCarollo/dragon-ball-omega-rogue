@@ -42,3 +42,7 @@ This game was created to explore and test various design patterns in object-orie
    ```bash
    ruby main.rb
    ```
+
+## Packaging
+
+For more information about packaging, you can check the Ruby Gosu Wiki : https://github.com/gosu/gosu/wiki/ 
